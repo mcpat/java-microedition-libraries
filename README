@@ -1,0 +1,3 @@
+A collection of libraries for the development of Java Microedition applications:
+
+ o Stubs of APIs (CLDC, IMP, MIDP, CDC) to compile against

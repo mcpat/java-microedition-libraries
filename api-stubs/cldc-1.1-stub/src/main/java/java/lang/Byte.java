@@ -3,7 +3,7 @@ package java.lang;
 /**
  * @since CLDC 1.0
  */
-public class Byte {
+public final class Byte {
     public static final byte MAX_VALUE= 127;
     public static final byte MIN_VALUE= -128;
     

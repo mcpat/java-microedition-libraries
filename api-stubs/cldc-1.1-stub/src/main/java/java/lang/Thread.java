@@ -32,15 +32,15 @@ public class Thread implements Runnable {
     
     public Thread(Runnable target, String name) {}
     
-    public String getName() {
+    public final String getName() {
         return null;
     }
     
-    public int getPriority() {
+    public final int getPriority() {
         return -1;
     }
     
-    public boolean isAlive() {
+    public final boolean isAlive() {
         return false;
     }
     
@@ -52,14 +52,14 @@ public class Thread implements Runnable {
     /**
      * @throws InterruptedException
      */
-    public void join() throws InterruptedException {}
+    public final void join() throws InterruptedException {}
     
     public void run() {}
     
     /**
      * @throws IllegalArgumentException
      */
-    public void setPriority(int newPriority) {}
+    public final void setPriority(int newPriority) {}
     
     /**
      * @throws IllegalThreadStateException

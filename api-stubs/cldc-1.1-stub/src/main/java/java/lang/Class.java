@@ -5,7 +5,7 @@ package java.lang;
 
 import java.io.InputStream;
 
-public class Class {
+public final class Class {
 
 	/**
 	 * @throws ClassNotFoundException

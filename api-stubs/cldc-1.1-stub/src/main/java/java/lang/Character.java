@@ -3,7 +3,7 @@ package java.lang;
 /**
  * @since CLDC 1.0
  */
-public class Character {
+public final class Character {
     public final static int MAX_RADIX= 36;
     public final static char MAX_VALUE= 65535;
     public final static int MIN_RADIX= 2;

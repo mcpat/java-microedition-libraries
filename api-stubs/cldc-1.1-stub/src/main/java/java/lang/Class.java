@@ -1,6 +1,6 @@
 package java.lang;
 /**
- * @since JDK1.0, CLDC 1.0 
+ * @since CLDC 1.0 
  */
 
 import java.io.InputStream;

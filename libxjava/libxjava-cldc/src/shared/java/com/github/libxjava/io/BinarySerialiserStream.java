@@ -18,9 +18,6 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * $Id: BinarySerialiserStream.java 28783 2010-08-24 12:59:45Z marcel $
- */
 package com.github.libxjava.io;
 
 import java.io.DataOutputStream;
@@ -33,7 +30,6 @@ import com.github.libxjava.util.BasicHashMap;
 /**
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
- * @version $Revision: 28783 $
  */
 public final class BinarySerialiserStream extends DataOutputStream implements ISerialiser {
     private BasicHashMap _references= new BasicHashMap();

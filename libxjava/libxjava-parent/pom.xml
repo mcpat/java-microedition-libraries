@@ -111,7 +111,7 @@
 					<executions>
 						<execution>
 							<id>eclipse-metadata</id>
-							<phase>generate-sources</phase>
+							<phase>initialize</phase>
 							<goals>
 								<goal>clean</goal>
 								<goal>eclipse</goal>

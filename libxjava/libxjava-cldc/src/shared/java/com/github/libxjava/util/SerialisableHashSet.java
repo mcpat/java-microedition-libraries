@@ -45,7 +45,7 @@ public class SerialisableHashSet/*[J5<E>J5]*/ extends BasicHashSet/*[J5<E>J5]*/ 
     public void deserialise(IDeserialiser in) throws IOException, ClassNotFoundException {
         final int count= in.readInt();
         for(int i= 0; i < count; ++i) {
-            super.add(in.readObject());
+            super.add(/*[J5(E)J5]*/in.readObject());
         }
     }
 

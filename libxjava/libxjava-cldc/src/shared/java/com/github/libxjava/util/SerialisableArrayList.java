@@ -47,7 +47,7 @@ public class SerialisableArrayList/*[J5<E>J5]*/ extends BasicArrayList/*[J5<E>J5
         ensureCapacity(count);
         
         for(int i= 0; i < count; ++i) {
-            super.add(in.readObject());
+            super.add(/*[J5(E)J5]*/in.readObject());
         }
     }
 

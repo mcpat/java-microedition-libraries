@@ -27,10 +27,10 @@ import java.util.NoSuchElementException;
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
-final class IteratorWrapper implements BasicEnumeration {
-    private final Iterator _iter;
+final class IteratorWrapper/*[J5<E>J5]*/ implements BasicEnumeration/*[J5<E>J5]*/ {
+    private final Iterator/*[J5<E>J5]*/ _iter;
     
-    IteratorWrapper(Iterator iter) {
+    IteratorWrapper(Iterator/*[J5<E>J5]*/ iter) {
         _iter= iter;
     }
     
@@ -38,7 +38,7 @@ final class IteratorWrapper implements BasicEnumeration {
         return _iter.hasNext();
     }
 
-    public Object nextElement() {
+    public /*[J5E/*J5]*/Object/**/ nextElement() {
         if(_iter.hasNext()) {
             return _iter.next();
         }

@@ -46,7 +46,7 @@ public class SerialisableHashMap/*[J5<K,V>J5]*/ extends BasicHashMap/*[J5<K,V>J5
         final int count= in.readInt();
         
         for(int i= 0; i < count; ++i) {
-            super.put(in.readObject(), in.readObject());
+            super.put(/*[J5(K)J5]*/in.readObject(), /*[J5(V)J5]*/in.readObject());
         }
     }
 

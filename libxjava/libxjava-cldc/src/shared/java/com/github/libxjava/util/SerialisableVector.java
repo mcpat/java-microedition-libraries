@@ -56,7 +56,7 @@ public class SerialisableVector/*[J5<E>J5]*/ extends Vector/*[J5<E>J5]*/ impleme
         ensureCapacity(count);
         
         for(int i= 0; i < count; ++i) {
-            super.addElement(in.readObject());
+            super.addElement(/*[J5(E)J5]*/in.readObject());
         }
     }
 

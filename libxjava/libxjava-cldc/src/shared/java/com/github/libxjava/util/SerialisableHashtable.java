@@ -53,7 +53,7 @@ public class SerialisableHashtable/*[J5<K,V>J5]*/ extends Hashtable/*[J5<K,V>J5]
         int count= in.readInt();
         
         for(int i= 0; i < count; ++i) {
-            super.put(in.readObject(), in.readObject());
+            super.put(/*[J5(K)J5]*/in.readObject(), /*[J5(V)J5]*/in.readObject());
         }
     }
 

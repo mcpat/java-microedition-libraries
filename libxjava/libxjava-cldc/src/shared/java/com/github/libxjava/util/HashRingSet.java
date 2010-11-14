@@ -28,6 +28,7 @@ package com.github.libxjava.util;
  * inserted objects.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class HashRingSet {
     private static final int LOAD_FACTOR = 75;

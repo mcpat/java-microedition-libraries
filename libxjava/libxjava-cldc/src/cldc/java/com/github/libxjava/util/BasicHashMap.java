@@ -26,6 +26,7 @@ import com.github.libxjava.util.BasicEnumeration;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class BasicHashMap {
     private final static class Entry {

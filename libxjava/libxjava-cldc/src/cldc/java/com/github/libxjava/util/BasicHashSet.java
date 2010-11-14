@@ -24,6 +24,7 @@ import com.github.libxjava.util.BasicEnumeration;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class BasicHashSet {
     private final static Object PRESENT= new Object();

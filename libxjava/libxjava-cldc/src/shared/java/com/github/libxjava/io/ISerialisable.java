@@ -29,6 +29,7 @@ import java.io.IOException;
  * that it defines a default constructor. Otherwise it cannot be accessed or instantiated!
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public interface ISerialisable {
     

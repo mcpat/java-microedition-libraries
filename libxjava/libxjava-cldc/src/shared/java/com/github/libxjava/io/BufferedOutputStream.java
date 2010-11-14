@@ -25,6 +25,7 @@ import java.io.OutputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public abstract class BufferedOutputStream extends OutputStream {
     protected final int bufsize;

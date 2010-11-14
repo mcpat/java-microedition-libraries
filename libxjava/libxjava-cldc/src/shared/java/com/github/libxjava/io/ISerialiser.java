@@ -29,6 +29,7 @@ import java.io.OutputStream;
  * This interface defines write methods for a primitive serialiser.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public interface ISerialiser extends DataOutput {
     /**

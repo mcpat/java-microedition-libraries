@@ -24,6 +24,7 @@ import java.util.HashMap;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class BasicHashMap/*[J5<K,V>J5]*/ extends HashMap/*[J5<K,V>J5]*/ {
     private static final long serialVersionUID= 1L;

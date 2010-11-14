@@ -23,6 +23,7 @@ package com.github.libxjava.concurrent;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public abstract class AbstractSingleThreadRunner {
     public final static byte STARTED= 0x01;

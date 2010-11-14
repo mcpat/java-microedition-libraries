@@ -27,6 +27,7 @@ import java.io.IOException;
  * This interface defines read methods for a primitive deserialiser.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public interface IDeserialiser extends DataInput {
     /**

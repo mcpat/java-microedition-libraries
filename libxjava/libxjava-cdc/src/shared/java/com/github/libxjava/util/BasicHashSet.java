@@ -24,6 +24,7 @@ import java.util.HashSet;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class BasicHashSet/*[J5<E>J5]*/ extends HashSet/*[J5<E>J5]*/ {
     private static final long serialVersionUID= 1L;

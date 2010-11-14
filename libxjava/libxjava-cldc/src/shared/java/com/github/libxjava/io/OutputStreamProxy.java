@@ -25,6 +25,7 @@ import java.io.OutputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class OutputStreamProxy extends OutputStream {
     public volatile OutputStream concreteStream= null;

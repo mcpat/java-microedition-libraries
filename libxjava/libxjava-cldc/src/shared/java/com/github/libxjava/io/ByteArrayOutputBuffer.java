@@ -31,6 +31,7 @@ import java.io.OutputStream;
  * it can be reused.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class ByteArrayOutputBuffer extends OutputStream {
     private byte[] _buffer;

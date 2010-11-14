@@ -29,6 +29,7 @@ import com.github.libxjava.io.ISerialiser;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class SerialisableHashMap/*[J5<K,V>J5]*/ extends BasicHashMap/*[J5<K,V>J5]*/ implements ISerialisable {
     private static final long serialVersionUID= 1L;

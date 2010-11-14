@@ -35,6 +35,7 @@ import com.github.libxjava.io.ISerialiser;
  * </p>
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class SerialisableHashtable/*[J5<K,V>J5]*/ extends Hashtable/*[J5<K,V>J5]*/ implements ISerialisable {
     private static final long serialVersionUID= 1L;

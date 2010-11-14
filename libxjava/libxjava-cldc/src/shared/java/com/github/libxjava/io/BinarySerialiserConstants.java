@@ -26,6 +26,7 @@ import com.github.libxjava.util.BasicHashMap;
  * A utility class with constants for the serialisation.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 final class BinarySerialiserConstants {
     // special class types

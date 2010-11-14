@@ -28,6 +28,7 @@ import java.io.OutputStream;
  * Base85 implementation using the table proposed in RFC-1924.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  * 
  * @see <a href="http://www.faqs.org/rfcs/rfc1924.html" />
  */

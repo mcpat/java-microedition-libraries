@@ -26,6 +26,7 @@ import java.util.Hashtable;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class PropertyUtil {
     private static final class KeyValueReader {

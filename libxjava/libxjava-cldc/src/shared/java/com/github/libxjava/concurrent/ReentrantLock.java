@@ -25,6 +25,7 @@ package com.github.libxjava.concurrent;
  * Implementation of an "unfair" reentrant lock.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class ReentrantLock {
     private Thread _owner;

@@ -25,6 +25,7 @@ package com.github.libxjava.concurrent;
  * Implementation of an "unfair" semaphore.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class Semaphore {
     private int _permits;

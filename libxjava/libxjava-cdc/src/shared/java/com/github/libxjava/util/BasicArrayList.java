@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class BasicArrayList/*[J5<E>J5]*/ extends ArrayList/*[J5<E>J5]*/ {
     private static final long serialVersionUID= 1L;

@@ -25,6 +25,7 @@ import java.io.InputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class InputStreamProxy extends InputStream {
     public volatile InputStream concreteStream;

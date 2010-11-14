@@ -27,6 +27,7 @@ import java.io.OutputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class ByteArrayBuffer {
     public final class Reader extends InputStream {

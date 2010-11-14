@@ -26,6 +26,7 @@ import java.io.OutputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public abstract class BaseX {
     private final Object _workLock= new Object();

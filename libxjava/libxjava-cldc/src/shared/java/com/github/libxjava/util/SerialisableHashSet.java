@@ -29,6 +29,7 @@ import com.github.libxjava.io.ISerialiser;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class SerialisableHashSet/*[J5<E>J5]*/ extends BasicHashSet/*[J5<E>J5]*/ implements ISerialisable {
     private static final long serialVersionUID= 1L;

@@ -24,6 +24,7 @@ import java.io.IOException;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class NestedIOException extends IOException {
     private Throwable _cause;

@@ -29,6 +29,7 @@ import com.github.libxjava.util.IntHashMap;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class BinaryDeserialiserStream extends DataInputStream implements IDeserialiser {
     private IntHashMap _references= new IntHashMap();

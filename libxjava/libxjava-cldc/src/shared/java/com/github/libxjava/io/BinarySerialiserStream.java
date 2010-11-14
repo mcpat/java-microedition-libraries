@@ -32,6 +32,7 @@ import com.github.libxjava.util.BasicHashMap;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  * @version $Revision: 28783 $
  */
 public final class BinarySerialiserStream extends DataOutputStream implements ISerialiser {

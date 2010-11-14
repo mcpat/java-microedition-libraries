@@ -24,6 +24,7 @@ import java.io.InputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public final class ByteArrayInputBuffer extends InputStream {
     private byte[] _buffer;

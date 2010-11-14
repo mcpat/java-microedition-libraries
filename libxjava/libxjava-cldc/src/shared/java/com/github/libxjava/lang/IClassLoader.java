@@ -28,6 +28,7 @@ import java.io.InputStream;
  * Classloaders are mainly used in the deserialisers.
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public interface IClassLoader {
     /**

@@ -26,6 +26,7 @@ import java.io.OutputStream;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class Base64 extends BaseX {
     private static final byte FILL = '=';

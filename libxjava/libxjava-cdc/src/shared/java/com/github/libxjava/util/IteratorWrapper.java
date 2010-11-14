@@ -25,6 +25,7 @@ import java.util.NoSuchElementException;
 
 /**
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 final class IteratorWrapper implements BasicEnumeration {
     private final Iterator _iter;

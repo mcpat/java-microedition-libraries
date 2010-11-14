@@ -29,6 +29,7 @@ import java.io.OutputStream;
  * <a href="http://base91.sourceforge.net">http://base91.sourceforge.net</a>
  * 
  * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
  */
 public class Base91 extends BaseX {
     private static final byte[] ENCODABET;

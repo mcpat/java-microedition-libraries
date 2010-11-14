@@ -7,7 +7,7 @@
 		<relativePath>../stub-parent/pom.xml</relativePath>
 		<version>1</version>
 	</parent>
-	<groupId>com.github.mcpat.apistubs</groupId>
+
 	<artifactId>cldc-1.1-stub</artifactId>
 	<version>0.1-SNAPSHOT</version>
 

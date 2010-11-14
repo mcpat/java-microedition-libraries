@@ -1,0 +1,9 @@
+libxjava (lib-cross-java)
+
+Small library with unified API that supports several Java platforms (cross-Java-Platform):
+ o CLDC Version 1.1
+ o CDC Version 1.1 / Java SE 1.3
+ o Java SE 1.5
+
+All versions are upward-compatible, meaning that the CLDC version is the most common one and can be used on all other platforms as well.
+

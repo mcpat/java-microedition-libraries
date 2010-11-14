@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<signature xmlns="http://jour.sourceforge.net/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jour.sourceforge.net/2.0/ http://jour.sourceforge.net/2.0/api-signature.xsd">
+	
+	<class modifiers="public abstract" name="com.github.libxjava.concurrent.AbstractSingleThreadRunner">
+		<constructor modifiers="protected">
+			<parameter type="java.lang.String"/>
+		</constructor>
+		<method modifiers="public final" name="getName" return="java.lang.String"/>
+		<method modifiers="public final" name="start" return="boolean"/>
+		<method modifiers="public final" name="stop" return="boolean"/>
+		<method modifiers="public final" name="isInState" return="boolean">
+			<parameter type="byte"/>
+		</method>
+		<method modifiers="public final" name="waitForState" return="boolean">
+			<exception name="java.lang.InterruptedException"/>
+			<parameter type="int"/>
+			<parameter type="byte"/>
+		</method>
+		<method modifiers="protected abstract" return="void" name="doRun"/>
+		<method modifiers="protected" return="void" name="forkExecution">
+			<parameter type="java.lang.Runnable"/>
+			<parameter type="java.lang.String"/>
+		</method>
+		<method modifiers="protected" return="void" name="unblock"/>
+		<method modifiers="protected final" return="boolean" name="isCancelled"/>
+		<field modifiers="public final static" type="byte" name="STARTED" constant-value="1"/>
+		<field modifiers="public final static" type="byte" name="STOPPED" constant-value="2"/>
+	</class>
+</signature>

@@ -7,23 +7,27 @@
 		<relativePath>../libxjava-parent/pom.xml</relativePath>
 		<version>1</version>
 	</parent>
-	<artifactId>libxjava-cldc</artifactId>
+	<artifactId>libxjava-cdc</artifactId>
 	<version>0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
-	<name>Lib-Cross-Java CLDC</name>
-	<description>Lib-Cross-Java for the Connected Limited Device Configuration v1.1</description>
+	<name>Lib-Cross-Java CDC</name>
+	<description>Lib-Cross-Java for the Connected Device Configuration v1.1.2</description>
 
 	<properties>
 		<libxjava-class-version>1.3</libxjava-class-version>
-		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>
+<!--		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>-->
+		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
+		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>
+		
+		<jour-use-system-classes>true</jour-use-system-classes>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.github.mcpat.apistubs</groupId>
-			<artifactId>cldc-1.1-stub</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.github.mcpat.apistubs</groupId>-->
+<!--			<artifactId>cdc-1.1.2-stub</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -46,11 +50,11 @@
 							<outputDirectory>${libxjava-module-sources}</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/src/cldc/java</directory>
+									<directory>${basedir}/src/shared/java</directory>
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>${basedir}/src/shared/java</directory>
+									<directory>${libxjava-cldc-shared}</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>
@@ -58,6 +62,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>process-switches</id>
+						<phase>process-sources</phase>
+						<configuration>
+							<target>
+								<property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.JakartaOroRegexp"/>
+								<replaceregexp byline="true" flags="g" match="/\*\[.+?\]\*/" replace="">
+									<fileset dir="${libxjava-module-sources}"/>
+								</replaceregexp>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
 			<plugin>
 				<groupId>net.sf.jour</groupId>
 				<artifactId>jour-maven-plugin</artifactId>
@@ -88,7 +114,6 @@
 								</goals>
 								<configuration>
 									<sources>
-										<source>${project.basedir}/src/cldc/java</source>
 										<source>${project.basedir}/src/shared/java</source>
 									</sources>
 								</configuration>
@@ -98,6 +123,15 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-eclipse-plugin</artifactId>
+						<configuration>
+							<linkedResources>
+								<linkedResource>
+									<name>libxjava-cldc-shared</name>
+									<type>2</type>
+									<location>${libxjava-cldc-shared}</location>
+								</linkedResource>
+							</linkedResources>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>

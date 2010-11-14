@@ -20,40 +20,51 @@
 
 package com.github.libxjava.util;
 
-import java.io.IOException;
-import java.util.Enumeration;
-
-import com.github.libxjava.io.IDeserialiser;
-import com.github.libxjava.io.ISerialisable;
-import com.github.libxjava.io.ISerialiser;
+import java.util.HashSet;
 
 /**
  * @author Marcel Patzlaff
  */
-public class SerialisableHashSet/*[J5<E>J5]*/ extends BasicHashSet/*[J5<E>J5]*/ implements ISerialisable {
+public class BasicHashSet/*[J5<E>J5]*/ extends HashSet/*[J5<E>J5]*/ {
     private static final long serialVersionUID= 1L;
 
-    public SerialisableHashSet() {
+    public BasicHashSet() {
         super();
     }
-
-    public SerialisableHashSet(int initialCapacity) {
+    
+    public BasicHashSet(int initialCapacity) {
         super(initialCapacity);
     }
-
-    public void deserialise(IDeserialiser in) throws IOException, ClassNotFoundException {
-        final int count= in.readInt();
-        for(int i= 0; i < count; ++i) {
-            super.add(in.readObject());
-        }
+    
+    public boolean add(/*[J5E/*J5]*/Object/**/ o) {
+        return super.add(o);
+    }
+    
+    public void clear() {
+        super.clear();
+    }
+    
+    public boolean contains(Object o) {
+        return super.contains(o);
+    }
+    
+    public BasicEnumeration/*[J5<E>J5]*/ enumeration() {
+        return new IteratorWrapper(super.iterator());
+    }
+    
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
+    
+    public boolean remove(Object o) {
+        return super.remove(o);
+    }
+    
+    public int size() {
+        return super.size();
     }
 
-    public void serialise(ISerialiser out) throws IOException {
-        final int count= size();
-        out.writeInt(count);
-        Enumeration e= enumeration();
-        while(e.hasMoreElements()) {
-            out.writeObject(e.nextElement());
-        }
+    public String toString() {
+        return super.toString();
     }
 }

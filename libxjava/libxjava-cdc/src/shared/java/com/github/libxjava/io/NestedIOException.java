@@ -18,42 +18,33 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.libxjava.util;
+package com.github.libxjava.io;
 
 import java.io.IOException;
-import java.util.Enumeration;
-
-import com.github.libxjava.io.IDeserialiser;
-import com.github.libxjava.io.ISerialisable;
-import com.github.libxjava.io.ISerialiser;
 
 /**
  * @author Marcel Patzlaff
  */
-public class SerialisableHashSet/*[J5<E>J5]*/ extends BasicHashSet/*[J5<E>J5]*/ implements ISerialisable {
+public class NestedIOException extends IOException {
     private static final long serialVersionUID= 1L;
 
-    public SerialisableHashSet() {
+    public NestedIOException() {
         super();
     }
 
-    public SerialisableHashSet(int initialCapacity) {
-        super(initialCapacity);
+    public NestedIOException(String s) {
+        super(s);
+    }
+    
+    public NestedIOException(String s, Throwable cause) {
+        super(s, cause);
+    }
+    
+    public Throwable getCause() {
+        return super.getCause();
     }
 
-    public void deserialise(IDeserialiser in) throws IOException, ClassNotFoundException {
-        final int count= in.readInt();
-        for(int i= 0; i < count; ++i) {
-            super.add(in.readObject());
-        }
-    }
-
-    public void serialise(ISerialiser out) throws IOException {
-        final int count= size();
-        out.writeInt(count);
-        Enumeration e= enumeration();
-        while(e.hasMoreElements()) {
-            out.writeObject(e.nextElement());
-        }
+    public void printStackTrace() {
+        super.printStackTrace();
     }
 }

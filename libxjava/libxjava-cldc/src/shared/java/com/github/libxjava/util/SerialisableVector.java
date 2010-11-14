@@ -34,7 +34,7 @@ import com.github.libxjava.io.ISerialiser;
  * 
  * @author Marcel Patzlaff
  */
-public class SerialisableVector extends Vector implements ISerialisable {
+public class SerialisableVector/*[J5<E>J5]*/ extends Vector/*[J5<E>J5]*/ implements ISerialisable {
     private static final long serialVersionUID= 1L;
     
     public SerialisableVector() {
@@ -64,6 +64,6 @@ public class SerialisableVector extends Vector implements ISerialisable {
         out.writeInt(count);
         
         for(int i= 0; i < count; ++i)
-            out.writeObject(elementAt(i));
+            out.writeObject(/*[J5(E)J5]*/elementAt(i));
     }
 }

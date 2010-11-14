@@ -35,6 +35,11 @@
 		<junit-version>3.8.1</junit-version>
 		<cldc-version>0.1-SNAPSHOT</cldc-version>
 		<cldc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cldc-1.1-stub/${cldc-version}/cldc-1.1-stub-${cldc-version}.jar</cldc-jar>
+		
+		<cdc-version>0.1-SNAPSHOT</cdc-version>
+		<cdc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cdc-1.1.2-stub/${cdc-version}/cdc-1.1.2-stub-${cdc-version}.jar</cdc-jar>
+		
+		<jour-use-system-classes>false</jour-use-system-classes>
 	</properties>
 	
 	<dependencyManagement>
@@ -43,6 +48,12 @@
 				<groupId>com.github.mcpat.apistubs</groupId>
 				<artifactId>cldc-1.1-stub</artifactId>
 				<version>${cldc-version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.mcpat.apistubs</groupId>
+				<artifactId>cdc-1.1.2-stub</artifactId>
+				<version>${cdc-version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
@@ -70,7 +81,7 @@
 							</goals>
 							<configuration>
 								<signature>${libxjava-signature-file}</signature>
-								<useSystemClassPath>false</useSystemClassPath>
+								<useSystemClassPath>${jour-use-system-classes}</useSystemClassPath>
 								<allowAPIextension>true</allowAPIextension>
 								<allowThrowsLess>false</allowThrowsLess>
 							</configuration>
@@ -107,6 +118,24 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.6</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.ant</groupId>
+							<artifactId>ant-nodeps</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.ant</groupId>
+							<artifactId>ant-apache-oro</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -206,7 +235,7 @@
 				<executions>
 					<execution>
 						<id>attach-javadoc</id>
-						<phase>package</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
@@ -221,7 +250,7 @@
 				<executions>
 					<execution>
 						<id>attach-sources</id>
-						<phase>package</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>jar-no-fork</goal>
 						</goals>

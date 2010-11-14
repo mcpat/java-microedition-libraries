@@ -22,11 +22,11 @@ package com.github.libxjava.util;
 
 import java.util.Enumeration;
 
-public interface BasicEnumeration extends Enumeration {
+public interface BasicEnumeration/*[J5<E>J5]*/ extends Enumeration/*[J5<E>J5]*/ {
 
 	public boolean hasMoreElements();
 
-	public Object nextElement();
+	public /*[J5E/*J5]*/Object/**/ nextElement();
 
 	public void remove();
 }

@@ -20,42 +20,32 @@
 
 package com.github.libxjava.util;
 
-import java.io.IOException;
-
-import com.github.libxjava.io.IDeserialiser;
-import com.github.libxjava.io.ISerialisable;
-import com.github.libxjava.io.ISerialiser;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * @author Marcel Patzlaff
  */
-public class SerialisableArrayList/*[J5<E>J5]*/ extends BasicArrayList/*[J5<E>J5]*/ implements ISerialisable {
-    private static final long serialVersionUID= 1L;
-
-    public SerialisableArrayList() {
-        super();
+final class IteratorWrapper implements BasicEnumeration {
+    private final Iterator _iter;
+    
+    IteratorWrapper(Iterator iter) {
+        _iter= iter;
+    }
+    
+    public boolean hasMoreElements() {
+        return _iter.hasNext();
     }
 
-    public SerialisableArrayList(int initialCapacity) {
-        super(initialCapacity);
-    }
-
-    public void deserialise(IDeserialiser in) throws IOException, ClassNotFoundException {
-        clear();
-        int count= in.readInt();
-        ensureCapacity(count);
-        
-        for(int i= 0; i < count; ++i) {
-            super.add(in.readObject());
+    public Object nextElement() {
+        if(_iter.hasNext()) {
+            return _iter.next();
         }
+        
+        throw new NoSuchElementException("IteratorWrapper");
     }
 
-    public void serialise(ISerialiser out) throws IOException {
-        int count= size();
-        out.writeInt(count);
-        
-        for(int i= 0; i < count; ++i) {
-            out.writeObject(get(i));
-        }
+	public void remove() {
+		_iter.remove();
     }
 }

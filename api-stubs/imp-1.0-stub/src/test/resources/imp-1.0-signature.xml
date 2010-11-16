@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<signature>
+   <class modifiers="public" name="java.util.Timer">
+    <constructor modifiers="public"/>
+    <method modifiers="public" name="schedule" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public" name="schedule" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="java.util.Date"/>
+    </method>
+    <method modifiers="public" name="schedule" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="long"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public" name="schedule" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="java.util.Date"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public" name="scheduleAtFixedRate" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="long"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public" name="scheduleAtFixedRate" return="void">
+      <parameter type="java.util.TimerTask"/>
+      <parameter type="java.util.Date"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public" name="cancel" return="void"/>
+  </class>
+  <class modifiers="public abstract" name="java.util.TimerTask">
+    <implements>
+      <interface name="java.lang.Runnable"/>
+    </implements>
+    <constructor modifiers="protected"/>
+    <method modifiers="public abstract" name="run" return="void"/>
+    <method modifiers="public" name="cancel" return="boolean"/>
+    <method modifiers="public" name="scheduledExecutionTime" return="long"/>
+  </class>
+  <interface modifiers="public" name="javax.microedition.io.HttpConnection">
+    <implements>
+      <interface name="javax.microedition.io.ContentConnection"/>
+    </implements>
+    <method modifiers="public abstract" name="getURL" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getProtocol" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getHost" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getFile" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getRef" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getQuery" return="java.lang.String"/>
+    <method modifiers="public abstract" name="getPort" return="int"/>
+    <method modifiers="public abstract" name="getRequestMethod" return="java.lang.String"/>
+    <method modifiers="public abstract" name="setRequestMethod" return="void">
+      <exception name="java.io.IOException"/>
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public abstract" name="getRequestProperty" return="java.lang.String">
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public abstract" name="setRequestProperty" return="void">
+      <exception name="java.io.IOException"/>
+      <parameter type="java.lang.String"/>
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public abstract" name="getResponseCode" return="int">
+      <exception name="java.io.IOException"/>
+    </method>
+    <method modifiers="public abstract" name="getResponseMessage" return="java.lang.String">
+      <exception name="java.io.IOException"/>
+    </method>
+    <method modifiers="public abstract" name="getExpiration" return="long">
+      <exception name="java.io.IOException"/>
+    </method>
+    <method modifiers="public abstract" name="getDate" return="long">
+      <exception name="java.io.IOException"/>
+    </method>
+    <method modifiers="public abstract" name="getLastModified" return="long">
+      <exception name="java.io.IOException"/>
+    </method>
+    <method modifiers="public abstract" name="getHeaderField" return="java.lang.String">
+      <exception name="java.io.IOException"/>
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public abstract" name="getHeaderFieldInt" return="int">
+      <exception name="java.io.IOException"/>
+      <parameter type="java.lang.String"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public abstract" name="getHeaderFieldDate" return="long">
+      <exception name="java.io.IOException"/>
+      <parameter type="java.lang.String"/>
+      <parameter type="long"/>
+    </method>
+    <method modifiers="public abstract" name="getHeaderField" return="java.lang.String">
+      <exception name="java.io.IOException"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public abstract" name="getHeaderFieldKey" return="java.lang.String">
+      <exception name="java.io.IOException"/>
+      <parameter type="int"/>
+    </method>
+    <field constant-value="HEAD" modifiers="public static final" name="HEAD" type="java.lang.String"/>
+    <field constant-value="GET" modifiers="public static final" name="GET" type="java.lang.String"/>
+    <field constant-value="POST" modifiers="public static final" name="POST" type="java.lang.String"/>
+    <field constant-value="200" modifiers="public static final" name="HTTP_OK" type="int"/>
+    <field constant-value="201" modifiers="public static final" name="HTTP_CREATED" type="int"/>
+    <field constant-value="202" modifiers="public static final" name="HTTP_ACCEPTED" type="int"/>
+    <field constant-value="203" modifiers="public static final" name="HTTP_NOT_AUTHORITATIVE" type="int"/>
+    <field constant-value="204" modifiers="public static final" name="HTTP_NO_CONTENT" type="int"/>
+    <field constant-value="205" modifiers="public static final" name="HTTP_RESET" type="int"/>
+    <field constant-value="206" modifiers="public static final" name="HTTP_PARTIAL" type="int"/>
+    <field constant-value="300" modifiers="public static final" name="HTTP_MULT_CHOICE" type="int"/>
+    <field constant-value="301" modifiers="public static final" name="HTTP_MOVED_PERM" type="int"/>
+    <field constant-value="302" modifiers="public static final" name="HTTP_MOVED_TEMP" type="int"/>
+    <field constant-value="303" modifiers="public static final" name="HTTP_SEE_OTHER" type="int"/>
+    <field constant-value="304" modifiers="public static final" name="HTTP_NOT_MODIFIED" type="int"/>
+    <field constant-value="305" modifiers="public static final" name="HTTP_USE_PROXY" type="int"/>
+    <field constant-value="307" modifiers="public static final" name="HTTP_TEMP_REDIRECT" type="int"/>
+    <field constant-value="400" modifiers="public static final" name="HTTP_BAD_REQUEST" type="int"/>
+    <field constant-value="401" modifiers="public static final" name="HTTP_UNAUTHORIZED" type="int"/>
+    <field constant-value="402" modifiers="public static final" name="HTTP_PAYMENT_REQUIRED" type="int"/>
+    <field constant-value="403" modifiers="public static final" name="HTTP_FORBIDDEN" type="int"/>
+    <field constant-value="404" modifiers="public static final" name="HTTP_NOT_FOUND" type="int"/>
+    <field constant-value="405" modifiers="public static final" name="HTTP_BAD_METHOD" type="int"/>
+    <field constant-value="406" modifiers="public static final" name="HTTP_NOT_ACCEPTABLE" type="int"/>
+    <field constant-value="407" modifiers="public static final" name="HTTP_PROXY_AUTH" type="int"/>
+    <field constant-value="408" modifiers="public static final" name="HTTP_CLIENT_TIMEOUT" type="int"/>
+    <field constant-value="409" modifiers="public static final" name="HTTP_CONFLICT" type="int"/>
+    <field constant-value="410" modifiers="public static final" name="HTTP_GONE" type="int"/>
+    <field constant-value="411" modifiers="public static final" name="HTTP_LENGTH_REQUIRED" type="int"/>
+    <field constant-value="412" modifiers="public static final" name="HTTP_PRECON_FAILED" type="int"/>
+    <field constant-value="413" modifiers="public static final" name="HTTP_ENTITY_TOO_LARGE" type="int"/>
+    <field constant-value="414" modifiers="public static final" name="HTTP_REQ_TOO_LONG" type="int"/>
+    <field constant-value="415" modifiers="public static final" name="HTTP_UNSUPPORTED_TYPE" type="int"/>
+    <field constant-value="416" modifiers="public static final" name="HTTP_UNSUPPORTED_RANGE" type="int"/>
+    <field constant-value="417" modifiers="public static final" name="HTTP_EXPECT_FAILED" type="int"/>
+    <field constant-value="500" modifiers="public static final" name="HTTP_INTERNAL_ERROR" type="int"/>
+    <field constant-value="501" modifiers="public static final" name="HTTP_NOT_IMPLEMENTED" type="int"/>
+    <field constant-value="502" modifiers="public static final" name="HTTP_BAD_GATEWAY" type="int"/>
+    <field constant-value="503" modifiers="public static final" name="HTTP_UNAVAILABLE" type="int"/>
+    <field constant-value="504" modifiers="public static final" name="HTTP_GATEWAY_TIMEOUT" type="int"/>
+    <field constant-value="505" modifiers="public static final" name="HTTP_VERSION" type="int"/>
+  </interface>
+  <class modifiers="public abstract" name="javax.microedition.midlet.MIDlet">
+    <constructor modifiers="protected"/>
+    <method modifiers="protected abstract" name="startApp" return="void">
+      <exception name="javax.microedition.midlet.MIDletStateChangeException"/>
+    </method>
+    <method modifiers="protected abstract" name="pauseApp" return="void"/>
+    <method modifiers="protected abstract" name="destroyApp" return="void">
+      <exception name="javax.microedition.midlet.MIDletStateChangeException"/>
+      <parameter type="boolean"/>
+    </method>
+    <method modifiers="public final" name="notifyDestroyed" return="void"/>
+    <method modifiers="public final" name="notifyPaused" return="void"/>
+    <method modifiers="public final" name="getAppProperty" return="java.lang.String">
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public final" name="resumeRequest" return="void"/>
+  </class>
+  <class extends="java.lang.Exception" modifiers="public" name="javax.microedition.midlet.MIDletStateChangeException">
+    <constructor modifiers="public"/>
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+  </class>
+  <class extends="javax.microedition.rms.RecordStoreException" modifiers="public" name="javax.microedition.rms.InvalidRecordIDException">
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+    <constructor modifiers="public"/>
+  </class>
+  <interface modifiers="public" name="javax.microedition.rms.RecordComparator">
+    <method modifiers="public abstract" name="compare" return="int">
+      <parameter type="byte[]"/>
+      <parameter type="byte[]"/>
+    </method>
+    <field constant-value="0" modifiers="public static final" name="EQUIVALENT" type="int"/>
+    <field constant-value="1" modifiers="public static final" name="FOLLOWS" type="int"/>
+    <field constant-value="-1" modifiers="public static final" name="PRECEDES" type="int"/>
+  </interface>
+  <interface modifiers="public" name="javax.microedition.rms.RecordEnumeration">
+    <method modifiers="public abstract" name="numRecords" return="int"/>
+    <method modifiers="public abstract" name="nextRecord" return="byte[]">
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+    </method>
+    <method modifiers="public abstract" name="nextRecordId" return="int">
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+    </method>
+    <method modifiers="public abstract" name="previousRecord" return="byte[]">
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+    </method>
+    <method modifiers="public abstract" name="previousRecordId" return="int">
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+    </method>
+    <method modifiers="public abstract" name="hasNextElement" return="boolean"/>
+    <method modifiers="public abstract" name="hasPreviousElement" return="boolean"/>
+    <method modifiers="public abstract" name="reset" return="void"/>
+    <method modifiers="public abstract" name="rebuild" return="void"/>
+    <method modifiers="public abstract" name="keepUpdated" return="void">
+      <parameter type="boolean"/>
+    </method>
+    <method modifiers="public abstract" name="isKeptUpdated" return="boolean"/>
+    <method modifiers="public abstract" name="destroy" return="void"/>
+  </interface>
+  <interface modifiers="public" name="javax.microedition.rms.RecordFilter">
+    <method modifiers="public abstract" name="matches" return="boolean">
+      <parameter type="byte[]"/>
+    </method>
+  </interface>
+  <interface modifiers="public" name="javax.microedition.rms.RecordListener">
+    <method modifiers="public abstract" name="recordAdded" return="void">
+      <parameter type="javax.microedition.rms.RecordStore"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public abstract" name="recordChanged" return="void">
+      <parameter type="javax.microedition.rms.RecordStore"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public abstract" name="recordDeleted" return="void">
+      <parameter type="javax.microedition.rms.RecordStore"/>
+      <parameter type="int"/>
+    </method>
+  </interface>
+  <class modifiers="public" name="javax.microedition.rms.RecordStore">
+    <constructor modifiers="private"/>
+    <constructor modifiers="private">
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <exception name="javax.microedition.rms.RecordStoreNotFoundException"/>
+      <parameter type="java.lang.String"/>
+      <parameter type="boolean"/>
+    </constructor>
+    <method modifiers="public static" name="openRecordStore" return="javax.microedition.rms.RecordStore">
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <exception name="javax.microedition.rms.RecordStoreFullException"/>
+      <exception name="javax.microedition.rms.RecordStoreNotFoundException"/>
+      <parameter type="java.lang.String"/>
+      <parameter type="boolean"/>
+    </method>
+    <method modifiers="public static" name="listRecordStores" return="java.lang.String[]"/>
+    <method modifiers="public static" name="deleteRecordStore" return="void">
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <exception name="javax.microedition.rms.RecordStoreNotFoundException"/>
+      <parameter type="java.lang.String"/>
+    </method>
+    <method modifiers="public" name="addRecord" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <exception name="javax.microedition.rms.RecordStoreFullException"/>
+      <parameter type="byte[]"/>
+      <parameter type="int"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="deleteRecord" return="void">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="closeRecordStore" return="void">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+    </method>
+    <method modifiers="public" name="getRecordSize" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="getRecord" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <parameter type="int"/>
+      <parameter type="byte[]"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="getRecord" return="byte[]">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="setRecord" return="void">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.InvalidRecordIDException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+      <exception name="javax.microedition.rms.RecordStoreFullException"/>
+      <parameter type="int"/>
+      <parameter type="byte[]"/>
+      <parameter type="int"/>
+      <parameter type="int"/>
+    </method>
+    <method modifiers="public" name="getName" return="java.lang.String">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="getVersion" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="getNumRecords" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="getSize" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="getSizeAvailable" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="getLastModified" return="long">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+    </method>
+    <method modifiers="public" name="addRecordListener" return="void">
+      <parameter type="javax.microedition.rms.RecordListener"/>
+    </method>
+    <method modifiers="public" name="removeRecordListener" return="void">
+      <parameter type="javax.microedition.rms.RecordListener"/>
+    </method>
+    <method modifiers="public" name="getNextRecordID" return="int">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <exception name="javax.microedition.rms.RecordStoreException"/>
+    </method>
+    <method modifiers="public" name="enumerateRecords" return="javax.microedition.rms.RecordEnumeration">
+      <exception name="javax.microedition.rms.RecordStoreNotOpenException"/>
+      <parameter type="javax.microedition.rms.RecordFilter"/>
+      <parameter type="javax.microedition.rms.RecordComparator"/>
+      <parameter type="boolean"/>
+    </method>
+  </class>
+  <class extends="java.lang.Exception" modifiers="public" name="javax.microedition.rms.RecordStoreException">
+    <constructor modifiers="public"/>
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+  </class>
+  <class extends="javax.microedition.rms.RecordStoreException" modifiers="public" name="javax.microedition.rms.RecordStoreFullException">
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+    <constructor modifiers="public"/>
+  </class>
+  <class extends="javax.microedition.rms.RecordStoreException" modifiers="public" name="javax.microedition.rms.RecordStoreNotFoundException">
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+    <constructor modifiers="public"/>
+  </class>
+  <class extends="javax.microedition.rms.RecordStoreException" modifiers="public" name="javax.microedition.rms.RecordStoreNotOpenException">
+    <constructor modifiers="public">
+      <parameter type="java.lang.String"/>
+    </constructor>
+    <constructor modifiers="public"/>
+  </class>
+</signature>

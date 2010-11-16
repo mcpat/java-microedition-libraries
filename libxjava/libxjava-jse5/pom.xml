@@ -5,10 +5,9 @@
 		<groupId>com.github.mcpat.libxjava</groupId>
 		<artifactId>libxjava-parent</artifactId>
 		<relativePath>../libxjava-parent/pom.xml</relativePath>
-		<version>1</version>
+		<version>0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>libxjava-jse5</artifactId>
-	<version>0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>Lib-Cross-Java JSE5</name>

@@ -9,7 +9,6 @@
 	</parent>
 
 	<artifactId>imp-1.0-stub</artifactId>
-	<version>0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>IMP-1.0 Stub</name>
@@ -25,9 +24,9 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>com.github.mcpat.apistubs</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>cldc-1.1-stub</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

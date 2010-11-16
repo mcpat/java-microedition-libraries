@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.mcpat</groupId>
+	<artifactId>java-microedition-libraries</artifactId>
+	<version>1</version>
+	<packaging>pom</packaging>
+	<name>Java-Microedition-Libraries Aggregator</name>
+
+	<modules>
+		<module>api-stubs</module>
+		<module>libxjava</module>
+	</modules>
+	
+	<scm>
+		<url>git://github.com/mcpat/java-microedition-libraries.git</url>
+		<connection>scm:git:git://github.com/mcpat/java-microedition-libraries.git</connection>
+		<developerConnection>scm:git:git://github.com/mcpat/java-microedition-libraries.git</developerConnection>
+	</scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>${release-repo-id}</id>
+			<name>${release-repo-id}</name>
+			<url>${release-repo-url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${snapshot-repo-id}</id>
+			<name>${snapshot-repo-id}</name>
+			<url>${snapshot-repo-url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<configuration>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

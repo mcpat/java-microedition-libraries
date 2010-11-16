@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.mcpat.apistubs</groupId>
+		<artifactId>stub-parent</artifactId>
+		<relativePath>../stub-parent/pom.xml</relativePath>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>midp-2.0-stub</artifactId>
+	<version>0.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+	<name>MIDP-2.0 Stub</name>
+	<description>Stub of the Mobile Information Device Profile  v2.0</description>
+
+	<properties>
+		<api-id>MIDP</api-id>
+		<api-name>Mobile Information Device Profile</api-name>
+		<api-version>2.0</api-version>
+		<api-type>Configuration</api-type>
+		<api-specification-file>${basedir}/src/test/resources/midp-2.0-signature.xml</api-specification-file>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.github.mcpat.apistubs</groupId>
+			<artifactId>cldc-1.1-stub</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>net.sf.jour</groupId>
+				<artifactId>jour-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<source>1.3</source>
+					<target>1.3</target>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>	

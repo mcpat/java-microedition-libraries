@@ -11,6 +11,25 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
+	<scm>
+		<url>git://github.com/mcpat/java-microedition-libraries.git</url>
+		<connection>scm:git:git://github.com/mcpat/java-microedition-libraries.git</connection>
+		<developerConnection>scm:git:git://github.com/mcpat/java-microedition-libraries.git</developerConnection>
+	</scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>${release-repo-id}</id>
+			<name>${release-repo-id}</name>
+			<url>${release-repo-url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${snapshot-repo-id}</id>
+			<name>${snapshot-repo-id}</name>
+			<url>${snapshot-repo-url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<build>
 		<pluginManagement>
 			<plugins>

@@ -1,5 +1,9 @@
 package java.lang;
 
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.Serializable;
+
 public class Throwable implements Serializable {
     public Throwable() {}
     public Throwable(String arg0) {}

@@ -1,5 +1,8 @@
 package java.io;
 
+import java.security.Permission;
+import java.security.PermissionCollection;
+
 public final class FilePermission extends Permission implements Serializable {
     public FilePermission(String arg0, String arg1) {}
 

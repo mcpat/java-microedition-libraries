@@ -443,7 +443,7 @@
       <exception name="java.io.IOException"/>
       <parameter type="long"/>
     </method>
-    <field modifiers="public volatile" name="concreteStream" type="java.io.InputStream"/>
+    <field modifiers="public" name="concreteStream" type="java.io.InputStream"/>
   </class>
   <class extends="java.io.IOException" modifiers="public" name="com.github.libxjava.io.NestedIOException">
     <constructor modifiers="public"/>
@@ -479,7 +479,7 @@
       <exception name="java.io.IOException"/>
       <parameter type="int"/>
     </method>
-    <field modifiers="public volatile" name="concreteStream" type="java.io.OutputStream"/>
+    <field modifiers="public" name="concreteStream" type="java.io.OutputStream"/>
   </class>
   <interface modifiers="public" name="com.github.libxjava.lang.IClassLoader">
     <method modifiers="public abstract" name="loadClass" return="java.lang.Class">

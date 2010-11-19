@@ -28,7 +28,7 @@ import java.io.OutputStream;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class OutputStreamProxy extends OutputStream {
-    public volatile OutputStream concreteStream= null;
+    public OutputStream concreteStream= null;
     
     public void close() throws IOException {
         concreteStream.close();

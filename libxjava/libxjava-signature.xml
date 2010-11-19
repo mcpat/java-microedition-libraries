@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<signature>
+<signature xmlns="http://jour.sourceforge.net/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jour.sourceforge.net/2.0/ http://jour.sourceforge.net/2.0/api-signature.xsd">
   <class modifiers="public abstract" name="com.github.libxjava.concurrent.AbstractSingleThreadRunner">
     <constructor modifiers="protected">
       <parameter type="java.lang.String"/>

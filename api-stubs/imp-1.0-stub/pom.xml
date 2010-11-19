@@ -18,7 +18,7 @@
 		<api-id>IMP</api-id>
 		<api-name>Information Module Profile</api-name>
 		<api-version>1.0</api-version>
-		<api-type>Configuration</api-type>
+		<api-type>Profile</api-type>
 		<api-specification-file>${basedir}/src/test/resources/imp-1.0-signature.xml</api-specification-file>
 	</properties>
 	

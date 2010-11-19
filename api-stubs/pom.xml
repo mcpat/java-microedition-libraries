@@ -11,6 +11,7 @@
 		<module>stub-parent</module>
 		<module>cldc-1.1-stub</module>
 		<module>imp-1.0-stub</module>
+		<module>midp-2.0-stub</module>
 	</modules>
 
 	<scm>

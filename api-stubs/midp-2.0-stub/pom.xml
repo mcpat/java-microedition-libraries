@@ -19,7 +19,7 @@
 		<api-id>MIDP</api-id>
 		<api-name>Mobile Information Device Profile</api-name>
 		<api-version>2.0</api-version>
-		<api-type>Configuration</api-type>
+		<api-type>Profile</api-type>
 		<api-specification-file>${basedir}/src/test/resources/midp-2.0-signature.xml</api-specification-file>
 	</properties>
 	

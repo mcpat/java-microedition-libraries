@@ -1,5 +1,12 @@
 package javax.microedition.io;
 
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+/**
+ * @since CLDC 1.0
+ */
 public interface Datagram extends DataInput, DataOutput {
     String getAddress();
 
@@ -11,12 +18,24 @@ public interface Datagram extends DataInput, DataOutput {
 
     void reset();
 
-    void setAddress(String arg0) throws IOException;
+    /**
+     * @throws IllegalArgumentException
+     * @throws IOException
+     */
+    void setAddress(String addr) throws IOException;
 
-    void setAddress(Datagram arg0);
+    /**
+     * @throws IllegalArgumentException
+     */
+    void setAddress(Datagram reference);
 
-    void setData(byte[] arg0, int arg1, int arg2);
+    /**
+     * @throws IllegalArgumentException
+     */
+    void setData(byte[] buffer, int offset, int len);
 
-    void setLength(int arg0);
-
+    /**
+     * @throws IllegalArgumentException
+     */
+    void setLength(int len);
 }

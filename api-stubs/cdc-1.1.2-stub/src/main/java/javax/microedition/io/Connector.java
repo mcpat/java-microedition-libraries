@@ -1,37 +1,86 @@
 package javax.microedition.io;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+/**
+ * @since CLDC 1.0
+ */
 public class Connector {
-    public final static int READ;
-    public final static int READ_WRITE;
-    public final static int WRITE;
+    public final static int READ= 1;
+    public final static int READ_WRITE= 3;
+    public final static int WRITE= 2;
 
-    public static Connection open(String arg0) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static Connection open(String name) throws IOException {
         return null;
     }
 
-    public static Connection open(String arg0, int arg1) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static Connection open(String name, int mode) throws IOException {
         return null;
     }
 
-    public static Connection open(String arg0, int arg1, boolean arg2) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static Connection open(String name, int mode, boolean timeouts) throws IOException {
         return null;
     }
 
-    public static DataInputStream openDataInputStream(String arg0) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static DataInputStream openDataInputStream(String name) throws IOException {
         return null;
     }
 
-    public static DataOutputStream openDataOutputStream(String arg0) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static DataOutputStream openDataOutputStream(String name) throws IOException {
         return null;
     }
 
-    public static InputStream openInputStream(String arg0) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static InputStream openInputStream(String name) throws IOException {
         return null;
     }
 
-    public static OutputStream openOutputStream(String arg0) throws IOException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws ConnectionNotFoundException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public static OutputStream openOutputStream(String name) throws IOException {
         return null;
     }
-
-
 }

@@ -1,10 +1,27 @@
 package java.util.jar;
 
-public class JarInputStream extends ZipInputStream {
-    public JarInputStream(InputStream arg0) throws IOException {}
-    public JarInputStream(InputStream arg0, boolean arg1) throws IOException {}
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipInputStream;
 
-    protected ZipEntry createZipEntry(String arg0) {
+public class JarInputStream extends ZipInputStream {
+    /**
+     * @throws IOException
+     */
+    public JarInputStream(InputStream in) throws IOException {
+        super(in);
+    }
+    
+    /**
+     * @throws IOException
+     */
+    public JarInputStream(InputStream in, boolean verify) throws IOException {
+        super(in);
+    }
+
+    protected ZipEntry createZipEntry(String name) {
         return null;
     }
 
@@ -12,15 +29,27 @@ public class JarInputStream extends ZipInputStream {
         return null;
     }
 
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
     public ZipEntry getNextEntry() throws IOException {
         return null;
     }
 
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
     public JarEntry getNextJarEntry() throws IOException {
         return null;
     }
 
-    public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
+    public int read(byte[] b, int off, int len) throws IOException {
         return 0;
     }
 

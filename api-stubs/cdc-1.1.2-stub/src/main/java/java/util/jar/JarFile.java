@@ -1,30 +1,80 @@
 package java.util.jar;
 
-public class JarFile extends ZipFile {
-    public final static String MANIFEST_NAME;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipFile;
 
-    public JarFile(String arg0) throws IOException {}
-    public JarFile(String arg0, boolean arg1) throws IOException {}
-    public JarFile(File arg0) throws IOException {}
-    public JarFile(File arg0, boolean arg1) throws IOException {}
-    public JarFile(File arg0, boolean arg1, int arg2) throws IOException {}
+public class JarFile extends ZipFile {
+    public final static String MANIFEST_NAME= "META-INF/MANIFEST.MF";
+
+    /**
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public JarFile(String name) throws IOException {
+        super(name);
+    }
+    
+    /**
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public JarFile(String name, boolean verify) throws IOException {
+        super(name);
+    }
+    
+    /**
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public JarFile(File file) throws IOException {
+        super(file);
+    }
+    
+    /**
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public JarFile(File file, boolean verify) throws IOException {
+        super(file);
+    }
+    
+    /**
+     * @throws IOException
+     * @throws IllegalArgumentException
+     * @throws SecurityException
+     */
+    public JarFile(File file, boolean verify, int mode) throws IOException {
+        super(file);
+    }
 
     public Enumeration entries() {
         return null;
     }
 
-    public ZipEntry getEntry(String arg0) {
+    public ZipEntry getEntry(String name) {
         return null;
     }
 
-    public InputStream getInputStream(ZipEntry arg0) throws IOException {
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
+    public InputStream getInputStream(ZipEntry ze) throws IOException {
         return null;
     }
 
-    public JarEntry getJarEntry(String arg0) {
+    public JarEntry getJarEntry(String name) {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     public Manifest getManifest() throws IOException {
         return null;
     }

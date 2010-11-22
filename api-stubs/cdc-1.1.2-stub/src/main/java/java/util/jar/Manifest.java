@@ -1,9 +1,19 @@
 package java.util.jar;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Map;
+
 public class Manifest implements Cloneable {
     public Manifest() {}
-    public Manifest(InputStream arg0) throws IOException {}
-    public Manifest(Manifest arg0) {}
+    
+    /**
+     * @throws IOException
+     */
+    public Manifest(InputStream is) throws IOException {}
+    
+    public Manifest(Manifest man) {}
 
     public void clear() {}
 
@@ -11,11 +21,11 @@ public class Manifest implements Cloneable {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
-    public Attributes getAttributes(String arg0) {
+    public Attributes getAttributes(String name) {
         return null;
     }
 
@@ -31,8 +41,14 @@ public class Manifest implements Cloneable {
         return 0;
     }
 
-    public void read(InputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void read(InputStream is) throws IOException {}
 
-    public void write(OutputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(OutputStream out) throws IOException {}
 
 }

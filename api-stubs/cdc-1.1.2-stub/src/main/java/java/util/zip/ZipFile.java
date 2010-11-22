@@ -1,26 +1,65 @@
 package java.util.zip;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+
 public class ZipFile implements ZipConstants {
-    public final static int OPEN_DELETE;
-    public final static int OPEN_READ;
+    public final static int OPEN_DELETE= 4;
+    public final static int OPEN_READ= 1;
 
-    public ZipFile(String arg0) throws IOException {}
-    public ZipFile(File arg0, int arg1) throws IOException {}
-    public ZipFile(File arg0) throws ZipException, IOException {}
+    /**
+     * @throws ZipException
+     * @throws IOException
+     * @throws SecurityException
+     */
+    public ZipFile(String name) throws IOException {}
+    
+    /**
+     * @throws ZipException
+     * @throws IOException
+     * @throws SecurityException
+     * @throws IllegalArgumentException
+     */
+    public ZipFile(File file, int mode) throws IOException {}
+    
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
+    public ZipFile(File file) throws ZipException, IOException {}
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
+    /**
+     * @throws IllegalStateException
+     */
     public Enumeration entries() {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     protected void finalize() throws IOException {}
 
-    public ZipEntry getEntry(String arg0) {
+    /**
+     * @throws IllegalStateException
+     */
+    public ZipEntry getEntry(String name) {
         return null;
     }
 
-    public InputStream getInputStream(ZipEntry arg0) throws IOException {
+    /**
+     * @throws ZipException
+     * @throws IOException
+     * @throws IllegalStateException
+     */
+    public InputStream getInputStream(ZipEntry entry) throws IOException {
         return null;
     }
 
@@ -28,6 +67,9 @@ public class ZipFile implements ZipConstants {
         return null;
     }
 
+    /**
+     * @throws IllegalStateException
+     */
     public int size() {
         return 0;
     }

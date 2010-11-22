@@ -5,8 +5,8 @@ public interface Checksum {
 
     void reset();
 
-    void update(int arg0);
+    void update(int b);
 
-    void update(byte[] arg0, int arg1, int arg2);
+    void update(byte[] b, int off, int len);
 
 }

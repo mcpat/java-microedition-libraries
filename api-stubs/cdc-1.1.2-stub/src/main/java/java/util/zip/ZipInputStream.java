@@ -1,29 +1,57 @@
 package java.util.zip;
 
-public class ZipInputStream extends InflaterInputStream implements ZipConstants {
-    public ZipInputStream(InputStream arg0) {}
+import java.io.IOException;
+import java.io.InputStream;
 
+public class ZipInputStream extends InflaterInputStream implements ZipConstants {
+    public ZipInputStream(InputStream in) {
+        super(in);
+    }
+
+    /**
+     * @throws IOException
+     */
     public int available() throws IOException {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
     public void closeEntry() throws IOException {}
 
-    protected ZipEntry createZipEntry(String arg0) {
+    protected ZipEntry createZipEntry(String name) {
         return null;
     }
 
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
     public ZipEntry getNextEntry() throws IOException {
         return null;
     }
 
-    public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws ZipException
+     * @throws IOException
+     */
+    public int read(byte[] b, int off, int len) throws IOException {
         return 0;
     }
 
-    public long skip(long arg0) throws IOException {
+    /**
+     * @throws ZipException
+     * @throws IOException
+     * @throws IllegalArgumentException
+     */
+    public long skip(long n) throws IOException {
         return 0;
     }
 

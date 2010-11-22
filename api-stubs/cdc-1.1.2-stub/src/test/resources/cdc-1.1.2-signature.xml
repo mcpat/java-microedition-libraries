@@ -9749,6 +9749,48 @@
     <field modifiers="protected" name="buf" type="byte[]"/>
     <field modifiers="protected" name="len" type="int"/>
   </class>
+  <interface name="java.util.zip.ZipConstants">
+    <field constant-value="67324752" modifiers="public static final" name="LOCSIG" type="long"/>
+    <field constant-value="134695760" modifiers="public static final" name="EXTSIG" type="long"/>
+    <field constant-value="33639248" modifiers="public static final" name="CENSIG" type="long"/>
+    <field constant-value="101010256" modifiers="public static final" name="ENDSIG" type="long"/>
+    <field constant-value="30" modifiers="public static final" name="LOCHDR" type="int"/>
+    <field constant-value="16" modifiers="public static final" name="EXTHDR" type="int"/>
+    <field constant-value="46" modifiers="public static final" name="CENHDR" type="int"/>
+    <field constant-value="22" modifiers="public static final" name="ENDHDR" type="int"/>
+    <field constant-value="4" modifiers="public static final" name="LOCVER" type="int"/>
+    <field constant-value="6" modifiers="public static final" name="LOCFLG" type="int"/>
+    <field constant-value="8" modifiers="public static final" name="LOCHOW" type="int"/>
+    <field constant-value="10" modifiers="public static final" name="LOCTIM" type="int"/>
+    <field constant-value="14" modifiers="public static final" name="LOCCRC" type="int"/>
+    <field constant-value="18" modifiers="public static final" name="LOCSIZ" type="int"/>
+    <field constant-value="22" modifiers="public static final" name="LOCLEN" type="int"/>
+    <field constant-value="26" modifiers="public static final" name="LOCNAM" type="int"/>
+    <field constant-value="28" modifiers="public static final" name="LOCEXT" type="int"/>
+    <field constant-value="4" modifiers="public static final" name="EXTCRC" type="int"/>
+    <field constant-value="8" modifiers="public static final" name="EXTSIZ" type="int"/>
+    <field constant-value="12" modifiers="public static final" name="EXTLEN" type="int"/>
+    <field constant-value="4" modifiers="public static final" name="CENVEM" type="int"/>
+    <field constant-value="6" modifiers="public static final" name="CENVER" type="int"/>
+    <field constant-value="8" modifiers="public static final" name="CENFLG" type="int"/>
+    <field constant-value="10" modifiers="public static final" name="CENHOW" type="int"/>
+    <field constant-value="12" modifiers="public static final" name="CENTIM" type="int"/>
+    <field constant-value="16" modifiers="public static final" name="CENCRC" type="int"/>
+    <field constant-value="20" modifiers="public static final" name="CENSIZ" type="int"/>
+    <field constant-value="24" modifiers="public static final" name="CENLEN" type="int"/>
+    <field constant-value="28" modifiers="public static final" name="CENNAM" type="int"/>
+    <field constant-value="30" modifiers="public static final" name="CENEXT" type="int"/>
+    <field constant-value="32" modifiers="public static final" name="CENCOM" type="int"/>
+    <field constant-value="34" modifiers="public static final" name="CENDSK" type="int"/>
+    <field constant-value="36" modifiers="public static final" name="CENATT" type="int"/>
+    <field constant-value="38" modifiers="public static final" name="CENATX" type="int"/>
+    <field constant-value="42" modifiers="public static final" name="CENOFF" type="int"/>
+    <field constant-value="8" modifiers="public static final" name="ENDSUB" type="int"/>
+    <field constant-value="10" modifiers="public static final" name="ENDTOT" type="int"/>
+    <field constant-value="12" modifiers="public static final" name="ENDSIZ" type="int"/>
+    <field constant-value="16" modifiers="public static final" name="ENDOFF" type="int"/>
+    <field constant-value="20" modifiers="public static final" name="ENDCOM" type="int"/>
+  </interface>
   <class modifiers="public" name="java.util.zip.ZipEntry">
     <implements>
       <interface name="java.util.zip.ZipConstants"/>

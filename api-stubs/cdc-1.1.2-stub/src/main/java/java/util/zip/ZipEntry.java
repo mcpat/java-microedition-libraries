@@ -1,11 +1,16 @@
 package java.util.zip;
 
 public class ZipEntry implements ZipConstants, Cloneable {
-    public final static int DEFLATED;
-    public final static int STORED;
+    public final static int DEFLATED= 8;
+    public final static int STORED= 0;
 
-    public ZipEntry(String arg0) {}
-    public ZipEntry(ZipEntry arg0) {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    public ZipEntry(String name) {}
+    
+    public ZipEntry(ZipEntry e) {}
 
     public Object clone() {
         return null;
@@ -51,19 +56,34 @@ public class ZipEntry implements ZipConstants, Cloneable {
         return false;
     }
 
-    public void setComment(String arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setComment(String comment) {}
 
-    public void setCompressedSize(long arg0) {}
+    public void setCompressedSize(long csize) {}
 
-    public void setCrc(long arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setCrc(long crc) {}
 
-    public void setExtra(byte[] arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setExtra(byte[] extra) {}
 
-    public void setMethod(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setMethod(int method) {}
 
-    public void setSize(long arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setSize(long size) {}
 
-    public void setTime(long arg0) {}
+    public void setTime(long time) {}
 
     public String toString() {
         return null;

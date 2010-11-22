@@ -1,7 +1,9 @@
 package java.util.zip;
 
+import java.io.IOException;
+
 public class ZipException extends IOException {
     public ZipException() {}
-    public ZipException(String arg0) {}
+    public ZipException(String s) {}
 
 }

@@ -1,7 +1,7 @@
 package java.util.zip;
 
 public class Inflater {
-    public Inflater(boolean arg0) {}
+    public Inflater(boolean nowrap) {}
     public Inflater() {}
 
     public void end() {}
@@ -28,11 +28,17 @@ public class Inflater {
         return 0;
     }
 
-    public int inflate(byte[] arg0, int arg1, int arg2) throws DataFormatException {
+    /**
+     * @throws DataFormatException
+     */
+    public int inflate(byte[] b) throws DataFormatException {
         return 0;
     }
-
-    public int inflate(byte[] arg0) throws DataFormatException {
+    
+    /**
+     * @throws DataFormatException
+     */
+    public int inflate(byte[] b, int off, int len) throws DataFormatException {
         return 0;
     }
 
@@ -46,12 +52,12 @@ public class Inflater {
 
     public void reset() {}
 
-    public void setDictionary(byte[] arg0, int arg1, int arg2) {}
+    public void setDictionary(byte[] b) {}
+    
+    public void setDictionary(byte[] b, int off, int len) {}
 
-    public void setDictionary(byte[] arg0) {}
-
-    public void setInput(byte[] arg0, int arg1, int arg2) {}
-
-    public void setInput(byte[] arg0) {}
+    public void setInput(byte[] b) {}
+    
+    public void setInput(byte[] b, int off, int len) {}
 
 }

@@ -4,44 +4,68 @@ public final class Byte extends Number implements Comparable {
     public final static byte MAX_VALUE;
     public final static byte MIN_VALUE;
     public final static Class TYPE;
+    
+	static {
+		MAX_VALUE= 127;
+		MIN_VALUE= -128;
+		TYPE= Class.class;
+	}
 
-    public static Byte decode(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Byte decode(String nm) throws NumberFormatException {
         return null;
     }
 
-    public static byte parseByte(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static byte parseByte(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static byte parseByte(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static byte parseByte(String s, int radix) throws NumberFormatException {
         return 0;
     }
 
-    public static String toString(byte arg0) {
+    public static String toString(byte b) {
         return null;
     }
 
-    public static Byte valueOf(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Byte valueOf(String s, int radix) throws NumberFormatException {
         return null;
     }
 
-    public static Byte valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Byte valueOf(String s) throws NumberFormatException {
         return null;
     }
 
+    public Byte(byte value) {}
 
-    public Byte(byte arg0) {}
-    public Byte(String arg0) throws NumberFormatException {}
+    /**
+     * @throws NumberFormatException
+     */
+    public Byte(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Byte arg0) {
+    public int compareTo(Byte anotherByte) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -49,7 +73,7 @@ public final class Byte extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

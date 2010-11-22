@@ -1,24 +1,65 @@
 package java.io;
 
 public class FileOutputStream extends OutputStream {
-    public FileOutputStream(String arg0) throws FileNotFoundException {}
-    public FileOutputStream(String arg0, boolean arg1) throws FileNotFoundException {}
-    public FileOutputStream(File arg0) throws FileNotFoundException {}
-    public FileOutputStream(File arg0, boolean arg1) throws FileNotFoundException {}
-    public FileOutputStream(FileDescriptor arg0) {}
+	/**
+	 * @throws FileNotFoundException
+	 * @throws SecurityException
+	 */
+    public FileOutputStream(String name) throws FileNotFoundException {}
+    
+    /**
+     * @throws FileNotFoundException
+     * @throws SecurityException
+     */
+    public FileOutputStream(String name, boolean append) throws FileNotFoundException {}
 
+    /**
+     * @throws FileNotFoundException
+     * @throws SecurityException
+     */
+    public FileOutputStream(File file) throws FileNotFoundException {}
+    
+    /**
+     * @throws FileNotFoundException
+     * @throws SecurityException
+     */
+    public FileOutputStream(File file, boolean append) throws FileNotFoundException {}
+
+    /**
+     * @throws SecurityException
+     */
+    public FileOutputStream(FileDescriptor fdObj) {}
+
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     protected void finalize() throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     public final FileDescriptor getFD() throws IOException {
         return null;
     }
 
-    public void write(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(int b) throws IOException {}
 
-    public void write(byte[] arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(byte[] b) throws IOException {}
 
-    public void write(byte[] arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(byte[] b, int off, int len) throws IOException {}
 
 }

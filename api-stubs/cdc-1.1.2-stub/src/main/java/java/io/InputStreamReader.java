@@ -1,23 +1,38 @@
 package java.io;
 
 public class InputStreamReader extends Reader {
-    public InputStreamReader(InputStream arg0) {}
-    public InputStreamReader(InputStream arg0, String arg1) throws UnsupportedEncodingException {}
+    public InputStreamReader(InputStream in) {}
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public InputStreamReader(InputStream in, String enc) throws UnsupportedEncodingException {}
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
     public String getEncoding() {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     public int read() throws IOException {
         return 0;
     }
 
-    public int read(char[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public int read(char[] cbuf, int off, int len) throws IOException {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public boolean ready() throws IOException {
         return false;
     }

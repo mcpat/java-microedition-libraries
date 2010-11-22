@@ -7,32 +7,53 @@ public class BufferedInputStream extends FilterInputStream {
     protected int markpos;
     protected int pos;
 
-    public BufferedInputStream(InputStream arg0) {}
-    public BufferedInputStream(InputStream arg0, int arg1) {}
+    public BufferedInputStream(InputStream in) {super(null);}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public BufferedInputStream(InputStream in, int size) {super(null);}
 
+    /**
+     * @throws IOException
+     */
     public int available() throws IOException {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
-    public void mark(int arg0) {}
+    public void mark(int readlimit) {}
 
     public boolean markSupported() {
         return false;
     }
 
+    /**
+     * @throws IOException
+     */
     public int read() throws IOException {
         return 0;
     }
 
-    public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public int read(byte[] b, int off, int len) throws IOException {
         return 0;
     }
-
+    
+    /**
+     * @throws IOException
+     */
     public void reset() throws IOException {}
 
-    public long skip(long arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public long skip(long n) throws IOException {
         return 0;
     }
 

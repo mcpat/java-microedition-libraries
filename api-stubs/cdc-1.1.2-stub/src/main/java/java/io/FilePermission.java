@@ -4,9 +4,9 @@ import java.security.Permission;
 import java.security.PermissionCollection;
 
 public final class FilePermission extends Permission implements Serializable {
-    public FilePermission(String arg0, String arg1) {}
+    public FilePermission(String path, String actions) {super(null);}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -18,7 +18,7 @@ public final class FilePermission extends Permission implements Serializable {
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

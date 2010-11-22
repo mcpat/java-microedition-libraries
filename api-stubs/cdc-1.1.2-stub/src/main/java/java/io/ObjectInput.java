@@ -1,18 +1,40 @@
 package java.io;
 
 public interface ObjectInput extends DataInput {
+	/**
+	 * @throws IOException
+	 */
     int available() throws IOException;
 
+    /**
+     * @throws IOException
+     */
     void close() throws IOException;
 
+    /**
+     * @throws IOException
+     */
     int read() throws IOException;
 
-    int read(byte[] arg0) throws IOException;
+    /**
+     * @throws IOException
+     */
+    int read(byte[] b) throws IOException;
 
-    int read(byte[] arg0, int arg1, int arg2) throws IOException;
+    /**
+     * @throws IOException
+     */
+    int read(byte[] b, int off, int len) throws IOException;
 
+    /**
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     Object readObject() throws ClassNotFoundException, IOException;
 
-    long skip(long arg0) throws IOException;
+    /**
+     * @throws IOException
+     */
+    long skip(long n) throws IOException;
 
 }

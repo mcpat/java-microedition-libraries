@@ -6,33 +6,41 @@ public class ByteArrayInputStream extends InputStream {
     protected int mark;
     protected int pos;
 
-    public ByteArrayInputStream(byte[] arg0) {}
-    public ByteArrayInputStream(byte[] arg0, int arg1, int arg2) {}
+    public ByteArrayInputStream(byte[] buf) {}
 
-    public int available() {
-        return 0;
-    }
+	public ByteArrayInputStream(byte[] buf, int offset, int length){
+	}
 
-    public void close() throws IOException {}
+	public int available() {
+		return 0;
+	}
 
-    public void mark(int arg0) {}
+	/**
+	 * @throws IOException
+	 */
+	public void close() throws IOException {
+	}
 
-    public boolean markSupported() {
-        return false;
-    }
+	public void mark(int readAheadLimit) {
+	}
 
-    public int read() {
-        return 0;
-    }
+	public boolean markSupported() {
+		return false;
+	}
 
-    public int read(byte[] arg0, int arg1, int arg2) {
-        return 0;
-    }
+	public int read() {
+		return 0;
+	}
 
-    public void reset() {}
+	public int read(byte[] b, int off, int len) {
+		return 0;
+	}
 
-    public long skip(long arg0) {
-        return 0;
-    }
+	public void reset() {
+	}
+
+	public long skip(long n) {
+		return 0;
+	}
 
 }

@@ -5,8 +5,14 @@ public class ByteArrayOutputStream extends OutputStream {
     protected int count;
 
     public ByteArrayOutputStream() {}
-    public ByteArrayOutputStream(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public ByteArrayOutputStream(int size) {}
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
     public void reset() {}
@@ -23,14 +29,20 @@ public class ByteArrayOutputStream extends OutputStream {
         return null;
     }
 
-    public String toString(String arg0) throws UnsupportedEncodingException {
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public String toString(String enc) throws UnsupportedEncodingException {
         return null;
     }
 
     public void write(int arg0) {}
 
-    public void write(byte[] arg0, int arg1, int arg2) {}
+    public void write(byte[] b, int off, int len) {}
 
-    public void writeTo(OutputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void writeTo(OutputStream out) throws IOException {}
 
 }

@@ -1,6 +1,6 @@
 package java.io;
 
 public interface FileFilter {
-    boolean accept(File arg0);
+    boolean accept(File pathname);
 
 }

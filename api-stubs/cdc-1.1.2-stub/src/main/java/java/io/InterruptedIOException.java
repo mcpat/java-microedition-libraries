@@ -4,6 +4,6 @@ public class InterruptedIOException extends IOException {
     public int bytesTransferred;
 
     public InterruptedIOException() {}
-    public InterruptedIOException(String arg0) {}
+    public InterruptedIOException(String s) {}
 
 }

@@ -1,6 +1,6 @@
 package java.io;
 
 public class InvalidObjectException {
-    public InvalidObjectException(String arg0) {}
+    public InvalidObjectException(String reason) {}
 
 }

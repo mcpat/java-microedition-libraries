@@ -1,19 +1,39 @@
 package java.io;
 
 public class BufferedWriter extends Writer {
-    public BufferedWriter(Writer arg0) {}
-    public BufferedWriter(Writer arg0, int arg1) {}
-
+    public BufferedWriter(Writer out) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public BufferedWriter(Writer out, int sz) {}
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     public void flush() throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     public void newLine() throws IOException {}
 
-    public void write(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(int c) throws IOException {}
 
-    public void write(char[] arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(char[] cbuf, int off, int len) throws IOException {}
 
-    public void write(String arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(String s, int off, int len) throws IOException {}
 
 }

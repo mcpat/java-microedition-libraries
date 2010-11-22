@@ -3,8 +3,8 @@ package java.io;
 public class InvalidClassException {
     public String classname;
 
-    public InvalidClassException(String arg0) {}
-    public InvalidClassException(String arg0, String arg1) {}
+    public InvalidClassException(String reason) {}
+    public InvalidClassException(String cname, String reason) {}
 
     public String getMessage() {
         return null;

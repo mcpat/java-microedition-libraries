@@ -4,20 +4,41 @@ public abstract class Writer {
     protected Object lock;
 
     protected Writer() {}
-    protected Writer(Object arg0) {}
+    protected Writer(Object lock) {}
 
+    /**
+     * @throws IOException
+     */
     public abstract void close() throws IOException;
 
+    /**
+     * @throws IOException
+     */
     public abstract void flush() throws IOException;
 
-    public void write(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(int c) throws IOException {}
 
-    public void write(char[] arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(char[] cbuf) throws IOException {}
 
-    public abstract void write(char[] arg0, int arg1, int arg2) throws IOException;
+    /**
+     * @throws IOException
+     */
+    public abstract void write(char[] cbuf, int off, int len) throws IOException;
 
-    public void write(String arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(String str) throws IOException {}
 
-    public void write(String arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(String str, int off, int len) throws IOException {}
 
 }

@@ -1,6 +1,6 @@
 package java.io;
 
-public class NotActiveException {
+public class NotActiveException extends ObjectStreamException {
     public NotActiveException(String reason) {}
     public NotActiveException() {}
 

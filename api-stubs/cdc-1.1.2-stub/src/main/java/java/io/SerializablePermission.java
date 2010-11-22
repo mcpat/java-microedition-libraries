@@ -1,7 +1,9 @@
 package java.io;
 
+import java.security.BasicPermission;
+
 public final class SerializablePermission extends BasicPermission {
-    public SerializablePermission(String arg0) {}
-    public SerializablePermission(String arg0, String arg1) {}
+    public SerializablePermission(String name) {super(null);}
+    public SerializablePermission(String name, String actions) {super(null);}
 
 }

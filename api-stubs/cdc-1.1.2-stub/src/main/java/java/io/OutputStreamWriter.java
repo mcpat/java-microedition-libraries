@@ -1,21 +1,39 @@
 package java.io;
 
 public class OutputStreamWriter extends Writer {
-    public OutputStreamWriter(OutputStream arg0, String arg1) throws UnsupportedEncodingException {}
-    public OutputStreamWriter(OutputStream arg0) {}
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public OutputStreamWriter(OutputStream out, String enc) throws UnsupportedEncodingException {}
+    public OutputStreamWriter(OutputStream out) {}
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     public void flush() throws IOException {}
 
     public String getEncoding() {
         return null;
     }
 
-    public void write(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(int c) throws IOException {}
 
-    public void write(char[] arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(char[] cbuf, int off, int len) throws IOException {}
 
-    public void write(String arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(String str, int off, int len) throws IOException {}
 
 }

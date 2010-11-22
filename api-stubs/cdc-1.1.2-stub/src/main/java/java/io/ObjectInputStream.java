@@ -170,7 +170,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
      * @throws ClassNotFoundException
      * @throws NotActiveException
      */
-    public ObjectInputStream$GetField readFields() throws IOException, ClassNotFoundException, NotActiveException {
+    public GetField readFields() throws IOException, ClassNotFoundException, NotActiveException {
         return null;
     }
 

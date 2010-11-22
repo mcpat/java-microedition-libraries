@@ -2,6 +2,6 @@ package java.io;
 
 public class UTFDataFormatException extends IOException {
     public UTFDataFormatException() {}
-    public UTFDataFormatException(String arg0) {}
+    public UTFDataFormatException(String s) {}
 
 }

@@ -1,7 +1,7 @@
 package java.io;
 
-public class StreamCorruptedException {
-    public StreamCorruptedException(String arg0) {}
+public class StreamCorruptedException extends ObjectStreamException {
+    public StreamCorruptedException(String reason) {}
     public StreamCorruptedException() {}
 
 }

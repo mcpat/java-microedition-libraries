@@ -3,7 +3,11 @@ package java.io;
 public class ObjectStreamClass implements Serializable {
     public final static ObjectStreamField[] NO_FIELDS;
 
-    public static ObjectStreamClass lookup(Class arg0) {
+	static {
+		NO_FIELDS= new ObjectStreamField[0];
+	}
+	
+    public static ObjectStreamClass lookup(Class cl) {
         return null;
     }
 
@@ -14,7 +18,7 @@ public class ObjectStreamClass implements Serializable {
         return null;
     }
 
-    public ObjectStreamField getField(String arg0) {
+    public ObjectStreamField getField(String name) {
         return null;
     }
 

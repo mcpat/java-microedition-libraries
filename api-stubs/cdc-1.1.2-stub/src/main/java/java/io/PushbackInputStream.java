@@ -4,35 +4,62 @@ public class PushbackInputStream extends FilterInputStream {
     protected byte[] buf;
     protected int pos;
 
-    public PushbackInputStream(InputStream arg0, int arg1) {}
-    public PushbackInputStream(InputStream arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public PushbackInputStream(InputStream in, int size) {super(null);}
+    public PushbackInputStream(InputStream in) {super(null);}
 
+    /**
+     * @throws IOException
+     */
     public int available() throws IOException {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
     public boolean markSupported() {
         return false;
     }
 
+    /**
+     * @throws IOException
+     */
     public int read() throws IOException {
         return 0;
     }
 
-    public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public int read(byte[] b, int off, int len) throws IOException {
         return 0;
     }
 
-    public long skip(long arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public long skip(long n) throws IOException {
         return 0;
     }
 
-    public void unread(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void unread(int b) throws IOException {}
 
-    public void unread(byte[] arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void unread(byte[] b, int off, int len) throws IOException {}
 
-    public void unread(byte[] arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void unread(byte[] b) throws IOException {}
 
 }

@@ -1,10 +1,6 @@
 package java.io;
 
-public class OptionalDataException {
+public class OptionalDataException extends ObjectStreamException {
     public boolean eof;
     public int length;
-
-    OptionalDataException(int arg0) {}
-    OptionalDataException(boolean arg0) {}
-
 }

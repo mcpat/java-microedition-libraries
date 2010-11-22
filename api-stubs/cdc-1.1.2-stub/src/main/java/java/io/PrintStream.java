@@ -1,9 +1,12 @@
 package java.io;
 
 public class PrintStream extends FilterOutputStream {
-    public PrintStream(OutputStream arg0) {}
-    public PrintStream(OutputStream arg0, boolean arg1) {}
-    public PrintStream(OutputStream arg0, boolean arg1, String arg2) throws UnsupportedEncodingException {}
+    public PrintStream(OutputStream out) {super(null);}
+    public PrintStream(OutputStream out, boolean autoFlush) {super(null);}
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public PrintStream(OutputStream out, boolean autoFlush, String encoding) throws UnsupportedEncodingException {super(null);}
 
     public boolean checkError() {
         return false;
@@ -13,48 +16,48 @@ public class PrintStream extends FilterOutputStream {
 
     public void flush() {}
 
-    public void print(boolean arg0) {}
+    public void print(boolean b) {}
 
-    public void print(char arg0) {}
+    public void print(char c) {}
 
-    public void print(int arg0) {}
+    public void print(int i) {}
 
-    public void print(long arg0) {}
+    public void print(long l) {}
 
-    public void print(float arg0) {}
+    public void print(float f) {}
 
-    public void print(double arg0) {}
+    public void print(double d) {}
 
-    public void print(char[] arg0) {}
+    public void print(char[] s) {}
 
-    public void print(String arg0) {}
+    public void print(String s) {}
 
-    public void print(Object arg0) {}
+    public void print(Object obj) {}
 
     public void println() {}
 
-    public void println(boolean arg0) {}
+    public void println(boolean x) {}
 
-    public void println(char arg0) {}
+    public void println(char x) {}
 
-    public void println(int arg0) {}
+    public void println(int x) {}
 
-    public void println(long arg0) {}
+    public void println(long x) {}
 
-    public void println(float arg0) {}
+    public void println(float x) {}
 
-    public void println(double arg0) {}
+    public void println(double x) {}
 
-    public void println(char[] arg0) {}
+    public void println(char[] x) {}
 
-    public void println(String arg0) {}
+    public void println(String x) {}
 
-    public void println(Object arg0) {}
+    public void println(Object x) {}
 
     protected void setError() {}
 
-    public void write(int arg0) {}
+    public void write(int b) {}
 
-    public void write(byte[] arg0, int arg1, int arg2) {}
+    public void write(byte[] buf, int off, int len) {}
 
 }

@@ -1,31 +1,52 @@
 package java.io;
 
 public class PipedInputStream extends InputStream {
-    protected final static int PIPE_SIZE;
+    protected final static int PIPE_SIZE= 1024;
 
     protected byte[] buffer;
     protected int in;
     protected int out;
 
-    public PipedInputStream(PipedOutputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public PipedInputStream(PipedOutputStream src) throws IOException {}
     public PipedInputStream() {}
 
+    /**
+     * @throws IOException
+     */
     public int available() throws IOException {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public void close() throws IOException {}
 
-    public void connect(PipedOutputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void connect(PipedOutputStream src) throws IOException {}
 
+    /**
+     * @throws IOException
+     */
     public int read() throws IOException {
         return 0;
     }
 
-    public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public int read(byte[] b, int off, int len) throws IOException {
         return 0;
     }
 
-    protected void receive(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    protected void receive(int b) throws IOException {}
 
 }

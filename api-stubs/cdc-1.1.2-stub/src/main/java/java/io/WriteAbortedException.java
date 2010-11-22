@@ -3,7 +3,7 @@ package java.io;
 public class WriteAbortedException {
     public Exception detail;
 
-    public WriteAbortedException(String arg0, Exception arg1) {}
+    public WriteAbortedException(String s, Exception ex) {}
 
     public Throwable getCause() {
         return null;

@@ -1,10 +1,10 @@
 package java.io;
 
 public class ObjectStreamField implements Comparable {
-    public ObjectStreamField(String arg0, Class arg1) {}
-    public ObjectStreamField(String arg0, Class arg1, boolean arg2) {}
+    public ObjectStreamField(String name, Class type) {}
+    public ObjectStreamField(String name, Class type, boolean unshared) {}
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object obj) {
         return 0;
     }
 
@@ -32,7 +32,7 @@ public class ObjectStreamField implements Comparable {
         return false;
     }
 
-    protected void setOffset(int arg0) {}
+    protected void setOffset(int offset) {}
 
     public String toString() {
         return null;

@@ -1,6 +1,6 @@
 package java.io;
 
 public class SyncFailedException extends IOException {
-    public SyncFailedException(String arg0) {}
+    public SyncFailedException(String desc) {}
 
 }

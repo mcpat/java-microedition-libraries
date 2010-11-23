@@ -1,63 +1,76 @@
 package java.lang;
 
 public final class Float extends Number implements Comparable {
-    public final static float MAX_VALUE;
-    public final static float MIN_VALUE;
-    public final static float NaN;
-    public final static float NEGATIVE_INFINITY;
-    public final static float POSITIVE_INFINITY;
-    public final static Class TYPE;
+	public static final float MAX_VALUE= 3.4028234663852886E38f;
+	public static final float MIN_VALUE= 1.401298464324817E-45f;
+	public static final float NaN= 0f/0f;
+	public static final float NEGATIVE_INFINITY= -1f/0f;
+	public static final float POSITIVE_INFINITY= 1f/0f;
+	public final static Class TYPE;
 
-    public static int compare(float arg0, float arg1) {
+	static {
+		TYPE= null;
+	}
+    public static int compare(float f1, float f2) {
         return 0;
     }
 
-    public static int floatToIntBits(float arg0) {
+    public static int floatToIntBits(float value) {
         return 0;
     }
 
-    public static int floatToRawIntBits(float arg0) {
+    public static int floatToRawIntBits(float value) {
         return 0;
     }
 
-    public static float intBitsToFloat(int arg0) {
+    public static float intBitsToFloat(int bits) {
         return 0;
     }
 
-    public static boolean isInfinite(float arg0) {
+    public static boolean isInfinite(float v) {
         return false;
     }
 
-    public static boolean isNaN(float arg0) {
+    public static boolean isNaN(float v) {
         return false;
     }
 
-    public static float parseFloat(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static float parseFloat(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static String toString(float arg0) {
+    public static String toString(float f) {
         return null;
     }
 
-    public static Float valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Float valueOf(String s) throws NumberFormatException {
         return null;
     }
 
 
-    public Float(float arg0) {}
-    public Float(double arg0) {}
-    public Float(String arg0) throws NumberFormatException {}
+    public Float(float value) {}
+    public Float(double value) {}
+    
+    /**
+     * @throws NumberFormatException
+     */
+    public Float(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Float arg0) {
+    public int compareTo(Float anotherFloat) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -65,7 +78,7 @@ public final class Float extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

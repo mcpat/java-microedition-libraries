@@ -1,75 +1,97 @@
 package java.lang;
 
 public final class Integer extends Number implements Comparable {
-    public final static int MAX_VALUE;
-    public final static int MIN_VALUE;
+	public static final int MAX_VALUE= 2147483647;
+	public static final int MIN_VALUE= -2147483648;
     public final static Class TYPE;
+    
+    static {
+    	TYPE= null;
+    }
 
-    public static Integer decode(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Integer decode(String nm) throws NumberFormatException {
         return null;
     }
 
-    public static Integer getInteger(String arg0) {
+    public static Integer getInteger(String nm) {
         return null;
     }
 
-    public static Integer getInteger(String arg0, int arg1) {
+    public static Integer getInteger(String nm, int val) {
         return null;
     }
 
-    public static Integer getInteger(String arg0, Integer arg1) {
+    public static Integer getInteger(String nm, Integer val) {
         return null;
     }
 
-    public static int parseInt(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static int parseInt(String s, int radix) throws NumberFormatException {
         return 0;
     }
 
-    public static int parseInt(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static int parseInt(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static String toBinaryString(int arg0) {
+    public static String toBinaryString(int i) {
         return null;
     }
 
-    public static String toHexString(int arg0) {
+    public static String toHexString(int i) {
         return null;
     }
 
-    public static String toOctalString(int arg0) {
+    public static String toOctalString(int i) {
         return null;
     }
 
-    public static String toString(int arg0, int arg1) {
+    public static String toString(int i, int radix) {
         return null;
     }
 
-    public static String toString(int arg0) {
+    public static String toString(int i) {
         return null;
     }
 
-    public static Integer valueOf(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Integer valueOf(String s, int radix) throws NumberFormatException {
         return null;
     }
 
-    public static Integer valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Integer valueOf(String s) throws NumberFormatException {
         return null;
     }
 
 
-    public Integer(int arg0) {}
-    public Integer(String arg0) throws NumberFormatException {}
+    public Integer(int value) {}
+    /**
+     * @throws NumberFormatException
+     */
+    public Integer(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Integer arg0) {
+    public int compareTo(Integer anotherInteger) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -77,7 +99,7 @@ public final class Integer extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

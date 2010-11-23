@@ -1,42 +1,88 @@
 package java.lang;
 
+import java.io.File;
+import java.io.IOException;
+
 public class Runtime {
     public static Runtime getRuntime() {
         return null;
     }
 
-
-    public void addShutdownHook(Thread arg0) {}
+    /**
+     * @throws IllegalArgumentException 
+     * @throws IllegalStateException 
+     * @throws SecurityException
+     */
+    public void addShutdownHook(Thread hook) {}
 
     public int availableProcessors() {
         return 0;
     }
 
-    public Process exec(String arg0) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String command) throws IOException {
         return null;
     }
 
-    public Process exec(String arg0, String[] arg1) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String cmd, String[] envp) throws IOException {
         return null;
     }
 
-    public Process exec(String arg0, String[] arg1, File arg2) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String command, String[] envp, File dir) throws IOException {
         return null;
     }
 
-    public Process exec(String[] arg0) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String[] cmdarray) throws IOException {
         return null;
     }
 
-    public Process exec(String[] arg0, String[] arg1) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String[] cmdarray, String[] envp) throws IOException {
         return null;
     }
 
-    public Process exec(String[] arg0, String[] arg1, File arg2) throws IOException {
+    /**
+     * @throws SecurityException 
+     * @throws IOException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public Process exec(String[] cmdarray, String[] envp, File dir) throws IOException {
         return null;
     }
 
-    public void exit(int arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public void exit(int status) {}
 
     public long freeMemory() {
         return 0;
@@ -44,17 +90,32 @@ public class Runtime {
 
     public void gc() {}
 
-    public void halt(int arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public void halt(int status) {}
 
-    public void load(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws UnsatisfiedLinkError
+     */
+    public void load(String filename) {}
 
-    public void loadLibrary(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws UnsatisfiedLinkError
+     */
+    public void loadLibrary(String libname) {}
 
     public long maxMemory() {
         return 0;
     }
 
-    public boolean removeShutdownHook(Thread arg0) {
+    /**
+     * @throws IllegalStateException 
+     * @throws SecurityException
+     */
+    public boolean removeShutdownHook(Thread hook) {
         return false;
     }
 
@@ -64,8 +125,8 @@ public class Runtime {
         return 0;
     }
 
-    public void traceInstructions(boolean arg0) {}
+    public void traceInstructions(boolean on) {}
 
-    public void traceMethodCalls(boolean arg0) {}
+    public void traceMethodCalls(boolean on) {}
 
 }

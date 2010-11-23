@@ -3,11 +3,14 @@ package java.lang;
 public class Object {
     public Object() {}
 
+    /**
+     * @throws CloneNotSupportedException
+     */
     protected Object clone() throws CloneNotSupportedException {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -21,18 +24,38 @@ public class Object {
         return 0;
     }
 
+    /**
+     * @throws IllegalMonitorStateException
+     */
     public final void notify() {}
 
+    /**
+     * @throws IllegalMonitorStateException
+     */
     public final void notifyAll() {}
 
     public String toString() {
         return null;
     }
+    
+    /**
+     * @throws IllegalArgumentException 
+     * @throws IllegalMonitorStateException 
+     * @throws InterruptedException
+     */
+    public final void wait(long timeout) throws InterruptedException {}
 
-    public final void wait(long arg0) throws InterruptedException {}
+    /**
+     * @throws IllegalArgumentException 
+     * @throws IllegalMonitorStateException 
+     * @throws InterruptedException
+     */
+    public final void wait(long timeout, int nanos) throws InterruptedException {}
 
-    public final void wait(long arg0, int arg1) throws InterruptedException {}
-
+    /**
+     * @throws IllegalMonitorStateException 
+     * @throws InterruptedException
+     */
     public final void wait() throws InterruptedException {}
 
 }

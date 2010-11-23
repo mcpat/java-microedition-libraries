@@ -2,6 +2,6 @@ package java.lang;
 
 public class NegativeArraySizeException extends RuntimeException {
     public NegativeArraySizeException() {}
-    public NegativeArraySizeException(String arg0) {}
+    public NegativeArraySizeException(String s) {}
 
 }

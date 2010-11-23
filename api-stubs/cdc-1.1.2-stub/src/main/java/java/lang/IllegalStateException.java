@@ -2,6 +2,6 @@ package java.lang;
 
 public class IllegalStateException extends RuntimeException {
     public IllegalStateException() {}
-    public IllegalStateException(String arg0) {}
+    public IllegalStateException(String s) {}
 
 }

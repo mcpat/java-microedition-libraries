@@ -1,7 +1,9 @@
 package java.lang;
 
+import java.security.BasicPermission;
+
 public final class RuntimePermission extends BasicPermission {
-    public RuntimePermission(String arg0) {}
-    public RuntimePermission(String arg0, String arg1) {}
+    public RuntimePermission(String name) {super(null);}
+    public RuntimePermission(String name, String actions) {super(null);}
 
 }

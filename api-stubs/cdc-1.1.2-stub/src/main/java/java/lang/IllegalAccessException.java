@@ -2,6 +2,6 @@ package java.lang;
 
 public class IllegalAccessException extends Exception {
     public IllegalAccessException() {}
-    public IllegalAccessException(String arg0) {}
+    public IllegalAccessException(String s) {}
 
 }

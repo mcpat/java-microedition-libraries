@@ -2,6 +2,6 @@ package java.lang;
 
 public class IllegalAccessError extends IncompatibleClassChangeError {
     public IllegalAccessError() {}
-    public IllegalAccessError(String arg0) {}
+    public IllegalAccessError(String s) {}
 
 }

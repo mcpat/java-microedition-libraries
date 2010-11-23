@@ -1,75 +1,97 @@
 package java.lang;
 
 public final class Long extends Number implements Comparable {
-    public final static long MAX_VALUE;
-    public final static long MIN_VALUE;
+	public static final long MAX_VALUE= 9223372036854775807l;
+	public static final long MIN_VALUE= -9223372036854775808l;
     public final static Class TYPE;
 
-    public static Long decode(String arg0) throws NumberFormatException {
+    static {
+    	TYPE= null;
+    }
+    /**
+     * @throws NumberFormatException
+     */
+    public static Long decode(String nm) throws NumberFormatException {
         return null;
     }
 
-    public static Long getLong(String arg0) {
+    public static Long getLong(String nm) {
         return null;
     }
 
-    public static Long getLong(String arg0, long arg1) {
+    public static Long getLong(String nm, long val) {
         return null;
     }
 
-    public static Long getLong(String arg0, Long arg1) {
+    public static Long getLong(String nm, Long val) {
         return null;
     }
 
-    public static long parseLong(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static long parseLong(String s, int radix) throws NumberFormatException {
         return 0;
     }
 
-    public static long parseLong(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static long parseLong(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static String toBinaryString(long arg0) {
+    public static String toBinaryString(long i) {
         return null;
     }
 
-    public static String toHexString(long arg0) {
+    public static String toHexString(long i) {
         return null;
     }
 
-    public static String toOctalString(long arg0) {
+    public static String toOctalString(long i) {
         return null;
     }
 
-    public static String toString(long arg0, int arg1) {
+    public static String toString(long i, int radix) {
         return null;
     }
 
-    public static String toString(long arg0) {
+    public static String toString(long i) {
         return null;
     }
 
-    public static Long valueOf(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Long valueOf(String s, int radix) throws NumberFormatException {
         return null;
     }
 
-    public static Long valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Long valueOf(String s) throws NumberFormatException {
         return null;
     }
 
 
-    public Long(long arg0) {}
-    public Long(String arg0) throws NumberFormatException {}
+    public Long(long value) {}
+
+    /**
+     * @throws NumberFormatException
+     */
+    public Long(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Long arg0) {
+    public int compareTo(Long anotherLong) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -77,7 +99,7 @@ public final class Long extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

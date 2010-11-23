@@ -1,71 +1,194 @@
 package java.lang;
 
+import java.io.FileDescriptor;
+import java.net.InetAddress;
+import java.security.Permission;
+
 public class SecurityManager {
+	/**
+	 * @throws SecurityException
+	 */
     public SecurityManager() {}
 
-    public void checkAccept(String arg0, int arg1) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkAccept(String host, int port) {}
 
-    public void checkAccess(Thread arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkAccess(Thread t) {}
 
-    public void checkAccess(ThreadGroup arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkAccess(ThreadGroup g) {}
 
+    /**
+     * @throws SecurityException
+     */
     public void checkAwtEventQueueAccess() {}
 
-    public void checkConnect(String arg0, int arg1) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkConnect(String host, int port) {}
 
-    public void checkConnect(String arg0, int arg1, Object arg2) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkConnect(String host, int port, Object context) {}
 
+    /**
+     * @throws SecurityException
+     */
     public void checkCreateClassLoader() {}
 
-    public void checkDelete(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkDelete(String file) {}
 
-    public void checkExec(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkExec(String cmd) {}
 
-    public void checkExit(int arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public void checkExit(int status) {}
 
-    public void checkLink(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkLink(String lib) {}
 
-    public void checkListen(int arg0) {}
+    /**
+     * @throws SecurityException 
+     */
+    public void checkListen(int port) {}
 
-    public void checkMemberAccess(Class arg0, int arg1) {}
+    /**
+     * @throws SecurityException
+     * @throws NullPointerException
+     */
+    public void checkMemberAccess(Class clazz, int which) {}
 
-    public void checkMulticast(InetAddress arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkMulticast(InetAddress maddr) {}
 
-    public void checkMulticast(InetAddress arg0, byte arg1) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkMulticast(InetAddress maddr, byte ttl) {}
 
-    public void checkPackageAccess(String arg0) {}
+    /**
+     * @throws SecurityException
+     * @throws NullPointerException
+     */
+    public void checkPackageAccess(String pkg) {}
 
-    public void checkPackageDefinition(String arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public void checkPackageDefinition(String pkg) {}
 
-    public void checkPermission(Permission arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkPermission(Permission perm) {}
 
-    public void checkPermission(Permission arg0, Object arg1) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkPermission(Permission perm, Object context) {}
 
+    /**
+     * @throws SecurityException
+     */
     public void checkPrintJobAccess() {}
 
+    /**
+     * @throws SecurityException 
+     */
     public void checkPropertiesAccess() {}
 
-    public void checkPropertyAccess(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public void checkPropertyAccess(String key) {}
 
-    public void checkRead(FileDescriptor arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkRead(FileDescriptor fd) {}
 
-    public void checkRead(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkRead(String file) {}
 
-    public void checkRead(String arg0, Object arg1) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkRead(String file, Object context) {}
 
-    public void checkSecurityAccess(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public void checkSecurityAccess(String target) {}
 
+    /**
+     * @throws SecurityException
+     */
     public void checkSetFactory() {}
 
+    /**
+     * @throws SecurityException
+     */
     public void checkSystemClipboardAccess() {}
 
-    public boolean checkTopLevelWindow(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean checkTopLevelWindow(Object window) {
         return false;
     }
 
-    public void checkWrite(FileDescriptor arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkWrite(FileDescriptor fd) {}
 
-    public void checkWrite(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException
+     */
+    public void checkWrite(String file) {}
 
     protected Class[] getClassContext() {
         return null;

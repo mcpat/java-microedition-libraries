@@ -1,7 +1,10 @@
 package java.lang;
 
+import java.net.URL;
+import java.util.jar.Manifest;
+
 public class Package {
-    public static Package getPackage(String arg0) {
+	public static Package getPackage(String name) {
         return null;
     }
 
@@ -9,9 +12,8 @@ public class Package {
         return null;
     }
 
-
     Package(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, URL arg7) {}
-    Package(String arg0, Manifest arg1, URL arg2, Package$1 arg3) {}
+    Package(String arg0, Manifest arg1, URL arg2, Package arg3) {}
 
     public String getImplementationTitle() {
         return null;
@@ -45,7 +47,10 @@ public class Package {
         return 0;
     }
 
-    public boolean isCompatibleWith(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public boolean isCompatibleWith(String desired) throws NumberFormatException {
         return false;
     }
 
@@ -53,7 +58,7 @@ public class Package {
         return false;
     }
 
-    public boolean isSealed(URL arg0) {
+    public boolean isSealed(URL url) {
         return false;
     }
 

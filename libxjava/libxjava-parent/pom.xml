@@ -57,8 +57,6 @@
 		
 		<cdc-version>0.1-SNAPSHOT</cdc-version>
 		<cdc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cdc-1.1.2-stub/${cdc-version}/cdc-1.1.2-stub-${cdc-version}.jar</cdc-jar>
-		
-		<jour-use-system-classes>false</jour-use-system-classes>
 	</properties>
 	
 	<dependencyManagement>

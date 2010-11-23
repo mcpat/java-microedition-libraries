@@ -19,8 +19,6 @@
 		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
 		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>
 		<libxjava-api-link>${clc-api-link}</libxjava-api-link>
-		
-		<jour-use-system-classes>true</jour-use-system-classes>
 	</properties>
 
 	<dependencies>
@@ -86,6 +84,7 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<target>
+								<echo>processing switches in source files...</echo>
 								<property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.JakartaOroRegexp"/>
 								<replaceregexp byline="true" flags="g" match="/\*\[.+?\]\*/" replace="">
 									<fileset dir="${libxjava-module-sources}"/>

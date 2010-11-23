@@ -72,6 +72,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>remove-switches</id>
+						<phase>process-sources</phase>
+						<configuration>
+							<target>
+								<echo>removing switches from source files...</echo>
+								<property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.JakartaOroRegexp"/>
+								<replaceregexp byline="true" flags="g" match="/\*\[.+?\]\*/" replace="">
+									<fileset dir="${libxjava-module-sources}"/>
+								</replaceregexp>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	

@@ -1,34 +1,63 @@
 package java.math;
 
+import java.util.Random;
+
 public class BigInteger extends Number implements Comparable {
     public final static BigInteger ONE;
     public final static BigInteger ZERO;
 
-    public static BigInteger valueOf(long arg0) {
+	static {
+		ONE= new BigInteger("");
+		ZERO= new BigInteger("");
+	}
+	
+    public static BigInteger valueOf(long val) {
         return null;
     }
 
+    /**
+     * @throws NumberFormatException
+     */
+    public BigInteger(byte[] val) {}
 
-    public BigInteger(byte[] arg0) {}
-    public BigInteger(int arg0, byte[] arg1) {}
-    public BigInteger(String arg0, int arg1) {}
-    public BigInteger(String arg0) {}
-    public BigInteger(int arg0, Random arg1) {}
-    public BigInteger(int arg0, int arg1, Random arg2) {}
+    /**
+     * @throws NumberFormatException
+     */
+    public BigInteger(int signum, byte[] magnitude) {}
+   
+    /**
+     * @throws NumberFormatException
+     */
+    public BigInteger(String val, int radix) {}
+
+    /**
+     * @throws NumberFormatException
+     */
+    public BigInteger(String val) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public BigInteger(int numBits, Random rnd) {}
+    
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger(int bitLength, int certainty, Random rnd) {}
 
     public BigInteger abs() {
         return null;
     }
 
-    public BigInteger add(BigInteger arg0) {
+    public BigInteger add(BigInteger val) {
         return null;
     }
 
-    public BigInteger and(BigInteger arg0) {
+    public BigInteger and(BigInteger val) {
         return null;
     }
 
-    public BigInteger andNot(BigInteger arg0) {
+    public BigInteger andNot(BigInteger val) {
         return null;
     }
 
@@ -40,23 +69,35 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public BigInteger clearBit(int arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger clearBit(int n) {
         return null;
     }
 
-    public int compareTo(BigInteger arg0) {
+    public int compareTo(BigInteger val) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    /**
+     * @throws ClassCastException
+     */
+    public int compareTo(Object o) {
         return 0;
     }
 
-    public BigInteger divide(BigInteger arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger divide(BigInteger val) {
         return null;
     }
 
-    public BigInteger[] divideAndRemainder(BigInteger arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger[] divideAndRemainder(BigInteger val) {
         return null;
     }
 
@@ -64,11 +105,14 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object x) {
         return false;
     }
 
-    public BigInteger flipBit(int arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger flipBit(int n) {
         return null;
     }
 
@@ -76,7 +120,7 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public BigInteger gcd(BigInteger arg0) {
+    public BigInteger gcd(BigInteger val) {
         return null;
     }
 
@@ -92,7 +136,7 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public boolean isProbablePrime(int arg0) {
+    public boolean isProbablePrime(int certainty) {
         return false;
     }
 
@@ -100,27 +144,36 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public BigInteger max(BigInteger arg0) {
+    public BigInteger max(BigInteger val) {
         return null;
     }
 
-    public BigInteger min(BigInteger arg0) {
+    public BigInteger min(BigInteger val) {
         return null;
     }
 
-    public BigInteger mod(BigInteger arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger mod(BigInteger m) {
         return null;
     }
 
-    public BigInteger modInverse(BigInteger arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger modInverse(BigInteger m) {
         return null;
     }
 
-    public BigInteger modPow(BigInteger arg0, BigInteger arg1) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger modPow(BigInteger exponent, BigInteger m) {
         return null;
     }
 
-    public BigInteger multiply(BigInteger arg0) {
+    public BigInteger multiply(BigInteger val) {
         return null;
     }
 
@@ -132,27 +185,33 @@ public class BigInteger extends Number implements Comparable {
         return null;
     }
 
-    public BigInteger or(BigInteger arg0) {
+    public BigInteger or(BigInteger val) {
         return null;
     }
 
-    public BigInteger pow(int arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger pow(int exponent) {
         return null;
     }
 
-    public BigInteger remainder(BigInteger arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public BigInteger remainder(BigInteger val) {
         return null;
     }
 
-    public BigInteger setBit(int arg0) {
+    public BigInteger setBit(int n) {
         return null;
     }
 
-    public BigInteger shiftLeft(int arg0) {
+    public BigInteger shiftLeft(int n) {
         return null;
     }
 
-    public BigInteger shiftRight(int arg0) {
+    public BigInteger shiftRight(int n) {
         return null;
     }
 
@@ -160,11 +219,14 @@ public class BigInteger extends Number implements Comparable {
         return 0;
     }
 
-    public BigInteger subtract(BigInteger arg0) {
+    public BigInteger subtract(BigInteger val) {
         return null;
     }
 
-    public boolean testBit(int arg0) {
+    /**
+     * @throws ArithmeticException
+     */
+    public boolean testBit(int n) {
         return false;
     }
 
@@ -172,7 +234,7 @@ public class BigInteger extends Number implements Comparable {
         return null;
     }
 
-    public String toString(int arg0) {
+    public String toString(int radix) {
         return null;
     }
 
@@ -180,7 +242,7 @@ public class BigInteger extends Number implements Comparable {
         return null;
     }
 
-    public BigInteger xor(BigInteger arg0) {
+    public BigInteger xor(BigInteger val) {
         return null;
     }
 

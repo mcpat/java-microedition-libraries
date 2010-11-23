@@ -1,9 +1,13 @@
 package java.net;
 
-public final class SocketPermission extends Permission implements Serializable {
-    public SocketPermission(String arg0, String arg1) {}
+import java.io.Serializable;
+import java.security.Permission;
+import java.security.PermissionCollection;
 
-    public boolean equals(Object arg0) {
+public final class SocketPermission extends Permission implements Serializable {
+    public SocketPermission(String host, String action) {super(null);}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -15,7 +19,7 @@ public final class SocketPermission extends Permission implements Serializable {
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

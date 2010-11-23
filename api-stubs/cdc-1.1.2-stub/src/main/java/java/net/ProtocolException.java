@@ -1,7 +1,9 @@
 package java.net;
 
+import java.io.IOException;
+
 public class ProtocolException extends IOException {
-    public ProtocolException(String arg0) {}
+    public ProtocolException(String host) {}
     public ProtocolException() {}
 
 }

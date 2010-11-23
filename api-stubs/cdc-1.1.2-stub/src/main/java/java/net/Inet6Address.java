@@ -4,7 +4,7 @@ public final class Inet6Address extends InetAddress {
     Inet6Address() {}
     Inet6Address(String arg0, byte[] arg1) {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

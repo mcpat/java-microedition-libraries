@@ -1,23 +1,29 @@
 package java.net;
 
 public interface SocketOptions {
-    int IP_MULTICAST_IF;
-    int IP_MULTICAST_IF2;
-    int IP_MULTICAST_LOOP;
-    int IP_TOS;
-    int SO_BINDADDR;
-    int SO_BROADCAST;
-    int SO_KEEPALIVE;
-    int SO_LINGER;
-    int SO_OOBINLINE;
-    int SO_RCVBUF;
-    int SO_REUSEADDR;
-    int SO_SNDBUF;
-    int SO_TIMEOUT;
-    int TCP_NODELAY;
+	public static final int IP_MULTICAST_IF= 16;
+	public static final int IP_MULTICAST_IF2= 31;
+	public static final int IP_MULTICAST_LOOP= 18;
+	public static final int IP_TOS= 3;
+	public static final int SO_BINDADDR= 15;
+	public static final int SO_BROADCAST= 32;
+	public static final int SO_KEEPALIVE= 8;
+	public static final int SO_LINGER= 128;
+	public static final int SO_OOBINLINE= 4099;
+	public static final int SO_RCVBUF= 4098;
+	public static final int SO_REUSEADDR= 4;
+	public static final int SO_SNDBUF= 4097;
+	public static final int SO_TIMEOUT= 4102;
+	public static final int TCP_NODELAY= 1;
 
-    Object getOption(int arg0) throws SocketException;
+    /**
+     * @throws SocketException
+     */
+    Object getOption(int optID) throws SocketException;
 
-    void setOption(int arg0, Object arg1) throws SocketException;
+    /**
+     * @throws SocketException
+     */
+    void setOption(int optID, Object value) throws SocketException;
 
 }

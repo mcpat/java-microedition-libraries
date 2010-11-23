@@ -1,7 +1,9 @@
 package java.net;
 
+import java.io.InterruptedIOException;
+
 public class SocketTimeoutException extends InterruptedIOException {
-    public SocketTimeoutException(String arg0) {}
+    public SocketTimeoutException(String msg) {}
     public SocketTimeoutException() {}
 
 }

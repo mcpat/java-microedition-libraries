@@ -1,7 +1,9 @@
 package java.net;
 
+import java.io.IOException;
+
 public class SocketException extends IOException {
-    public SocketException(String arg0) {}
+    public SocketException(String msg) {}
     public SocketException() {}
 
 }

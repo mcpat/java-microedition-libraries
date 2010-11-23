@@ -1,11 +1,22 @@
 package java.net;
 
 public class InetSocketAddress extends SocketAddress {
-    public InetSocketAddress(int arg0) {}
-    public InetSocketAddress(InetAddress arg0, int arg1) {}
-    public InetSocketAddress(String arg0, int arg1) {}
+	/**
+	 * @throws IllegalArgumentException
+	 */
+    public InetSocketAddress(int port) {}
 
-    public final boolean equals(Object arg0) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public InetSocketAddress(InetAddress addr, int port) {}
+
+    /**
+     * @throws IllegalArgumentException
+     */
+    public InetSocketAddress(String hostname, int port) {}
+
+    public final boolean equals(Object obj) {
         return false;
     }
 

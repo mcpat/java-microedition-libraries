@@ -1,14 +1,28 @@
 package java.net;
 
+import java.util.Enumeration;
+
 public final class NetworkInterface {
-    public static NetworkInterface getByInetAddress(InetAddress arg0) throws SocketException {
+	
+	/**
+	 * @throws SocketException
+	 * @throws NullPointerException
+	 */
+    public static NetworkInterface getByInetAddress(InetAddress addr) throws SocketException {
         return null;
     }
 
-    public static NetworkInterface getByName(String arg0) throws SocketException {
+    /**
+     * @throws SocketException
+     * @throws NullPointerException
+     */
+    public static NetworkInterface getByName(String name) throws SocketException {
         return null;
     }
 
+    /**
+     * @throws SocketException
+     */
     public static Enumeration getNetworkInterfaces() throws SocketException {
         return null;
     }
@@ -17,7 +31,7 @@ public final class NetworkInterface {
     NetworkInterface() {}
     NetworkInterface(String arg0, int arg1, InetAddress[] arg2) {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

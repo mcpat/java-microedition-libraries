@@ -1,7 +1,9 @@
 package java.net;
 
+import java.io.IOException;
+
 public class UnknownHostException extends IOException {
-    public UnknownHostException(String arg0) {}
+    public UnknownHostException(String host) {}
     public UnknownHostException() {}
 
 }

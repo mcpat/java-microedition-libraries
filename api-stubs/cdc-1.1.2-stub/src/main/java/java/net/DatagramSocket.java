@@ -1,25 +1,66 @@
 package java.net;
 
+import java.io.IOException;
+
 public class DatagramSocket {
-    public static void setDatagramSocketImplFactory(DatagramSocketImplFactory arg0) throws IOException {}
+	/**
+	 * @throws IOException 
+	 * @throws SocketException 
+	 * @throws SecurityException
+	 */
+    public static void setDatagramSocketImplFactory(DatagramSocketImplFactory fac) throws IOException {}
 
-
+    /**
+     * @throws SecurityException
+     * @throws SocketException
+     */
     public DatagramSocket() throws SocketException {}
-    protected DatagramSocket(DatagramSocketImpl arg0) {}
-    public DatagramSocket(SocketAddress arg0) throws SocketException {}
-    public DatagramSocket(int arg0) throws SocketException {}
-    public DatagramSocket(int arg0, InetAddress arg1) throws SocketException {}
+    protected DatagramSocket(DatagramSocketImpl impl) {}
+    
+    /**
+     * @throws SecurityException
+     * @throws SocketException
+     */
+    public DatagramSocket(SocketAddress bindaddr) throws SocketException {}
 
-    public void bind(SocketAddress arg0) throws SocketException {}
+    /**
+     * @throws SecurityException
+     * @throws SocketException
+     */
+    public DatagramSocket(int port) throws SocketException {}
+   
+    /**
+     * @throws SecurityException
+     * @throws SocketException
+     */
+    public DatagramSocket(int port, InetAddress laddr) throws SocketException {}
+
+    /**
+     * @throws SocketException 
+     * @throws SecurityException 
+     * @throws IllegalArgumentException
+     */
+    public void bind(SocketAddress addr) throws SocketException {}
 
     public void close() {}
 
-    public void connect(InetAddress arg0, int arg1) {}
+    /**
+     * @throws IllegalArgumentException 
+     * @throws SecurityException
+     */
+    public void connect(InetAddress address, int port) {}
 
-    public void connect(SocketAddress arg0) throws SocketException {}
+    /**
+     * @throws SocketException 
+     * @throws IllegalArgumentException
+     */
+    public void connect(SocketAddress addr) throws SocketException {}
 
     public void disconnect() {}
 
+    /**
+     * @throws SocketException
+     */
     public boolean getBroadcast() throws SocketException {
         return false;
     }
@@ -44,6 +85,9 @@ public class DatagramSocket {
         return 0;
     }
 
+    /**
+     * @throws SocketException
+     */
     public int getReceiveBufferSize() throws SocketException {
         return 0;
     }
@@ -52,14 +96,23 @@ public class DatagramSocket {
         return null;
     }
 
+    /**
+     * @throws SocketException
+     */
     public boolean getReuseAddress() throws SocketException {
         return false;
     }
 
+    /**
+     * @throws SocketException
+     */
     public int getSendBufferSize() throws SocketException {
         return 0;
     }
 
+    /**
+     * @throws SocketException
+     */
     public int getSoTimeout() throws SocketException {
         return 0;
     }
@@ -80,20 +133,50 @@ public class DatagramSocket {
         return false;
     }
 
-    public void receive(DatagramPacket arg0) throws IOException {}
+    /**
+     * @throws IOException 
+     * @throws SocketTimeoutException 
+     * @throws PortUnreachableException
+     */
+    public void receive(DatagramPacket p) throws IOException {}
 
-    public void send(DatagramPacket arg0) throws IOException {}
+    /**
+     * @throws IOException 
+     * @throws SecurityException 
+     * @throws PortUnreachableException
+     */
+    public void send(DatagramPacket p) throws IOException {}
 
-    public void setBroadcast(boolean arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     */
+    public void setBroadcast(boolean on) throws SocketException {}
 
-    public void setReceiveBufferSize(int arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     * @throws IllegalArgumentException
+     */
+    public void setReceiveBufferSize(int size) throws SocketException {}
 
-    public void setReuseAddress(boolean arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     */
+    public void setReuseAddress(boolean on) throws SocketException {}
 
-    public void setSendBufferSize(int arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     * @throws IllegalArgumentException
+     */
+    public void setSendBufferSize(int size) throws SocketException {}
 
-    public void setSoTimeout(int arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     */
+    public void setSoTimeout(int size) throws SocketException {}
 
-    public void setTrafficClass(int arg0) throws SocketException {}
+    /**
+     * @throws SocketException
+     */
+    public void setTrafficClass(int tc) throws SocketException {}
 
 }

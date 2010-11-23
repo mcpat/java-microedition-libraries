@@ -1,12 +1,22 @@
 package java.net;
 
 public final class DatagramPacket {
-    public DatagramPacket(byte[] arg0, int arg1, int arg2) {}
-    public DatagramPacket(byte[] arg0, int arg1) {}
-    public DatagramPacket(byte[] arg0, int arg1, int arg2, InetAddress arg3, int arg4) {}
-    public DatagramPacket(byte[] arg0, int arg1, int arg2, SocketAddress arg3) throws SocketException {}
-    public DatagramPacket(byte[] arg0, int arg1, InetAddress arg2, int arg3) {}
-    public DatagramPacket(byte[] arg0, int arg1, SocketAddress arg2) throws SocketException {}
+    public DatagramPacket(byte[] buf, int offset, int length) {}
+    public DatagramPacket(byte[] buf, int length) {}
+    public DatagramPacket(byte[] buf, int offset, int length, InetAddress address, int port) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     * @throws SocketException
+     */
+    public DatagramPacket(byte[] buf, int offset, int length, SocketAddress address) throws SocketException {}
+    public DatagramPacket(byte[] buf, int length, InetAddress address, int port) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     * @throws SocketException
+     */
+    public DatagramPacket(byte[] buf, int length, SocketAddress address) throws SocketException {}
 
     public InetAddress getAddress() {
         return null;
@@ -32,16 +42,28 @@ public final class DatagramPacket {
         return null;
     }
 
-    public void setAddress(InetAddress arg0) {}
+    public void setAddress(InetAddress iaddr) {}
 
-    public void setData(byte[] arg0, int arg1, int arg2) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setData(byte[] buf, int offset, int length) {}
 
-    public void setData(byte[] arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setData(byte[] buf) {}
 
-    public void setLength(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setLength(int length) {}
 
-    public void setPort(int arg0) {}
+    public void setPort(int iport) {}
 
-    public void setSocketAddress(SocketAddress arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setSocketAddress(SocketAddress address) {}
 
 }

@@ -1,6 +1,6 @@
 package java.net;
 
 public interface FileNameMap {
-    String getContentTypeFor(String arg0);
+    String getContentTypeFor(String fileName);
 
 }

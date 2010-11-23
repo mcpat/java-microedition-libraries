@@ -1,22 +1,41 @@
 package java.net;
 
+import java.io.Serializable;
+
 public class InetAddress implements Serializable {
-    public static InetAddress[] getAllByName(String arg0) throws UnknownHostException {
+	/**
+	 * @throws UnknownHostException
+	 * @throws SecurityException
+	 */
+    public static InetAddress[] getAllByName(String host) throws UnknownHostException {
         return null;
     }
 
-    public static InetAddress getByAddress(String arg0, byte[] arg1) throws UnknownHostException {
+    /**
+     * @throws UnknownHostException
+     */
+    public static InetAddress getByAddress(String host, byte[] addr) throws UnknownHostException {
         return null;
     }
 
-    public static InetAddress getByAddress(byte[] arg0) throws UnknownHostException {
+    /**
+     * @throws UnknownHostException
+     */
+    public static InetAddress getByAddress(byte[] addr) throws UnknownHostException {
         return null;
     }
 
-    public static InetAddress getByName(String arg0) throws UnknownHostException {
+    /**
+     * @throws UnknownHostException
+     * @throws SecurityException
+     */
+    public static InetAddress getByName(String host) throws UnknownHostException {
         return null;
     }
 
+    /**
+     * @throws UnknownHostException
+     */
     public static InetAddress getLocalHost() throws UnknownHostException {
         return null;
     }
@@ -24,7 +43,7 @@ public class InetAddress implements Serializable {
 
     InetAddress() {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

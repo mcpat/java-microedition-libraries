@@ -7,10 +7,17 @@ public class ReferenceQueue {
         return null;
     }
 
-    public Reference remove(long arg0) throws IllegalArgumentException, InterruptedException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws InterruptedException
+     */
+    public Reference remove(long timeout) throws IllegalArgumentException, InterruptedException {
         return null;
     }
 
+    /**
+     * @throws InterruptedException
+     */
     public Reference remove() throws InterruptedException {
         return null;
     }

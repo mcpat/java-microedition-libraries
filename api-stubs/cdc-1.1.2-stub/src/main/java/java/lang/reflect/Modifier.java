@@ -1,71 +1,70 @@
 package java.lang.reflect;
 
 public class Modifier {
-    public final static int ABSTRACT;
-    public final static int FINAL;
-    public final static int INTERFACE;
-    public final static int NATIVE;
-    public final static int PRIVATE;
-    public final static int PROTECTED;
-    public final static int PUBLIC;
-    public final static int STATIC;
-    public final static int STRICT;
-    public final static int SYNCHRONIZED;
-    public final static int TRANSIENT;
-    public final static int VOLATILE;
+	public static final int ABSTRACT= 1024;
+	public static final int FINAL= 16;
+	public static final int INTERFACE= 512;
+	public static final int NATIVE= 256;
+	public static final int PRIVATE= 2;
+	public static final int PROTECTED= 4;
+	public static final int PUBLIC= 1;
+	public static final int STATIC= 8;
+	public static final int STRICT= 2048;
+	public static final int SYNCHRONIZED= 32;
+	public static final int TRANSIENT= 128;
+	public static final int VOLATILE= 64;
 
-    public static boolean isAbstract(int arg0) {
+    public static boolean isAbstract(int mod) {
         return false;
     }
 
-    public static boolean isFinal(int arg0) {
+    public static boolean isFinal(int mod) {
         return false;
     }
 
-    public static boolean isInterface(int arg0) {
+    public static boolean isInterface(int mod) {
         return false;
     }
 
-    public static boolean isNative(int arg0) {
+    public static boolean isNative(int mod) {
         return false;
     }
 
-    public static boolean isPrivate(int arg0) {
+    public static boolean isPrivate(int mod) {
         return false;
     }
 
-    public static boolean isProtected(int arg0) {
+    public static boolean isProtected(int mod) {
         return false;
     }
 
-    public static boolean isPublic(int arg0) {
+    public static boolean isPublic(int mod) {
         return false;
     }
 
-    public static boolean isStatic(int arg0) {
+    public static boolean isStatic(int mod) {
         return false;
     }
 
-    public static boolean isStrict(int arg0) {
+    public static boolean isStrict(int mod) {
         return false;
     }
 
-    public static boolean isSynchronized(int arg0) {
+    public static boolean isSynchronized(int mod) {
         return false;
     }
 
-    public static boolean isTransient(int arg0) {
+    public static boolean isTransient(int mod) {
         return false;
     }
 
-    public static boolean isVolatile(int arg0) {
+    public static boolean isVolatile(int mod) {
         return false;
     }
 
-    public static String toString(int arg0) {
+    public static String toString(int mod) {
         return null;
     }
-
 
     public Modifier() {}
 

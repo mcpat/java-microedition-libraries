@@ -1,7 +1,10 @@
 package java.lang.reflect;
 
 public class AccessibleObject {
-    public static void setAccessible(AccessibleObject[] arg0, boolean arg1) throws SecurityException {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setAccessible(AccessibleObject[] array, boolean flag) throws SecurityException {}
 
 
     protected AccessibleObject() {}
@@ -10,6 +13,9 @@ public class AccessibleObject {
         return false;
     }
 
-    public void setAccessible(boolean arg0) throws SecurityException {}
+    /**
+     * @throws SecurityException
+     */
+    public void setAccessible(boolean flag) throws SecurityException {}
 
 }

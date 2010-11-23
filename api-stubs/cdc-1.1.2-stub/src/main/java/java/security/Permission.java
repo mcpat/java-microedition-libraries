@@ -1,5 +1,7 @@
 package java.security;
 
+import java.io.Serializable;
+
 public abstract class Permission implements Guard, Serializable {
     public Permission(String arg0) {}
 

@@ -1,7 +1,7 @@
 package java.lang.reflect;
 
 public final class Constructor implements Member {
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -29,7 +29,14 @@ public final class Constructor implements Member {
         return 0;
     }
 
-    public Object newInstance(Object[] arg0) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    /**
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws IllegalArgumentException
+     * @throws InvocationTargetException
+     * @throws ExceptionInInitializerError
+     */
+    public Object newInstance(Object[] initargs) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         return null;
     }
 

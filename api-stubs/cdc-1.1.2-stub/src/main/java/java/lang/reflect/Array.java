@@ -1,71 +1,174 @@
 package java.lang.reflect;
 
 public final class Array {
-    public static Object get(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static Object get(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return null;
     }
 
-    public static boolean getBoolean(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static boolean getBoolean(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return false;
     }
 
-    public static byte getByte(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static byte getByte(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static char getChar(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static char getChar(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static double getDouble(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static double getDouble(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static float getFloat(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static float getFloat(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static int getInt(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static int getInt(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static int getLength(Object arg0) throws IllegalArgumentException {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public static int getLength(Object array) throws IllegalArgumentException {
         return 0;
     }
 
-    public static long getLong(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static long getLong(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static short getShort(Object arg0, int arg1) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static short getShort(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         return 0;
     }
 
-    public static Object newInstance(Class arg0, int arg1) throws NegativeArraySizeException {
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException 
+     * @throws NegativeArraySizeException
+     */
+    public static Object newInstance(Class componentType, int length) throws NegativeArraySizeException {
         return null;
     }
 
-    public static Object newInstance(Class arg0, int[] arg1) throws IllegalArgumentException, NegativeArraySizeException {
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException 
+     * @throws NegativeArraySizeException
+     */
+    public static Object newInstance(Class componentType, int[] dimensions) throws IllegalArgumentException, NegativeArraySizeException {
         return null;
     }
 
-    public static void set(Object arg0, int arg1, Object arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void set(Object array, int index, Object value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setBoolean(Object arg0, int arg1, boolean arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setBoolean(Object array, int index, boolean z) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setByte(Object arg0, int arg1, byte arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setByte(Object array, int index, byte b) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setChar(Object arg0, int arg1, char arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setChar(Object array, int index, char c) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setDouble(Object arg0, int arg1, double arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setDouble(Object array, int index, double d) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setFloat(Object arg0, int arg1, float arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setFloat(Object array, int index, float f) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setInt(Object arg0, int arg1, int arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setInt(Object array, int index, int i) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setLong(Object arg0, int arg1, long arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setLong(Object array, int index, long l) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
-    public static void setShort(Object arg0, int arg1, short arg2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void setShort(Object array, int index, short s) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {}
 
 
 }

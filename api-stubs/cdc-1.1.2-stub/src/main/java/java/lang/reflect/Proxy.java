@@ -1,25 +1,41 @@
 package java.lang.reflect;
 
+import java.io.Serializable;
+
 public class Proxy implements Serializable {
-    public static InvocationHandler getInvocationHandler(Object arg0) throws IllegalArgumentException {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public static InvocationHandler getInvocationHandler(Object proxy) throws IllegalArgumentException {
         return null;
     }
 
-    public static Class getProxyClass(ClassLoader arg0, Class[] arg1) throws IllegalArgumentException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public static Class getProxyClass(ClassLoader loader, Class[] interfaces) throws IllegalArgumentException {
         return null;
     }
 
-    public static boolean isProxyClass(Class arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public static boolean isProxyClass(Class cl) {
         return false;
     }
 
-    public static Object newProxyInstance(ClassLoader arg0, Class[] arg1, InvocationHandler arg2) throws IllegalArgumentException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public static Object newProxyInstance(ClassLoader loader, Class[] interfaces, InvocationHandler h) throws IllegalArgumentException {
         return null;
     }
 
 
     protected InvocationHandler h;
 
-    protected Proxy(InvocationHandler arg0) {}
+    protected Proxy(InvocationHandler h) {}
 
 }

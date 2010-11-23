@@ -1,7 +1,7 @@
 package java.lang.reflect;
 
 public final class Method implements Member {
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -33,7 +33,14 @@ public final class Method implements Member {
         return 0;
     }
 
-    public Object invoke(Object arg0, Object[] arg1) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    /**
+     * @throws IllegalAccessException
+     * @throws IllegalArgumentException
+     * @throws InvocationTargetException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public Object invoke(Object obj, Object[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         return null;
     }
 

@@ -5,19 +5,43 @@ public final class Field implements Member {
         return false;
     }
 
-    public Object get(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public Object get(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return null;
     }
 
-    public boolean getBoolean(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public boolean getBoolean(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return false;
     }
 
-    public byte getByte(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public byte getByte(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
-    public char getChar(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public char getChar(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
@@ -25,19 +49,43 @@ public final class Field implements Member {
         return null;
     }
 
-    public double getDouble(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public double getDouble(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
-    public float getFloat(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public float getFloat(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
-    public int getInt(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public int getInt(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
-    public long getLong(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public long getLong(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
@@ -49,7 +97,13 @@ public final class Field implements Member {
         return null;
     }
 
-    public short getShort(Object arg0) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public short getShort(Object obj) throws IllegalArgumentException, IllegalAccessException {
         return 0;
     }
 
@@ -61,23 +115,77 @@ public final class Field implements Member {
         return 0;
     }
 
-    public void set(Object arg0, Object arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void set(Object obj, Object value) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setBoolean(Object arg0, boolean arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setBoolean(Object obj, boolean z) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setByte(Object arg0, byte arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setByte(Object obj, byte b) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setChar(Object arg0, char arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setChar(Object obj, char c) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setDouble(Object arg0, double arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setDouble(Object obj, double d) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setFloat(Object arg0, float arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setFloat(Object obj, float f) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setInt(Object arg0, int arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setInt(Object obj, int i) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setLong(Object arg0, long arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setLong(Object obj, long l) throws IllegalArgumentException, IllegalAccessException {}
 
-    public void setShort(Object arg0, short arg1) throws IllegalArgumentException, IllegalAccessException {}
+    /**
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     * @throws NullPointerException 
+     * @throws ExceptionInInitializerError
+     */
+    public void setShort(Object obj, short s) throws IllegalArgumentException, IllegalAccessException {}
 
     public String toString() {
         return null;

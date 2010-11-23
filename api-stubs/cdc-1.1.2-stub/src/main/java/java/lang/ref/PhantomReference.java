@@ -1,7 +1,10 @@
 package java.lang.ref;
 
 public class PhantomReference extends Reference {
-    public PhantomReference(Object arg0, ReferenceQueue arg1) {}
+	/**
+	 * @throws NullPointerException
+	 */
+    public PhantomReference(Object referent, ReferenceQueue q) {super(null);}
 
     public Object get() {
         return null;

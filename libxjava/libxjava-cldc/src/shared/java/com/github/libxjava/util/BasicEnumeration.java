@@ -22,6 +22,10 @@ package com.github.libxjava.util;
 
 import java.util.Enumeration;
 
+/**
+ * @author Marcel Patzlaff
+ * @version ${project.artifactId} - ${project.version}
+ */
 public interface BasicEnumeration/*[J5<E>J5]*/ extends Enumeration/*[J5<E>J5]*/ {
 
 	public boolean hasMoreElements();

@@ -28,7 +28,7 @@ import java.io.InputStream;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class InputStreamProxy extends InputStream {
-    public InputStream concreteStream;
+    public volatile InputStream concreteStream;
     
     
     public int available() throws IOException {

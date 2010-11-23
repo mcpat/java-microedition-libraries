@@ -21,7 +21,6 @@
 package com.github.libxjava.util;
 
 
-
 /**
  * Simple ring buffer set.
  * It uses the standard Java hash mechanism to detect already

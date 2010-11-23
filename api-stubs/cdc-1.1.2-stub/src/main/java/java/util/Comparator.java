@@ -1,8 +1,11 @@
 package java.util;
 
 public interface Comparator {
-    int compare(Object arg0, Object arg1);
+    /**
+     * @throws ClassCastException
+     */
+    int compare(Object o1, Object o2);
 
-    boolean equals(Object arg0);
+    boolean equals(Object obj);
 
 }

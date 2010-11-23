@@ -1,17 +1,40 @@
 package java.util;
 
 public interface Set extends Collection {
-    boolean add(Object arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    boolean add(Object o);
 
-    boolean addAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    boolean addAll(Collection c);
 
+    /**
+     * @throws UnsupportedOperationException
+     */
     void clear();
 
-    boolean contains(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean contains(Object o);
 
-    boolean containsAll(Collection arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean containsAll(Collection c);
 
-    boolean equals(Object arg0);
+    boolean equals(Object o);
 
     int hashCode();
 
@@ -19,16 +42,35 @@ public interface Set extends Collection {
 
     Iterator iterator();
 
-    boolean remove(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws UnsupportedOperationException
+     */
+    boolean remove(Object o);
 
-    boolean removeAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean removeAll(Collection c);
 
-    boolean retainAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean retainAll(Collection c);
 
     int size();
 
     Object[] toArray();
 
-    Object[] toArray(Object[] arg0);
+    /**
+     * @throws ArrayStoreException
+     * @throws NullPointerException
+     */
+    Object[] toArray(Object[] a);
 
 }

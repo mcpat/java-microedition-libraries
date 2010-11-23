@@ -1,51 +1,131 @@
 package java.util;
 
 public interface List extends Collection {
-    boolean add(Object arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    boolean add(Object o);
 
-    void add(int arg0, Object arg1);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    void add(int index, Object element);
 
-    boolean addAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    boolean addAll(Collection c);
 
-    boolean addAll(int arg0, Collection arg1);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    boolean addAll(int index, Collection c);
 
+    /**
+     * @throws UnsupportedOperationException
+     */
     void clear();
 
-    boolean contains(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean contains(Object o);
 
-    boolean containsAll(Collection arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean containsAll(Collection c);
 
-    boolean equals(Object arg0);
+    boolean equals(Object o);
 
-    Object get(int arg0);
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    Object get(int index);
 
     int hashCode();
 
-    int indexOf(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    int indexOf(Object o);
 
     boolean isEmpty();
 
     Iterator iterator();
 
-    int lastIndexOf(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    int lastIndexOf(Object o);
 
     ListIterator listIterator();
 
-    ListIterator listIterator(int arg0);
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    ListIterator listIterator(int index);
 
-    boolean remove(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws UnsupportedOperationException
+     */
+    boolean remove(Object o);
 
-    Object remove(int arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws IndexOutOfBoundsException
+     */
+    Object remove(int index);
 
-    boolean removeAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean removeAll(Collection c);
 
-    boolean retainAll(Collection arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean retainAll(Collection c);
 
-    Object set(int arg0, Object arg1);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    Object set(int index, Object element);
 
     int size();
 
-    List subList(int arg0, int arg1);
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    List subList(int fromIndex, int toIndex);
 
     Object[] toArray();
 

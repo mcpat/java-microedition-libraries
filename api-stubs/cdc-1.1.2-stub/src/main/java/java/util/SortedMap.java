@@ -3,14 +3,35 @@ package java.util;
 public interface SortedMap extends Map {
     Comparator comparator();
 
+    /**
+     * @throws NoSuchElementException
+     */
     Object firstKey();
 
-    SortedMap headMap(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    SortedMap headMap(Object toKey);
 
+    /**
+     * @throws NoSuchElementException
+     */
     Object lastKey();
 
-    SortedMap subMap(Object arg0, Object arg1);
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    SortedMap subMap(Object fromKey, Object toKey);
 
-    SortedMap tailMap(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    SortedMap tailMap(Object fromKey);
 
 }

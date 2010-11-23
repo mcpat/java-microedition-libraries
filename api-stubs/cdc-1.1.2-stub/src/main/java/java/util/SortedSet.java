@@ -3,14 +3,35 @@ package java.util;
 public interface SortedSet extends Set {
     Comparator comparator();
 
+    /**
+     * @throws NoSuchElementException
+     */
     Object first();
 
-    SortedSet headSet(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    SortedSet headSet(Object toElement);
 
+    /**
+     * @throws NoSuchElementException
+     */
     Object last();
 
-    SortedSet subSet(Object arg0, Object arg1);
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    SortedSet subSet(Object fromElement, Object toElement);
 
-    SortedSet tailSet(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    SortedSet tailSet(Object fromElement);
 
 }

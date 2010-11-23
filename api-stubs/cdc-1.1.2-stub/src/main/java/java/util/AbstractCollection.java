@@ -3,21 +3,37 @@ package java.util;
 public abstract class AbstractCollection implements Collection {
     protected AbstractCollection() {}
 
-    public boolean add(Object arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     */
+    public boolean add(Object o) {
         return false;
     }
 
-    public boolean addAll(Collection arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     */
+    public boolean addAll(Collection c) {
         return false;
     }
 
+    /**
+     * @throws UnsupportedOperationException
+     */
     public void clear() {}
 
-    public boolean contains(Object arg0) {
+    public boolean contains(Object o) {
         return false;
     }
 
-    public boolean containsAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean containsAll(Collection c) {
         return false;
     }
 
@@ -27,15 +43,26 @@ public abstract class AbstractCollection implements Collection {
 
     public abstract Iterator iterator();
 
-    public boolean remove(Object arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public boolean remove(Object o) {
         return false;
     }
 
-    public boolean removeAll(Collection arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     */
+    public boolean removeAll(Collection c) {
         return false;
     }
 
-    public boolean retainAll(Collection arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     */
+    public boolean retainAll(Collection c) {
         return false;
     }
 
@@ -45,7 +72,11 @@ public abstract class AbstractCollection implements Collection {
         return null;
     }
 
-    public Object[] toArray(Object[] arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws ArrayStoreException
+     */
+    public Object[] toArray(Object[] a) {
         return null;
     }
 

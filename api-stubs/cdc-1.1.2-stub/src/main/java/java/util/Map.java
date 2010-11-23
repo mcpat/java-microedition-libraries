@@ -1,17 +1,51 @@
 package java.util;
 
 public interface Map {
+    interface Entry {
+        boolean equals(Object o);
+
+        Object getKey();
+
+        Object getValue();
+
+        int hashCode();
+
+        /**
+         * @throws UnsupportedOperationException
+         * @throws ClassCastException
+         * @throws IllegalArgumentException
+         * @throws NullPointerException
+         */
+        Object setValue(Object value);
+
+    }
+    
+    /**
+     * @throws UnsupportedOperationException
+     */
     void clear();
 
-    boolean containsKey(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean containsKey(Object key);
 
-    boolean containsValue(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    boolean containsValue(Object value);
 
     Set entrySet();
 
-    boolean equals(Object arg0);
+    boolean equals(Object o);
 
-    Object get(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    Object get(Object key);
 
     int hashCode();
 
@@ -19,11 +53,28 @@ public interface Map {
 
     Set keySet();
 
-    Object put(Object arg0, Object arg1);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    Object put(Object key, Object value);
 
-    void putAll(Map arg0);
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    void putAll(Map t);
 
-    Object remove(Object arg0);
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     * @throws UnsupportedOperationException
+     */
+    Object remove(Object key);
 
     int size();
 

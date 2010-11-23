@@ -3,13 +3,30 @@ package java.util;
 public abstract class AbstractSequentialList extends AbstractList {
     protected AbstractSequentialList() {}
 
-    public void add(int arg0, Object arg1) {}
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    public void add(int index, Object element) {}
 
-    public boolean addAll(int arg0, Collection arg1) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    public boolean addAll(int index, Collection c) {
         return false;
     }
 
-    public Object get(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object get(int index) {
         return null;
     }
 
@@ -17,13 +34,24 @@ public abstract class AbstractSequentialList extends AbstractList {
         return null;
     }
 
-    public abstract ListIterator listIterator(int arg0);
+    public abstract ListIterator listIterator(int index);
 
-    public Object remove(int arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws IndexOutOfBoundsException
+     */
+    public Object remove(int index) {
         return null;
     }
 
-    public Object set(int arg0, Object arg1) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    public Object set(int index, Object element) {
         return null;
     }
 

@@ -3,27 +3,39 @@ package java.util;
 public abstract class AbstractMap implements Map {
     protected AbstractMap() {}
 
+    /**
+     * @throws UnsupportedOperationException
+     */
     public void clear() {}
 
+    /**
+     * @throws CloneNotSupportedException
+     */
     protected Object clone() throws CloneNotSupportedException {
         return null;
     }
 
-    public boolean containsKey(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
     public abstract Set entrySet();
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
-    public Object get(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object get(Object key) {
         return null;
     }
 
@@ -39,13 +51,28 @@ public abstract class AbstractMap implements Map {
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public void putAll(Map t) {}
 
-    public Object remove(Object arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public Object remove(Object key) {
         return null;
     }
 

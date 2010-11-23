@@ -5,29 +5,53 @@ public abstract class AbstractList extends AbstractCollection implements List {
 
     protected AbstractList() {}
 
-    public boolean add(Object arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     */
+    public boolean add(Object o) {
         return false;
     }
 
-    public void add(int arg0, Object arg1) {}
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    public void add(int index, Object element) {}
 
-    public boolean addAll(int arg0, Collection arg1) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     * @throws NullPointerException
+     */
+    public boolean addAll(int index, Collection c) {
         return false;
     }
 
+    /**
+     * @throws UnsupportedOperationException
+     */
     public void clear() {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
-    public abstract Object get(int arg0);
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public abstract Object get(int index);
 
     public int hashCode() {
         return 0;
     }
 
-    public int indexOf(Object arg0) {
+    public int indexOf(Object o) {
         return 0;
     }
 
@@ -35,7 +59,7 @@ public abstract class AbstractList extends AbstractCollection implements List {
         return null;
     }
 
-    public int lastIndexOf(Object arg0) {
+    public int lastIndexOf(Object o) {
         return 0;
     }
 
@@ -43,21 +67,38 @@ public abstract class AbstractList extends AbstractCollection implements List {
         return null;
     }
 
-    public ListIterator listIterator(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public ListIterator listIterator(int index) {
         return null;
     }
 
-    public Object remove(int arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws IndexOutOfBoundsException
+     */
+    public Object remove(int index) {
         return null;
     }
 
-    protected void removeRange(int arg0, int arg1) {}
+    protected void removeRange(int fromIndex, int toIndex) {}
 
-    public Object set(int arg0, Object arg1) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws IndexOutOfBoundsException
+     */
+    public Object set(int index, Object element) {
         return null;
     }
 
-    public List subList(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     * @throws IllegalArgumentException
+     */
+    public List subList(int fromIndex, int toIndex) {
         return null;
     }
 

@@ -2,6 +2,6 @@ package java.lang;
 
 public class UnsupportedClassVersionError extends ClassFormatError {
     public UnsupportedClassVersionError() {}
-    public UnsupportedClassVersionError(String arg0) {}
+    public UnsupportedClassVersionError(String s) {}
 
 }

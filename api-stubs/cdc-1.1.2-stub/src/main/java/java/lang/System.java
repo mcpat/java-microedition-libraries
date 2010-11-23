@@ -1,29 +1,60 @@
 package java.lang;
 
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.Properties;
+
 public final class System {
     public final static PrintStream err;
     public final static InputStream in;
     public final static PrintStream out;
 
-    public static void arraycopy(Object arg0, int arg1, Object arg2, int arg3, int arg4) {}
+    static {
+    	err= null;
+    	in= null;
+    	out= null;
+    }
+    
+    /**
+     * @throws IndexOutOfBoundsException 
+     * @throws ArrayStoreException 
+     * @throws NullPointerException
+     */
+    public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) {}
 
     public static long currentTimeMillis() {
         return 0;
     }
 
-    public static void exit(int arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void exit(int status) {}
 
     public static void gc() {}
 
+    /**
+     * @throws SecurityException
+     */
     public static Properties getProperties() {
         return null;
     }
 
-    public static String getProperty(String arg0) {
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public static String getProperty(String key) {
         return null;
     }
 
-    public static String getProperty(String arg0, String arg1) {
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public static String getProperty(String key, String def) {
         return null;
     }
 
@@ -31,33 +62,61 @@ public final class System {
         return null;
     }
 
-    public static int identityHashCode(Object arg0) {
+    public static int identityHashCode(Object x) {
         return 0;
     }
 
-    public static void load(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws UnsatisfiedLinkError
+     */
+    public static void load(String filename) {}
 
-    public static void loadLibrary(String arg0) {}
+    /**
+     * @throws SecurityException 
+     * @throws UnsatisfiedLinkError
+     */
+    public static void loadLibrary(String libname) {}
 
-    public static String mapLibraryName(String arg0) {
+    public static String mapLibraryName(String libname) {
         return null;
     }
 
     public static void runFinalization() {}
 
-    public static void setErr(PrintStream arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setErr(PrintStream err) {}
 
-    public static void setIn(InputStream arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setIn(InputStream in) {}
 
-    public static void setOut(PrintStream arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setOut(PrintStream out) {}
 
-    public static void setProperties(Properties arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setProperties(Properties props) {}
 
-    public static String setProperty(String arg0, String arg1) {
+    /**
+     * @throws SecurityException 
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public static String setProperty(String key, String value) {
         return null;
     }
 
-    public static void setSecurityManager(SecurityManager arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setSecurityManager(SecurityManager s) {}
 
 
 }

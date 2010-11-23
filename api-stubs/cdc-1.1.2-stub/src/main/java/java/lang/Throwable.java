@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 public class Throwable implements Serializable {
     public Throwable() {}
-    public Throwable(String arg0) {}
-    public Throwable(String arg0, Throwable arg1) {}
-    public Throwable(Throwable arg0) {}
+    public Throwable(String message) {}
+    public Throwable(String message, Throwable cause) {}
+    public Throwable(Throwable cause) {}
 
     public Throwable fillInStackTrace() {
         return null;
@@ -30,17 +30,24 @@ public class Throwable implements Serializable {
         return null;
     }
 
-    public Throwable initCause(Throwable arg0) {
+    /**
+     * @throws IllegalArgumentException 
+     * @throws IllegalStateException
+     */
+    public Throwable initCause(Throwable cause) {
         return null;
     }
 
     public void printStackTrace() {}
 
-    public void printStackTrace(PrintStream arg0) {}
+    public void printStackTrace(PrintStream s) {}
 
-    public void printStackTrace(PrintWriter arg0) {}
+    public void printStackTrace(PrintWriter s) {}
 
-    public void setStackTrace(StackTraceElement[] arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setStackTrace(StackTraceElement[] stackTrace) {}
 
     public String toString() {
         return null;

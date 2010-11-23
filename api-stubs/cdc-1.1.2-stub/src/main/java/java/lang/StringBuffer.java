@@ -1,51 +1,61 @@
 package java.lang;
 
+import java.io.Serializable;
+
 public final class StringBuffer implements Serializable, CharSequence {
     public StringBuffer() {}
-    public StringBuffer(int arg0) {}
-    public StringBuffer(String arg0) {}
+    
+    /**
+     * @throws NegativeArraySizeException
+     */
+    public StringBuffer(int length) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public StringBuffer(String str) {}
 
-    public StringBuffer append(Object arg0) {
+    public StringBuffer append(Object obj) {
         return null;
     }
 
-    public StringBuffer append(String arg0) {
+    public StringBuffer append(String str) {
         return null;
     }
 
-    public StringBuffer append(StringBuffer arg0) {
+    public StringBuffer append(StringBuffer sb) {
         return null;
     }
 
-    public StringBuffer append(char[] arg0) {
+    public StringBuffer append(char[] str) {
         return null;
     }
 
-    public StringBuffer append(char[] arg0, int arg1, int arg2) {
+    public StringBuffer append(char[] str, int offset, int len) {
         return null;
     }
 
-    public StringBuffer append(boolean arg0) {
+    public StringBuffer append(boolean b) {
         return null;
     }
 
-    public StringBuffer append(char arg0) {
+    public StringBuffer append(char c) {
         return null;
     }
 
-    public StringBuffer append(int arg0) {
+    public StringBuffer append(int i) {
         return null;
     }
 
-    public StringBuffer append(long arg0) {
+    public StringBuffer append(long l) {
         return null;
     }
 
-    public StringBuffer append(float arg0) {
+    public StringBuffer append(float f) {
         return null;
     }
 
-    public StringBuffer append(double arg0) {
+    public StringBuffer append(double d) {
         return null;
     }
 
@@ -53,75 +63,130 @@ public final class StringBuffer implements Serializable, CharSequence {
         return 0;
     }
 
-    public char charAt(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public char charAt(int index) {
         return 0;
     }
 
-    public StringBuffer delete(int arg0, int arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer delete(int start, int end) {
         return null;
     }
 
-    public StringBuffer deleteCharAt(int arg0) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer deleteCharAt(int index) {
         return null;
     }
 
-    public void ensureCapacity(int arg0) {}
+    public void ensureCapacity(int minimumCapacity) {}
 
-    public void getChars(int arg0, int arg1, char[] arg2, int arg3) {}
+    /**
+     * @throws NullPointerException 
+     * @throws IndexOutOfBoundsException
+     */
+    public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) {}
 
-    public int indexOf(String arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public int indexOf(String str) {
         return 0;
     }
 
-    public int indexOf(String arg0, int arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public int indexOf(String str, int fromIndex) {
         return 0;
     }
 
-    public StringBuffer insert(int arg0, char[] arg1, int arg2, int arg3) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int index, char[] str, int offset, int len) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, Object arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, Object obj) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, String arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, String str) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, char[] arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, char[] str) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, boolean arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, boolean b) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, char arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, char c) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, int arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, int i) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, long arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, long l) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, float arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, float f) {
         return null;
     }
 
-    public StringBuffer insert(int arg0, double arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer insert(int offset, double d) {
         return null;
     }
 
-    public int lastIndexOf(String arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public int lastIndexOf(String str) {
         return 0;
     }
 
-    public int lastIndexOf(String arg0, int arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public int lastIndexOf(String str, int fromIndex) {
         return 0;
     }
 
@@ -129,7 +194,10 @@ public final class StringBuffer implements Serializable, CharSequence {
         return 0;
     }
 
-    public StringBuffer replace(int arg0, int arg1, String arg2) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public StringBuffer replace(int start, int end, String str) {
         return null;
     }
 
@@ -137,19 +205,34 @@ public final class StringBuffer implements Serializable, CharSequence {
         return null;
     }
 
-    public void setCharAt(int arg0, char arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void setCharAt(int index, char ch) {}
 
-    public void setLength(int arg0) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void setLength(int newLength) {}
 
-    public CharSequence subSequence(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public CharSequence subSequence(int start, int end) {
         return null;
     }
 
-    public String substring(int arg0) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public String substring(int start) {
         return null;
     }
 
-    public String substring(int arg0, int arg1) {
+    /**
+     * @throws StringIndexOutOfBoundsException
+     */
+    public String substring(int start, int end) {
         return null;
     }
 

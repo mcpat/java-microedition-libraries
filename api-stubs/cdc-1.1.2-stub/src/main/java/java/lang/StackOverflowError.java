@@ -2,6 +2,6 @@ package java.lang;
 
 public class StackOverflowError extends VirtualMachineError {
     public StackOverflowError() {}
-    public StackOverflowError(String arg0) {}
+    public StackOverflowError(String s) {}
 
 }

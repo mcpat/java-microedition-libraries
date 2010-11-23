@@ -1,7 +1,9 @@
 package java.lang;
 
+import java.io.Serializable;
+
 public final class StackTraceElement implements Serializable {
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

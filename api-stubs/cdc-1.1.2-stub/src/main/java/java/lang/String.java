@@ -1,100 +1,131 @@
 package java.lang;
 
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.util.Comparator;
+import java.util.Locale;
+
 public final class String implements Serializable, Comparable, CharSequence {
     public final static Comparator CASE_INSENSITIVE_ORDER;
 
-    public static String copyValueOf(char[] arg0, int arg1, int arg2) {
+    static {
+    	CASE_INSENSITIVE_ORDER= null;
+    }
+    public static String copyValueOf(char[] data, int offset, int count) {
         return null;
     }
 
-    public static String copyValueOf(char[] arg0) {
+    public static String copyValueOf(char[] data) {
         return null;
     }
 
-    public static String valueOf(Object arg0) {
+    public static String valueOf(Object obj) {
         return null;
     }
 
-    public static String valueOf(char[] arg0) {
+    public static String valueOf(char[] data) {
         return null;
     }
 
-    public static String valueOf(char[] arg0, int arg1, int arg2) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public static String valueOf(char[] data, int offset, int count) {
         return null;
     }
 
-    public static String valueOf(boolean arg0) {
+    public static String valueOf(boolean b) {
         return null;
     }
 
-    public static String valueOf(char arg0) {
+    public static String valueOf(char c) {
         return null;
     }
 
-    public static String valueOf(int arg0) {
+    public static String valueOf(int i) {
         return null;
     }
 
-    public static String valueOf(long arg0) {
+    public static String valueOf(long l) {
         return null;
     }
 
-    public static String valueOf(float arg0) {
+    public static String valueOf(float f) {
         return null;
     }
 
-    public static String valueOf(double arg0) {
+    public static String valueOf(double d) {
         return null;
     }
 
 
     public String() {}
-    public String(String arg0) {}
-    public String(char[] arg0) {}
-    public String(char[] arg0, int arg1, int arg2) {}
-    public String(byte[] arg0, int arg1, int arg2, String arg3) throws UnsupportedEncodingException {}
-    public String(byte[] arg0, String arg1) throws UnsupportedEncodingException {}
-    public String(byte[] arg0, int arg1, int arg2) {}
-    public String(byte[] arg0) {}
-    public String(StringBuffer arg0) {}
+    public String(String original) {}
+    public String(char[] value) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public String(char[] value, int offset, int count) {}
+    /**
+     * @throws UnsupportedEncodingException
+     * @throws IndexOutOfBoundsException
+     */
+    public String(byte[] bytes, int offset, int length, String charsetName) throws UnsupportedEncodingException {}
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public String(byte[] bytes, String charsetName) throws UnsupportedEncodingException {}
+    
+    /**
+     * @throws IndexOutOfBoundsException 
+     */
+    public String(byte[] bytes, int offset, int length) {}
+    public String(byte[] bytes) {}
+    public String(StringBuffer buffer) {}
 
-    public char charAt(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public char charAt(int index) {
         return 0;
     }
 
-    public int compareTo(String arg0) {
+    public int compareTo(String anotherString) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
-    public int compareToIgnoreCase(String arg0) {
+    public int compareToIgnoreCase(String str) {
         return 0;
     }
 
-    public String concat(String arg0) {
+    public String concat(String str) {
         return null;
     }
 
-    public boolean contentEquals(StringBuffer arg0) {
+    public boolean contentEquals(StringBuffer sb) {
         return false;
     }
 
-    public boolean endsWith(String arg0) {
+    public boolean endsWith(String suffix) {
         return false;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object anObject) {
         return false;
     }
 
-    public boolean equalsIgnoreCase(String arg0) {
+    public boolean equalsIgnoreCase(String anotherString) {
         return false;
     }
 
-    public byte[] getBytes(String arg0) throws UnsupportedEncodingException {
+    /**
+     * @throws UnsupportedEncodingException
+     */
+    public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
         return null;
     }
 
@@ -102,25 +133,28 @@ public final class String implements Serializable, Comparable, CharSequence {
         return null;
     }
 
-    public void getChars(int arg0, int arg1, char[] arg2, int arg3) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) {}
 
     public int hashCode() {
         return 0;
     }
 
-    public int indexOf(int arg0) {
+    public int indexOf(int ch) {
         return 0;
     }
 
-    public int indexOf(int arg0, int arg1) {
+    public int indexOf(int ch, int fromIndex) {
         return 0;
     }
 
-    public int indexOf(String arg0) {
+    public int indexOf(String str) {
         return 0;
     }
 
-    public int indexOf(String arg0, int arg1) {
+    public int indexOf(String str, int fromIndex) {
         return 0;
     }
 
@@ -128,19 +162,19 @@ public final class String implements Serializable, Comparable, CharSequence {
         return null;
     }
 
-    public int lastIndexOf(int arg0) {
+    public int lastIndexOf(int ch) {
         return 0;
     }
 
-    public int lastIndexOf(int arg0, int arg1) {
+    public int lastIndexOf(int ch, int fromIndex) {
         return 0;
     }
 
-    public int lastIndexOf(String arg0) {
+    public int lastIndexOf(String str) {
         return 0;
     }
 
-    public int lastIndexOf(String arg0, int arg1) {
+    public int lastIndexOf(String str, int fromIndex) {
         return 0;
     }
 
@@ -148,35 +182,44 @@ public final class String implements Serializable, Comparable, CharSequence {
         return 0;
     }
 
-    public boolean regionMatches(int arg0, String arg1, int arg2, int arg3) {
+    public boolean regionMatches(int toffset, String other, int ooffset, int len) {
         return false;
     }
 
-    public boolean regionMatches(boolean arg0, int arg1, String arg2, int arg3, int arg4) {
+    public boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len) {
         return false;
     }
 
-    public String replace(char arg0, char arg1) {
+    public String replace(char oldChar, char newChar) {
         return null;
     }
 
-    public boolean startsWith(String arg0, int arg1) {
+    public boolean startsWith(String prefix, int toffset) {
         return false;
     }
 
-    public boolean startsWith(String arg0) {
+    public boolean startsWith(String prefix) {
         return false;
     }
 
-    public CharSequence subSequence(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public CharSequence subSequence(int beginIndex, int endIndex) {
         return null;
     }
 
-    public String substring(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public String substring(int beginIndex) {
         return null;
     }
 
-    public String substring(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public String substring(int beginIndex, int endIndex) {
         return null;
     }
 
@@ -184,7 +227,7 @@ public final class String implements Serializable, Comparable, CharSequence {
         return null;
     }
 
-    public String toLowerCase(Locale arg0) {
+    public String toLowerCase(Locale locale) {
         return null;
     }
 
@@ -196,7 +239,7 @@ public final class String implements Serializable, Comparable, CharSequence {
         return null;
     }
 
-    public String toUpperCase(Locale arg0) {
+    public String toUpperCase(Locale locale) {
         return null;
     }
 

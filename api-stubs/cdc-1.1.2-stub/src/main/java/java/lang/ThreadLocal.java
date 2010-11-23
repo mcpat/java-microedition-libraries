@@ -11,6 +11,6 @@ public class ThreadLocal {
         return null;
     }
 
-    public void set(Object arg0) {}
+    public void set(Object value) {}
 
 }

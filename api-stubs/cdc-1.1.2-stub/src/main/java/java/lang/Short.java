@@ -1,47 +1,70 @@
 package java.lang;
 
 public final class Short extends Number implements Comparable {
-    public final static short MAX_VALUE;
-    public final static short MIN_VALUE;
+	public static final short MAX_VALUE= 32767;
+	public static final short MIN_VALUE= -32768;
     public final static Class TYPE;
+    
+    static {
+    	TYPE= null;
+    }
 
-    public static Short decode(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Short decode(String nm) throws NumberFormatException {
         return null;
     }
 
-    public static short parseShort(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static short parseShort(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static short parseShort(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static short parseShort(String s, int radix) throws NumberFormatException {
         return 0;
     }
 
-    public static String toString(short arg0) {
+    public static String toString(short s) {
         return null;
     }
 
-    public static Short valueOf(String arg0, int arg1) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Short valueOf(String s, int radix) throws NumberFormatException {
         return null;
     }
 
-    public static Short valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Short valueOf(String s) throws NumberFormatException {
         return null;
     }
 
 
-    public Short(short arg0) {}
-    public Short(String arg0) throws NumberFormatException {}
+    public Short(short value) {}
+   
+    /**
+     * @throws NumberFormatException
+     */
+    public Short(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Short arg0) {
+    public int compareTo(Short anotherShort) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -49,7 +72,7 @@ public final class Short extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

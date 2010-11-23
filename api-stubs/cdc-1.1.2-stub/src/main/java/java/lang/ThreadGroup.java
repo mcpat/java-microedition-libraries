@@ -1,8 +1,16 @@
 package java.lang;
 
 public class ThreadGroup {
-    public ThreadGroup(String arg0) {}
-    public ThreadGroup(ThreadGroup arg0, String arg1) {}
+	/**
+	 * @throws SecurityException
+	 */
+    public ThreadGroup(String name) {}
+    
+    /**
+     * @throws NullPointerException 
+     * @throws SecurityException
+     */
+    public ThreadGroup(ThreadGroup parent, String name) {}
 
     public int activeCount() {
         return 0;
@@ -12,23 +20,39 @@ public class ThreadGroup {
         return 0;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public final void checkAccess() {}
 
+    /**
+     * @throws SecurityException
+     * @throws IllegalThreadStateException	
+     */
     public final void destroy() {}
 
-    public int enumerate(Thread[] arg0) {
+    public int enumerate(Thread[] list) {
         return 0;
     }
 
-    public int enumerate(Thread[] arg0, boolean arg1) {
+    /**
+     * @throws SecurityException
+     */
+    public int enumerate(Thread[] list, boolean recurse) {
         return 0;
     }
 
-    public int enumerate(ThreadGroup[] arg0) {
+    /**
+     * @throws SecurityException
+     */
+    public int enumerate(ThreadGroup[] list) {
         return 0;
     }
 
-    public int enumerate(ThreadGroup[] arg0, boolean arg1) {
+    /**
+     * @throws SecurityException
+     */
+    public int enumerate(ThreadGroup[] list, boolean recurse) {
         return 0;
     }
 
@@ -40,10 +64,16 @@ public class ThreadGroup {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public final ThreadGroup getParent() {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public final void interrupt() {}
 
     public final boolean isDaemon() {
@@ -56,18 +86,24 @@ public class ThreadGroup {
 
     public void list() {}
 
-    public final boolean parentOf(ThreadGroup arg0) {
+    public final boolean parentOf(ThreadGroup g) {
         return false;
     }
 
-    public final void setDaemon(boolean arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public final void setDaemon(boolean daemon) {}
 
-    public final void setMaxPriority(int arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public final void setMaxPriority(int pri) {}
 
     public String toString() {
         return null;
     }
 
-    public void uncaughtException(Thread arg0, Throwable arg1) {}
+    public void uncaughtException(Thread t, Throwable e) {}
 
 }

@@ -2,6 +2,6 @@ package java.lang;
 
 public abstract class VirtualMachineError extends Error {
     public VirtualMachineError() {}
-    public VirtualMachineError(String arg0) {}
+    public VirtualMachineError(String s) {}
 
 }

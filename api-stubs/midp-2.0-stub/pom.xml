@@ -28,7 +28,6 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>cldc-1.1-stub</artifactId>
 			<version>${project.version}</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

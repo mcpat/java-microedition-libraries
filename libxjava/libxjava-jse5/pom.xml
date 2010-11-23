@@ -80,8 +80,8 @@
 			</plugin>
 			
 			<plugin>
-				<groupId>net.sf.jour</groupId>
-				<artifactId>jour-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>clirr-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

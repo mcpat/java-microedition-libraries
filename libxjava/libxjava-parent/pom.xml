@@ -87,26 +87,28 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-<!--				<plugin>-->
-<!--					<groupId>net.sf.jour</groupId>-->
-<!--					<artifactId>jour-maven-plugin</artifactId>-->
-<!--					<version>2.0.3</version>-->
-<!--					<executions>-->
-<!--						<execution>-->
-<!--							<id>verify-api</id>-->
-<!--							<phase>process-classes</phase>-->
-<!--							<goals>-->
-<!--								<goal>signatureVerify</goal>-->
-<!--							</goals>-->
-<!--							<configuration>-->
-<!--								<signature>${libxjava-signature-file}</signature>-->
-<!--								<useSystemClassPath>${jour-use-system-classes}</useSystemClassPath>-->
-<!--								<allowAPIextension>true</allowAPIextension>-->
-<!--								<allowThrowsLess>false</allowThrowsLess>-->
-<!--							</configuration>-->
-<!--						</execution>-->
-<!--					</executions>-->
-<!--				</plugin>-->
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>clirr-maven-plugin</artifactId>
+					<version>2.2.2</version>
+					<executions>
+						<execution>
+							<id>check-compatibility</id>
+							<goals>
+								<goal>check</goal>
+							</goals>
+							<configuration>
+								<comparisonArtifacts>
+									<comparisonArtifact>
+										<groupId>${project.groupId}</groupId>
+										<artifactId>libxjava-cldc</artifactId>
+										<version>${project.version}</version>
+									</comparisonArtifact>
+								</comparisonArtifacts>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
 				
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>

@@ -39,7 +39,7 @@ public interface ISerialisable {
      * 
      * @param   out             the serialiser to write the content to 
      * @throws  IOException     if problems occur during the serialisation process
-     * @see BinarySerialiserConstants#isSerialisationSupported(java.lang.Object)
+     * @see ISerialiser#writeObject(Object)
      */
     void serialise(ISerialiser out) throws IOException;
     
@@ -54,7 +54,6 @@ public interface ISerialisable {
      * @throws  IOException             if problems occur during the deserialisation process
      * @throws  ClassNotFoundException  if class cannot be loaded and instantiated
      * @see IDeserialiser#readObject()
-     * @see BinarySerialiserConstants#isSerialisationSupported(java.lang.Object)
      */
     void deserialise(IDeserialiser in) throws IOException, ClassNotFoundException;
 }

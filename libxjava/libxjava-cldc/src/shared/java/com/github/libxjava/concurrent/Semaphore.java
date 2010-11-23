@@ -47,7 +47,7 @@ public final class Semaphore {
      * <p>
      * Same as {@code acquire(1)};
      * </p>
-     * @see {@link #acquireInterruptibly()};
+     * @see #acquireInterruptibly()
      */
     public void acquire() {
         acquire(1);
@@ -57,7 +57,7 @@ public final class Semaphore {
      * Blocks until {@code permits} permits are available and acquires them. A call
      * to this method is not interruptible!
      * 
-     * @see {@link #acquireInterruptibly()}
+     * @see #acquireInterruptibly()
      */
     public void acquire(int permits) {
         if(permits <= 0) {
@@ -89,7 +89,7 @@ public final class Semaphore {
      * 
      * @throws InterruptedException
      * 
-     * @see {@link #acquire()}
+     * @see #acquire()
      */
     public void acquireInterruptibly() throws InterruptedException {
         acquireInterruptibly(1);
@@ -102,7 +102,7 @@ public final class Semaphore {
      * 
      * @throws InterruptedException
      * 
-     * @see {@link #acquire()}
+     * @see #acquire()
      */
     public void acquireInterruptibly(int permits) throws InterruptedException, IllegalArgumentException {
         if(permits <= 0) {

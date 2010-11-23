@@ -49,7 +49,6 @@ public interface ISerialiser extends DataOutput {
      * 
      * @param o             the <code>Object</code> to write.
      * @throws IOException  if problems occur while writing data
-     * @see {@link BinarySerialiserConstants}
      */
     void writeObject(Object o) throws IOException;
 }

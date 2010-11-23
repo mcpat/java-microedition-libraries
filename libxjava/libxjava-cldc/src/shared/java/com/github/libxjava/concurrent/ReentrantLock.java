@@ -43,7 +43,7 @@ public final class ReentrantLock {
      * Blocks until this lock becomes available. A call
      * to this method is not interruptible!
      * 
-     * @see {@link #lockInterruptibly()}
+     * @see #lockInterruptibly()
      */
     public void lock() {
         boolean interrupted= false;

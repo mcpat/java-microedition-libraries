@@ -11,7 +11,7 @@
 		<module>libxjava-parent</module>
 		<module>libxjava-cldc</module>
 		<module>libxjava-cdc</module>
-<!--		<module>libxjava-jse5</module>-->
+		<module>libxjava-jse5</module>
 	</modules>
 
 	<scm>

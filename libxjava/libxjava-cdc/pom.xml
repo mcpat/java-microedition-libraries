@@ -18,6 +18,7 @@
 <!--		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>-->
 		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
 		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>
+		<libxjava-api-link>${clc-api-link}</libxjava-api-link>
 		
 		<jour-use-system-classes>true</jour-use-system-classes>
 	</properties>
@@ -34,6 +35,21 @@
 	</dependencies>
 	
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<configuration>
+						<bootclasspath>${libxjava-boot-classpath}</bootclasspath>
+						<detectJavaApiLink>false</detectJavaApiLink>
+						<links>
+							<link>http://download.oracle.com/javame/config/cdc/ref-impl/cdc1.1.2/jsr218</link>
+						</links>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -84,8 +100,8 @@
 			</plugin>
 			
 			<plugin>
-				<groupId>net.sf.jour</groupId>
-				<artifactId>jour-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>clirr-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

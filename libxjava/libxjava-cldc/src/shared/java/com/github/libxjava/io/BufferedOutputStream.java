@@ -104,7 +104,7 @@ public abstract class BufferedOutputStream extends OutputStream {
     }
     
     /**
-     * {@code end} indicates the length of the payload {@strong and} the first non-payload bytes.
+     * {@code end} indicates the length of the payload <strong>and</strong> the first non-payload bytes.
      */
     protected abstract void internalWrite(byte[] buffer, int end, boolean flushed) throws IOException;
 

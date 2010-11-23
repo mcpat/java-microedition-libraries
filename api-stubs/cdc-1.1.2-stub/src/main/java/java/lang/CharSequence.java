@@ -1,11 +1,11 @@
 package java.lang;
 
 public interface CharSequence {
-    char charAt(int arg0);
+    char charAt(int index);
 
     int length();
 
-    CharSequence subSequence(int arg0, int arg1);
+    CharSequence subSequence(int start, int end);
 
     String toString();
 

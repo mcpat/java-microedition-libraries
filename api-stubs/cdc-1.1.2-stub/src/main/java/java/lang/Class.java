@@ -1,11 +1,29 @@
 package java.lang;
 
+import java.io.InputStream;
+import java.io.Serializable;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.security.ProtectionDomain;
+
 public final class Class implements Serializable {
-    public static Class forName(String arg0) throws ClassNotFoundException {
+	/**
+	 * @throws LinkageError 
+	 * @throws ExceptionInInitializerError 
+	 * @throws ClassNotFoundException 
+	 */
+    public static Class forName(String className) throws ClassNotFoundException {
         return null;
     }
 
-    public static Class forName(String arg0, boolean arg1, ClassLoader arg2) throws ClassNotFoundException {
+    /**
+     * @throws LinkageError 
+     * @throws ExceptionInInitializerError 
+     * @throws ClassNotFoundException
+     */
+    public static Class forName(String name, boolean initialize, ClassLoader loader) throws ClassNotFoundException {
         return null;
     }
 
@@ -14,10 +32,16 @@ public final class Class implements Serializable {
         return false;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Class[] getClasses() {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public ClassLoader getClassLoader() {
         return null;
     }
@@ -26,38 +50,71 @@ public final class Class implements Serializable {
         return null;
     }
 
-    public Constructor getConstructor(Class[] arg0) throws NoSuchMethodException, SecurityException {
+    /**
+     * @throws NoSuchMethodException
+     * @throws SecurityException
+     */
+    public Constructor getConstructor(Class[] parameterTypes) throws NoSuchMethodException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Constructor[] getConstructors() throws SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Class[] getDeclaredClasses() throws SecurityException {
         return null;
     }
 
-    public Constructor getDeclaredConstructor(Class[] arg0) throws NoSuchMethodException, SecurityException {
+    /**
+     * @throws NoSuchMethodException
+     * @throws SecurityException
+     */
+    public Constructor getDeclaredConstructor(Class[] parameterTypes) throws NoSuchMethodException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Constructor[] getDeclaredConstructors() throws SecurityException {
         return null;
     }
 
-    public Field getDeclaredField(String arg0) throws NoSuchFieldException, SecurityException {
+    /**
+     * @throws NoSuchFieldException 
+     * @throws NullPointerException 
+     * @throws SecurityException
+     */
+    public Field getDeclaredField(String name) throws NoSuchFieldException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Field[] getDeclaredFields() throws SecurityException {
         return null;
     }
 
-    public Method getDeclaredMethod(String arg0, Class[] arg1) throws NoSuchMethodException, SecurityException {
+    /**
+     * @throws NoSuchFieldException 
+     * @throws NullPointerException 
+     * @throws SecurityException
+     */
+    public Method getDeclaredMethod(String name, Class[] parameterTypes) throws NoSuchMethodException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Method[] getDeclaredMethods() throws SecurityException {
         return null;
     }
@@ -66,10 +123,18 @@ public final class Class implements Serializable {
         return null;
     }
 
-    public Field getField(String arg0) throws NoSuchFieldException, SecurityException {
+    /**
+     * @throws NoSuchFieldException
+     * @throws SecurityException
+     * @throws NullPointerException
+     */
+    public Field getField(String name) throws NoSuchFieldException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Field[] getFields() throws SecurityException {
         return null;
     }
@@ -78,10 +143,18 @@ public final class Class implements Serializable {
         return null;
     }
 
-    public Method getMethod(String arg0, Class[] arg1) throws NoSuchMethodException, SecurityException {
+    /**
+     * @throws NoSuchFieldException
+     * @throws SecurityException
+     * @throws NullPointerException
+     */
+    public Method getMethod(String name, Class[] parameterTypes) throws NoSuchMethodException, SecurityException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public Method[] getMethods() throws SecurityException {
         return null;
     }
@@ -98,15 +171,21 @@ public final class Class implements Serializable {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public ProtectionDomain getProtectionDomain() {
         return null;
     }
 
-    public URL getResource(String arg0) {
+    public URL getResource(String name) {
         return null;
     }
 
-    public InputStream getResourceAsStream(String arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public InputStream getResourceAsStream(String name) {
         return null;
     }
 
@@ -115,18 +194,21 @@ public final class Class implements Serializable {
     }
 
     public Class getSuperclass() {
-        return null;
+    	return null;
     }
 
     public boolean isArray() {
         return false;
     }
 
-    public boolean isAssignableFrom(Class arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean isAssignableFrom(Class cls) {
         return false;
     }
 
-    public boolean isInstance(Object arg0) {
+    public boolean isInstance(Object obj) {
         return false;
     }
 
@@ -138,6 +220,12 @@ public final class Class implements Serializable {
         return false;
     }
 
+    /**
+     * @throws IllegalAccessException 
+     * @throws InstantiationException 
+     * @throws ExceptionInInitializerError 
+     * @throws SecurityException
+     */
     public Object newInstance() throws InstantiationException, IllegalAccessException {
         return null;
     }

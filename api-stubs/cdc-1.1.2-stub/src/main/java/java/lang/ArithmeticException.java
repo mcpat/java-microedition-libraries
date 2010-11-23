@@ -2,6 +2,6 @@ package java.lang;
 
 public class ArithmeticException extends RuntimeException {
     public ArithmeticException() {}
-    public ArithmeticException(String arg0) {}
+    public ArithmeticException(String s) {}
 
 }

@@ -1,65 +1,108 @@
 package java.lang;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.security.ProtectionDomain;
+import java.util.Enumeration;
+
 public abstract class ClassLoader {
-    public static ClassLoader getSystemClassLoader() {
+    /**
+     * @throws SecurityException 
+     * @throws IllegalStateException 
+     * @throws Error
+     */
+	public static ClassLoader getSystemClassLoader() {
         return null;
     }
 
-    public static URL getSystemResource(String arg0) {
+    public static URL getSystemResource(String name) {
         return null;
     }
 
-    public static InputStream getSystemResourceAsStream(String arg0) {
+    public static InputStream getSystemResourceAsStream(String name) {
         return null;
     }
 
-    public static Enumeration getSystemResources(String arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public static Enumeration getSystemResources(String name) throws IOException {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
+    protected ClassLoader(ClassLoader parent) {}
 
-    protected ClassLoader(ClassLoader arg0) {}
+    /**
+     * @throws SecurityException
+     */
     protected ClassLoader() {}
 
     public void clearAssertionStatus() {}
 
-    protected final Class defineClass(String arg0, byte[] arg1, int arg2, int arg3) throws ClassFormatError {
+    /**
+     * @throws ClassFormatError 
+     * @throws IndexOutOfBoundsException 
+     * @throws SecurityException
+     */
+    protected final Class defineClass(String name, byte[] b, int off, int len) throws ClassFormatError {
         return null;
     }
 
-    protected final Class defineClass(String arg0, byte[] arg1, int arg2, int arg3, ProtectionDomain arg4) throws ClassFormatError {
+    /**
+     * @throws ClassFormatError 
+     * @throws NoClassDefFoundError 
+     * @throws IndexOutOfBoundsException 
+     * @throws SecurityException
+     */
+    protected final Class defineClass(String name, byte[] b, int off, int len, ProtectionDomain protectionDomain) throws ClassFormatError {
         return null;
     }
 
-    protected Package definePackage(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, URL arg7) throws IllegalArgumentException {
+    /**
+     * @throws IllegalArgumentException
+     */
+    protected Package definePackage(String name, String specTitle, String specVersion, String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase) throws IllegalArgumentException {
         return null;
     }
 
-    protected Class findClass(String arg0) throws ClassNotFoundException {
+    /**
+     * @throws ClassNotFoundException
+     */
+    protected Class findClass(String name) throws ClassNotFoundException {
         return null;
     }
 
-    protected String findLibrary(String arg0) {
+    protected String findLibrary(String libname) {
         return null;
     }
 
-    protected final Class findLoadedClass(String arg0) {
+    protected final Class findLoadedClass(String name) {
         return null;
     }
 
-    protected URL findResource(String arg0) {
+    protected URL findResource(String name) {
         return null;
     }
 
-    protected Enumeration findResources(String arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    protected Enumeration findResources(String name) throws IOException {
         return null;
     }
 
-    protected final Class findSystemClass(String arg0) throws ClassNotFoundException {
+    /**
+     * @throws ClassNotFoundException
+     */
+    protected final Class findSystemClass(String name) throws ClassNotFoundException {
         return null;
     }
 
-    protected Package getPackage(String arg0) {
+    protected Package getPackage(String name) {
         return null;
     }
 
@@ -67,38 +110,53 @@ public abstract class ClassLoader {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public final ClassLoader getParent() {
         return null;
     }
 
-    public URL getResource(String arg0) {
+    public URL getResource(String name) {
         return null;
     }
 
-    public InputStream getResourceAsStream(String arg0) {
+    public InputStream getResourceAsStream(String name) {
         return null;
     }
 
-    public final Enumeration getResources(String arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public final Enumeration getResources(String name) throws IOException {
         return null;
     }
 
-    public Class loadClass(String arg0) throws ClassNotFoundException {
+    /**
+     * @throws ClassNotFoundException
+     */
+    public Class loadClass(String name) throws ClassNotFoundException {
         return null;
     }
 
-    protected Class loadClass(String arg0, boolean arg1) throws ClassNotFoundException {
+    /**
+     * @throws ClassNotFoundException
+     */
+    protected Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
         return null;
     }
 
-    protected final void resolveClass(Class arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    protected final void resolveClass(Class c) {}
 
-    public void setClassAssertionStatus(String arg0, boolean arg1) {}
+    public void setClassAssertionStatus(String className, boolean enabled) {}
 
-    public void setDefaultAssertionStatus(boolean arg0) {}
+    public void setDefaultAssertionStatus(boolean enabled) {}
 
-    public void setPackageAssertionStatus(String arg0, boolean arg1) {}
+    public void setPackageAssertionStatus(String packageName, boolean enabled) {}
 
-    protected final void setSigners(Class arg0, Object[] arg1) {}
+    protected final void setSigners(Class c, Object[] signers) {}
 
 }

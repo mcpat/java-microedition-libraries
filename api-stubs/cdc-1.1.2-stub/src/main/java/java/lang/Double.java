@@ -1,26 +1,25 @@
 package java.lang;
 
 public final class Double extends Number implements Comparable {
-    public final static double MAX_VALUE;
-    public final static double MIN_VALUE;
-    public final static double NaN;
-    public final static double NEGATIVE_INFINITY;
-    public final static double POSITIVE_INFINITY;
-    public final static Class TYPE;
+	public static final double MAX_VALUE= 1.7976931348623157E308d;
+	public static final double NaN= 0d/0d;
+	public static final double NEGATIVE_INFINITY= -1d/0d;
+	public static final double POSITIVE_INFINITY= 1d/0d;
+    public final static Class TYPE= null;
 
-    public static int compare(double arg0, double arg1) {
+    public static int compare(double d1, double d2) {
         return 0;
     }
 
-    public static long doubleToLongBits(double arg0) {
+    public static long doubleToLongBits(double value) {
         return 0;
     }
 
-    public static long doubleToRawLongBits(double arg0) {
+    public static long doubleToRawLongBits(double value) {
         return 0;
     }
 
-    public static boolean isInfinite(double arg0) {
+    public static boolean isInfinite(double v) {
         return false;
     }
 
@@ -28,35 +27,44 @@ public final class Double extends Number implements Comparable {
         return false;
     }
 
-    public static double longBitsToDouble(long arg0) {
+    public static double longBitsToDouble(long bits) {
         return 0;
     }
 
-    public static double parseDouble(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static double parseDouble(String s) throws NumberFormatException {
         return 0;
     }
 
-    public static String toString(double arg0) {
+    public static String toString(double d) {
         return null;
     }
 
-    public static Double valueOf(String arg0) throws NumberFormatException {
+    /**
+     * @throws NumberFormatException
+     */
+    public static Double valueOf(String s) throws NumberFormatException {
         return null;
     }
 
 
-    public Double(double arg0) {}
-    public Double(String arg0) throws NumberFormatException {}
+    public Double(double value) {}
+    /**
+     * @throws NumberFormatException
+     */
+    public Double(String s) throws NumberFormatException {}
 
     public byte byteValue() {
         return 0;
     }
 
-    public int compareTo(Double arg0) {
+    public int compareTo(Double anotherDouble) {
         return 0;
     }
 
-    public int compareTo(Object arg0) {
+    public int compareTo(Object o) {
         return 0;
     }
 
@@ -64,7 +72,7 @@ public final class Double extends Number implements Comparable {
         return 0;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 

@@ -2,6 +2,6 @@ package java.lang;
 
 public class ArrayStoreException extends RuntimeException {
     public ArrayStoreException() {}
-    public ArrayStoreException(String arg0) {}
+    public ArrayStoreException(String s) {}
 
 }

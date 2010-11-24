@@ -1,0 +1,9 @@
+${project.name}
+
+Copyright (c) 2010 Vladimir Schöner (schoener@wapl.de)
+Copyright (c) 2010 Marcel Patzlaff (marcel.patzlaff@gmail.com)
+
+This module provides class and interface signature stubs for the
+respective Java API but lacks any further implementation. It SHOULD
+only be used to compile your software against and IS NOT intended
+to be used in productive systems.

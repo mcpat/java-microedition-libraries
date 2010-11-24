@@ -7,6 +7,43 @@
 	<packaging>pom</packaging>
 	<name>Stub-Parent</name>
 
+	<inceptionYear>2010</inceptionYear>
+	<description>Stubs for Java Microedition related APIs.</description>
+
+	<prerequisites>
+		<maven>2.2</maven>
+	</prerequisites>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<comments>See NOTICE file for further information.</comments>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>schoener</id>
+			<name>Vladimir Sch&ouml;ner</name>
+			<email>schoener@wapl.de</email>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>mcpat</id>
+			<name>Marcel Patzlaff</name>
+			<email>marcel.patzlaff@gmail.com</email>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -31,6 +68,17 @@
 	</distributionManagement>
 	
 	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/..</directory>
+				<includes>
+					<include>NOTICE</include>
+					<include>LICENSE</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -64,6 +112,7 @@
 				<configuration>
 					<source>1.3</source>
 					<target>1.3</target>
+					<fork>true</fork>
 				</configuration>
 			</plugin>
 		
@@ -96,6 +145,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -110,6 +160,21 @@
 						</manifestEntries>
 					</archive>
 				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

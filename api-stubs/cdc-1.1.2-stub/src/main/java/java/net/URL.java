@@ -1,17 +1,49 @@
 package java.net;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
+
 public final class URL implements Serializable {
-    public static void setURLStreamHandlerFactory(URLStreamHandlerFactory arg0) {}
+	/**
+	 * @throws Error 
+	 * @throws SecurityException
+	 */
+    public static void setURLStreamHandlerFactory(URLStreamHandlerFactory fac) {}
 
+    /**
+     * @throws MalformedURLException
+     */
+    public URL(String protocol, String host, int port, String file) throws MalformedURLException {}
 
-    public URL(String arg0, String arg1, int arg2, String arg3) throws MalformedURLException {}
-    public URL(String arg0, String arg1, String arg2) throws MalformedURLException {}
-    public URL(String arg0, String arg1, int arg2, String arg3, URLStreamHandler arg4) throws MalformedURLException {}
-    public URL(String arg0) throws MalformedURLException {}
-    public URL(URL arg0, String arg1) throws MalformedURLException {}
-    public URL(URL arg0, String arg1, URLStreamHandler arg2) throws MalformedURLException {}
+    /**
+     * @throws MalformedURLException
+     */
+    public URL(String protocol, String host, String file) throws MalformedURLException {}
 
-    public boolean equals(Object arg0) {
+    /**
+     * @throws MalformedURLException
+     * @throws SecurityException
+     */
+    public URL(String protocol, String host, int port, String file, URLStreamHandler handler) throws MalformedURLException {}
+
+    /**
+     * @throws MalformedURLException
+     */
+    public URL(String spec) throws MalformedURLException {}
+
+    /**
+     * @throws MalformedURLException
+     */
+    public URL(URL context, String spec) throws MalformedURLException {}
+
+    /**
+     * @throws MalformedURLException
+     * @throws SecurityException
+     */
+    public URL(URL context, String spec, URLStreamHandler handler) throws MalformedURLException {}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -19,11 +51,17 @@ public final class URL implements Serializable {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     public final Object getContent() throws IOException {
         return null;
     }
 
-    public final Object getContent(Class[] arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public final Object getContent(Class[] classes) throws IOException {
         return null;
     }
 
@@ -67,21 +105,27 @@ public final class URL implements Serializable {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     */
     public URLConnection openConnection() throws IOException {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     public final InputStream openStream() throws IOException {
         return null;
     }
 
-    public boolean sameFile(URL arg0) {
+    public boolean sameFile(URL other) {
         return false;
     }
 
-    protected void set(String arg0, String arg1, int arg2, String arg3, String arg4) {}
+    protected void set(String protocol, String host, int port, String file, String ref) {}
 
-    protected void set(String arg0, String arg1, int arg2, String arg3, String arg4, String arg5, String arg6, String arg7) {}
+    protected void set(String protocol, String host, int port, String authority, String userInfo, String path, String query, String ref) {}
 
     public String toExternalForm() {
         return null;

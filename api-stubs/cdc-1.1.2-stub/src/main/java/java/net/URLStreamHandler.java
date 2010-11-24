@@ -1,9 +1,11 @@
 package java.net;
 
+import java.io.IOException;
+
 public abstract class URLStreamHandler {
     public URLStreamHandler() {}
 
-    protected boolean equals(URL arg0, URL arg1) {
+    protected boolean equals(URL u1, URL u2) {
         return false;
     }
 
@@ -11,29 +13,35 @@ public abstract class URLStreamHandler {
         return 0;
     }
 
-    protected InetAddress getHostAddress(URL arg0) {
+    protected InetAddress getHostAddress(URL u) {
         return null;
     }
 
-    protected int hashCode(URL arg0) {
+    protected int hashCode(URL u) {
         return 0;
     }
 
-    protected boolean hostsEqual(URL arg0, URL arg1) {
+    protected boolean hostsEqual(URL u1, URL u2) {
         return false;
     }
 
-    protected abstract URLConnection openConnection(URL arg0) throws IOException;
+    /**
+     * @throws IOException
+     */
+    protected abstract URLConnection openConnection(URL u) throws IOException;
 
-    protected void parseURL(URL arg0, String arg1, int arg2, int arg3) {}
+    protected void parseURL(URL u, String spec, int start, int limit) {}
 
-    protected boolean sameFile(URL arg0, URL arg1) {
+    protected boolean sameFile(URL u1, URL u2) {
         return false;
     }
 
-    protected void setURL(URL arg0, String arg1, String arg2, int arg3, String arg4, String arg5, String arg6, String arg7, String arg8) {}
+    /**
+     * @throws SecurityException
+     */
+    protected void setURL(URL u, String protocol, String host, int port, String authority, String userInfo, String path, String query, String ref) {}
 
-    protected String toExternalForm(URL arg0) {
+    protected String toExternalForm(URL u) {
         return null;
     }
 

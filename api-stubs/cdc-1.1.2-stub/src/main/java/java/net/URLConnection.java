@@ -1,5 +1,11 @@
 package java.net;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.security.Permission;
+import java.util.Map;
+
 public abstract class URLConnection {
     public static boolean getDefaultAllowUserInteraction() {
         return false;
@@ -9,19 +15,29 @@ public abstract class URLConnection {
         return null;
     }
 
-    public static String guessContentTypeFromName(String arg0) {
+    public static String guessContentTypeFromName(String fname) {
         return null;
     }
 
-    public static String guessContentTypeFromStream(InputStream arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public static String guessContentTypeFromStream(InputStream is) throws IOException {
         return null;
     }
 
-    public static void setContentHandlerFactory(ContentHandlerFactory arg0) {}
+    /**
+     * @throws Error 
+     * @throws SecurityException
+     */
+    public static void setContentHandlerFactory(ContentHandlerFactory fac) {}
 
-    public static void setDefaultAllowUserInteraction(boolean arg0) {}
+    public static void setDefaultAllowUserInteraction(boolean defaultallowuserinteraction) {}
 
-    public static void setFileNameMap(FileNameMap arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setFileNameMap(FileNameMap map) {}
 
 
     protected boolean allowUserInteraction;
@@ -32,20 +48,35 @@ public abstract class URLConnection {
     protected URL url;
     protected boolean useCaches;
 
-    protected URLConnection(URL arg0) {}
+    protected URLConnection(URL url) {}
 
-    public void addRequestProperty(String arg0, String arg1) {}
+    /**
+     * @throws IllegalStateException 
+     * @throws NullPointerException
+     */
+    public void addRequestProperty(String key, String value) {}
 
+    /**
+     * @throws IOException
+     */
     public abstract void connect() throws IOException;
 
     public boolean getAllowUserInteraction() {
         return false;
     }
 
+    /**
+     * @throws IOException 
+     * @throws UnknownServiceException
+     */
     public Object getContent() throws IOException {
         return null;
     }
 
+    /**
+     * @throws IOException 
+     * @throws UnknownServiceException
+     */
     public Object getContent(Class[] arg0) throws IOException {
         return null;
     }
@@ -82,23 +113,23 @@ public abstract class URLConnection {
         return 0;
     }
 
-    public String getHeaderField(String arg0) {
+    public String getHeaderField(String name) {
         return null;
     }
 
-    public String getHeaderField(int arg0) {
+    public String getHeaderField(int n) {
         return null;
     }
 
-    public long getHeaderFieldDate(String arg0, long arg1) {
+    public long getHeaderFieldDate(String name, long Default) {
         return 0;
     }
 
-    public int getHeaderFieldInt(String arg0, int arg1) {
+    public int getHeaderFieldInt(String name, int Default) {
         return 0;
     }
 
-    public String getHeaderFieldKey(int arg0) {
+    public String getHeaderFieldKey(int n) {
         return null;
     }
 
@@ -110,6 +141,10 @@ public abstract class URLConnection {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     * @throws UnknownServiceException
+     */
     public InputStream getInputStream() throws IOException {
         return null;
     }
@@ -118,19 +153,32 @@ public abstract class URLConnection {
         return 0;
     }
 
+    /**
+     * @throws IOException
+     * @throws UnknownServiceException
+     */
     public OutputStream getOutputStream() throws IOException {
         return null;
     }
 
+    /**
+     * @throws IOException
+     */
     public Permission getPermission() throws IOException {
         return null;
     }
 
+    /**
+     * @throws IllegalStateException
+     */
     public Map getRequestProperties() {
         return null;
     }
 
-    public String getRequestProperty(String arg0) {
+    /**
+     * @throws IllegalStateException
+     */
+    public String getRequestProperty(String key) {
         return null;
     }
 
@@ -142,19 +190,38 @@ public abstract class URLConnection {
         return false;
     }
 
-    public void setAllowUserInteraction(boolean arg0) {}
+    /**
+     * @throws IllegalStateException
+     */
+    public void setAllowUserInteraction(boolean allowuserinteraction) {}
 
-    public void setDefaultUseCaches(boolean arg0) {}
+    public void setDefaultUseCaches(boolean defaultusecaches) {}
 
-    public void setDoInput(boolean arg0) {}
+    /**
+     * @throws IllegalStateException
+     */
+    public void setDoInput(boolean doinput) {}
 
-    public void setDoOutput(boolean arg0) {}
+    /**
+     * @throws IllegalStateException
+     */
+    public void setDoOutput(boolean dooutput) {}
 
-    public void setIfModifiedSince(long arg0) {}
+    /**
+     * @throws IllegalStateException
+     */
+    public void setIfModifiedSince(long ifmodifiedsince) {}
 
-    public void setRequestProperty(String arg0, String arg1) {}
+    /**
+     * @throws IllegalStateException 
+     * @throws NullPointerException
+     */
+    public void setRequestProperty(String key, String value) {}
 
-    public void setUseCaches(boolean arg0) {}
+    /**
+     * @throws IllegalStateException
+     */
+    public void setUseCaches(boolean usecaches) {}
 
     public String toString() {
         return null;

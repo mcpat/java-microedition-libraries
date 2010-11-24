@@ -1,38 +1,64 @@
 package java.net;
 
+import java.io.IOException;
+import java.security.CodeSource;
+import java.security.PermissionCollection;
+import java.security.SecureClassLoader;
+import java.util.Enumeration;
+import java.util.jar.Manifest;
+
 public class URLClassLoader extends SecureClassLoader {
-    public static URLClassLoader newInstance(URL[] arg0, ClassLoader arg1) {
+    public static URLClassLoader newInstance(URL[] urls, ClassLoader parent) {
         return null;
     }
 
-    public static URLClassLoader newInstance(URL[] arg0) {
+    public static URLClassLoader newInstance(URL[] urls) {
         return null;
     }
 
+    /**
+     * @throws SecurityException
+     */
+    public URLClassLoader(URL[] urls, ClassLoader parent) {}
 
-    public URLClassLoader(URL[] arg0, ClassLoader arg1) {}
-    public URLClassLoader(URL[] arg0) {}
-    public URLClassLoader(URL[] arg0, ClassLoader arg1, URLStreamHandlerFactory arg2) {}
+    /**
+     * @throws SecurityException
+     */
+    public URLClassLoader(URL[] urls) {}
 
-    protected void addURL(URL arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public URLClassLoader(URL[] urls, ClassLoader parent, URLStreamHandlerFactory factory) {}
 
-    protected Package definePackage(String arg0, Manifest arg1, URL arg2) throws IllegalArgumentException {
+    protected void addURL(URL url) {}
+
+    /**
+     * @throws IllegalArgumentException
+     */
+    protected Package definePackage(String name, Manifest man, URL url) throws IllegalArgumentException {
         return null;
     }
 
-    protected Class findClass(String arg0) throws ClassNotFoundException {
+    /**
+     * @throws ClassNotFoundException
+     */
+    protected Class findClass(String name) throws ClassNotFoundException {
         return null;
     }
 
-    public URL findResource(String arg0) {
+    public URL findResource(String name) {
         return null;
     }
 
-    public Enumeration findResources(String arg0) throws IOException {
+    /**
+     * @throws IOException
+     */
+    public Enumeration findResources(String name) throws IOException {
         return null;
     }
 
-    protected PermissionCollection getPermissions(CodeSource arg0) {
+    protected PermissionCollection getPermissions(CodeSource codesource) {
         return null;
     }
 

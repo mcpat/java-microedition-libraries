@@ -1,17 +1,33 @@
 package java.util;
 
-public class ArrayList extends AbstractList implements List, RandomAccess, Cloneable, Serializable {
-    public ArrayList(int arg0) {}
-    public ArrayList() {}
-    public ArrayList(Collection arg0) {}
+import java.io.Serializable;
 
-    public boolean add(Object arg0) {
+public class ArrayList extends AbstractList implements List, RandomAccess, Cloneable, Serializable {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public ArrayList(int initialCapacity) {}
+    
+    public ArrayList() {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public ArrayList(Collection c) {}
+
+    public boolean add(Object o) {
         return false;
     }
 
-    public void add(int arg0, Object arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void add(int index, Object o) {}
 
-    public boolean addAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean addAll(Collection c) {
         return false;
     }
 
@@ -25,17 +41,20 @@ public class ArrayList extends AbstractList implements List, RandomAccess, Clone
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    public boolean contains(Object elem) {
         return false;
     }
 
-    public void ensureCapacity(int arg0) {}
+    public void ensureCapacity(int minCapacity) {}
 
-    public Object get(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object get(int index) {
         return null;
     }
 
-    public int indexOf(Object arg0) {
+    public int indexOf(Object elem) {
         return 0;
     }
 
@@ -43,17 +62,20 @@ public class ArrayList extends AbstractList implements List, RandomAccess, Clone
         return false;
     }
 
-    public int lastIndexOf(Object arg0) {
+    public int lastIndexOf(Object elem) {
         return 0;
     }
 
-    public Object remove(int arg0) {
+    public Object remove(int index) {
         return null;
     }
 
-    protected void removeRange(int arg0, int arg1) {}
+    protected void removeRange(int fromIndex, int toIndex) {}
 
-    public Object set(int arg0, Object arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object set(int index, Object element) {
         return null;
     }
 
@@ -65,7 +87,10 @@ public class ArrayList extends AbstractList implements List, RandomAccess, Clone
         return null;
     }
 
-    public Object[] toArray(Object[] arg0) {
+    /**
+     * @throws ArrayStoreException
+     */
+    public Object[] toArray(Object[] a) {
         return null;
     }
 

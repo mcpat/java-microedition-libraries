@@ -1,20 +1,32 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class BitSet implements Cloneable, Serializable {
     public BitSet() {}
-    public BitSet(int arg0) {}
+    
+    /**
+     * @throws NegativeArraySizeException
+     */
+    public BitSet(int nbits) {}
 
-    public void and(BitSet arg0) {}
+    public void and(BitSet set) {}
 
-    public void andNot(BitSet arg0) {}
+    public void andNot(BitSet set) {}
 
     public int cardinality() {
         return 0;
     }
 
-    public void clear(int arg0) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void clear(int bitIndex) {}
 
-    public void clear(int arg0, int arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void clear(int fromIndex, int toIndex) {}
 
     public void clear() {}
 
@@ -22,19 +34,31 @@ public class BitSet implements Cloneable, Serializable {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public void flip(int arg0) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void flip(int bitIndex) {}
 
-    public void flip(int arg0, int arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void flip(int fromIndex, int toIndex) {}
 
-    public boolean get(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public boolean get(int bitIndex) {
         return false;
     }
 
-    public BitSet get(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public BitSet get(int fromIndex, int toIndex) {
         return null;
     }
 
@@ -42,7 +66,7 @@ public class BitSet implements Cloneable, Serializable {
         return 0;
     }
 
-    public boolean intersects(BitSet arg0) {
+    public boolean intersects(BitSet set) {
         return false;
     }
 
@@ -54,23 +78,41 @@ public class BitSet implements Cloneable, Serializable {
         return 0;
     }
 
-    public int nextClearBit(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public int nextClearBit(int fromIndex) {
         return 0;
     }
 
-    public int nextSetBit(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public int nextSetBit(int fromIndex) {
         return 0;
     }
 
-    public void or(BitSet arg0) {}
+    public void or(BitSet set) {}
 
-    public void set(int arg0) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void set(int bitIndex) {}
 
-    public void set(int arg0, boolean arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void set(int bitIndex, boolean value) {}
 
-    public void set(int arg0, int arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void set(int fromIndex, int toIndex) {}
 
-    public void set(int arg0, int arg1, boolean arg2) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void set(int fromIndex, int toIndex, boolean value) {}
 
     public int size() {
         return 0;
@@ -80,6 +122,6 @@ public class BitSet implements Cloneable, Serializable {
         return null;
     }
 
-    public void xor(BitSet arg0) {}
+    public void xor(BitSet set) {}
 
 }

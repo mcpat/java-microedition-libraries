@@ -4,134 +4,198 @@ public class Collections {
     public final static List EMPTY_LIST;
     public final static Map EMPTY_MAP;
     public final static Set EMPTY_SET;
+    
+    static {
+        EMPTY_LIST= singletonList(null);
+        EMPTY_MAP= singletonMap(null, null);
+        EMPTY_SET= singleton(null);
+    }
 
-    public static int binarySearch(List arg0, Object arg1) {
+    /**
+     * @throws ClassCastException
+     */
+    public static int binarySearch(List list, Object key) {
         return 0;
     }
 
-    public static int binarySearch(List arg0, Object arg1, Comparator arg2) {
+    /**
+     * @throws ClassCastException
+     */
+    public static int binarySearch(List list, Object key, Comparator c) {
         return 0;
     }
 
-    public static void copy(List arg0, List arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     * @throws UnsupportedOperationException
+     */
+    public static void copy(List dest, List src) {}
 
-    public static Enumeration enumeration(Collection arg0) {
+    public static Enumeration enumeration(Collection c) {
         return null;
     }
 
-    public static void fill(List arg0, Object arg1) {}
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static void fill(List list, Object obj) {}
 
-    public static int indexOfSubList(List arg0, List arg1) {
+    public static int indexOfSubList(List source, List target) {
         return 0;
     }
 
-    public static int lastIndexOfSubList(List arg0, List arg1) {
+    public static int lastIndexOfSubList(List source, List target) {
         return 0;
     }
 
-    public static ArrayList list(Enumeration arg0) {
+    public static ArrayList list(Enumeration e) {
         return null;
     }
 
-    public static Object max(Collection arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NoSuchElementException
+     */
+    public static Object max(Collection coll) {
         return null;
     }
 
-    public static Object max(Collection arg0, Comparator arg1) {
+    /**
+     * @throws ClassCastException
+     * @throws NoSuchElementException
+     */
+    public static Object max(Collection coll, Comparator comp) {
         return null;
     }
 
-    public static Object min(Collection arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NoSuchElementException
+     */
+    public static Object min(Collection coll) {
         return null;
     }
 
-    public static Object min(Collection arg0, Comparator arg1) {
+    /**
+     * @throws ClassCastException
+     * @throws NoSuchElementException
+     */
+    public static Object min(Collection coll, Comparator comp) {
         return null;
     }
 
-    public static List nCopies(int arg0, Object arg1) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public static List nCopies(int n, Object o) {
         return null;
     }
 
-    public static boolean replaceAll(List arg0, Object arg1, Object arg2) {
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static boolean replaceAll(List list, Object oldVal, Object newVal) {
         return false;
     }
 
-    public static void reverse(List arg0) {}
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static void reverse(List list) {}
 
     public static Comparator reverseOrder() {
         return null;
     }
 
-    public static void rotate(List arg0, int arg1) {}
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static void rotate(List list, int distance) {}
 
-    public static void shuffle(List arg0) {}
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static void shuffle(List list) {}
 
-    public static void shuffle(List arg0, Random arg1) {}
+    /**
+     * @throws UnsupportedOperationException
+     */
+    public static void shuffle(List list, Random rnd) {}
 
-    public static Set singleton(Object arg0) {
+    public static Set singleton(Object o) {
         return null;
     }
 
-    public static List singletonList(Object arg0) {
+    public static List singletonList(Object o) {
         return null;
     }
 
-    public static Map singletonMap(Object arg0, Object arg1) {
+    public static Map singletonMap(Object key, Object value) {
         return null;
     }
 
-    public static void sort(List arg0) {}
+    /**
+     * @throws ClassCastException
+     * @throws UnsupportedOperationException
+     */
+    public static void sort(List list) {}
 
-    public static void sort(List arg0, Comparator arg1) {}
+    /**
+     * @throws ClassCastException
+     * @throws UnsupportedOperationException
+     */
+    public static void sort(List list, Comparator c) {}
 
-    public static void swap(List arg0, int arg1, int arg2) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public static void swap(List list, int i, int j) {}
 
-    public static Collection synchronizedCollection(Collection arg0) {
+    public static Collection synchronizedCollection(Collection c) {
         return null;
     }
 
-    public static List synchronizedList(List arg0) {
+    public static List synchronizedList(List list) {
         return null;
     }
 
-    public static Map synchronizedMap(Map arg0) {
+    public static Map synchronizedMap(Map m) {
         return null;
     }
 
-    public static Set synchronizedSet(Set arg0) {
+    public static Set synchronizedSet(Set s) {
         return null;
     }
 
-    public static SortedMap synchronizedSortedMap(SortedMap arg0) {
+    public static SortedMap synchronizedSortedMap(SortedMap m) {
         return null;
     }
 
-    public static SortedSet synchronizedSortedSet(SortedSet arg0) {
+    public static SortedSet synchronizedSortedSet(SortedSet s) {
         return null;
     }
 
-    public static Collection unmodifiableCollection(Collection arg0) {
+    public static Collection unmodifiableCollection(Collection c) {
         return null;
     }
 
-    public static List unmodifiableList(List arg0) {
+    public static List unmodifiableList(List list) {
         return null;
     }
 
-    public static Map unmodifiableMap(Map arg0) {
+    public static Map unmodifiableMap(Map m) {
         return null;
     }
 
-    public static Set unmodifiableSet(Set arg0) {
+    public static Set unmodifiableSet(Set s) {
         return null;
     }
 
-    public static SortedMap unmodifiableSortedMap(SortedMap arg0) {
+    public static SortedMap unmodifiableSortedMap(SortedMap m) {
         return null;
     }
 
-    public static SortedSet unmodifiableSortedSet(SortedSet arg0) {
+    public static SortedSet unmodifiableSortedSet(SortedSet s) {
         return null;
     }
 

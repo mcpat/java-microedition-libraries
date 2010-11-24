@@ -3,7 +3,7 @@ package java.util;
 public abstract class AbstractSet extends AbstractCollection implements Set {
     protected AbstractSet() {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
@@ -11,7 +11,11 @@ public abstract class AbstractSet extends AbstractCollection implements Set {
         return 0;
     }
 
-    public boolean removeAll(Collection arg0) {
+    /**
+     * @throws UnsupportedOperationException
+     * @throws NullPointerException
+     */
+    public boolean removeAll(Collection c) {
         return false;
     }
 

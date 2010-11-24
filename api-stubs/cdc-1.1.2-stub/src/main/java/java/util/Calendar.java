@@ -1,47 +1,49 @@
 package java.util;
 
+import java.io.Serializable;
+
 public abstract class Calendar implements Serializable, Cloneable {
-    public final static int AM;
-    public final static int AM_PM;
-    public final static int APRIL;
-    public final static int AUGUST;
-    public final static int DATE;
-    public final static int DAY_OF_MONTH;
-    public final static int DAY_OF_WEEK;
-    public final static int DAY_OF_WEEK_IN_MONTH;
-    public final static int DAY_OF_YEAR;
-    public final static int DECEMBER;
-    public final static int DST_OFFSET;
-    public final static int ERA;
-    public final static int FEBRUARY;
-    public final static int FIELD_COUNT;
-    public final static int FRIDAY;
-    public final static int HOUR;
-    public final static int HOUR_OF_DAY;
-    public final static int JANUARY;
-    public final static int JULY;
-    public final static int JUNE;
-    public final static int MARCH;
-    public final static int MAY;
-    public final static int MILLISECOND;
-    public final static int MINUTE;
-    public final static int MONDAY;
-    public final static int MONTH;
-    public final static int NOVEMBER;
-    public final static int OCTOBER;
-    public final static int PM;
-    public final static int SATURDAY;
-    public final static int SECOND;
-    public final static int SEPTEMBER;
-    public final static int SUNDAY;
-    public final static int THURSDAY;
-    public final static int TUESDAY;
-    public final static int UNDECIMBER;
-    public final static int WEDNESDAY;
-    public final static int WEEK_OF_MONTH;
-    public final static int WEEK_OF_YEAR;
-    public final static int YEAR;
-    public final static int ZONE_OFFSET;
+    public static final int AM= 0;
+    public static final int AM_PM= 9;
+    public static final int APRIL= 3;
+    public static final int AUGUST= 7;
+    public static final int DATE= 5;
+    public static final int DAY_OF_MONTH= 5;
+    public static final int DAY_OF_WEEK= 7;
+    public static final int DAY_OF_WEEK_IN_MONTH= 8;
+    public static final int DAY_OF_YEAR= 6;
+    public static final int DECEMBER= 11;
+    public static final int DST_OFFSET= 16;
+    public static final int ERA= 0;
+    public static final int FEBRUARY= 1;
+    public static final int FIELD_COUNT= 17;
+    public static final int FRIDAY= 6;
+    public static final int HOUR= 10;
+    public static final int HOUR_OF_DAY= 11;
+    public static final int JANUARY= 0;
+    public static final int JULY= 6;
+    public static final int JUNE= 5;
+    public static final int MARCH= 2;
+    public static final int MAY= 4;
+    public static final int MILLISECOND= 14;
+    public static final int MINUTE= 12;
+    public static final int MONDAY= 2;
+    public static final int MONTH= 2;
+    public static final int NOVEMBER= 10;
+    public static final int OCTOBER= 9;
+    public static final int PM= 1;
+    public static final int SATURDAY= 7;
+    public static final int SECOND= 13;
+    public static final int SEPTEMBER= 8;
+    public static final int SUNDAY= 1;
+    public static final int THURSDAY= 5;
+    public static final int TUESDAY= 3;
+    public static final int UNDECIMBER= 12;
+    public static final int WEDNESDAY= 4;
+    public static final int WEEK_OF_MONTH= 4;
+    public static final int WEEK_OF_YEAR= 3;
+    public static final int YEAR= 1;
+    public static final int ZONE_OFFSET= 15;
 
     public static Locale[] getAvailableLocales() {
         return null;
@@ -51,15 +53,15 @@ public abstract class Calendar implements Serializable, Cloneable {
         return null;
     }
 
-    public static Calendar getInstance(TimeZone arg0) {
+    public static Calendar getInstance(TimeZone zone) {
         return null;
     }
 
-    public static Calendar getInstance(Locale arg0) {
+    public static Calendar getInstance(Locale aLocale) {
         return null;
     }
 
-    public static Calendar getInstance(TimeZone arg0, Locale arg1) {
+    public static Calendar getInstance(TimeZone zone, Locale aLocale) {
         return null;
     }
 
@@ -71,21 +73,21 @@ public abstract class Calendar implements Serializable, Cloneable {
     protected long time;
 
     protected Calendar() {}
-    protected Calendar(TimeZone arg0, Locale arg1) {}
+    protected Calendar(TimeZone zone, Locale aLocale) {}
 
-    public abstract void add(int arg0, int arg1);
+    public abstract void add(int field, int amount);
 
-    public boolean after(Object arg0) {
+    public boolean after(Object when) {
         return false;
     }
 
-    public boolean before(Object arg0) {
+    public boolean before(Object when) {
         return false;
     }
 
     public final void clear() {}
 
-    public final void clear(int arg0) {}
+    public final void clear(int field) {}
 
     public Object clone() {
         return null;
@@ -97,19 +99,22 @@ public abstract class Calendar implements Serializable, Cloneable {
 
     protected abstract void computeTime();
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public int get(int arg0) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public int get(int field) {
         return 0;
     }
 
-    public int getActualMaximum(int arg0) {
+    public int getActualMaximum(int field) {
         return 0;
     }
 
-    public int getActualMinimum(int arg0) {
+    public int getActualMinimum(int field) {
         return 0;
     }
 
@@ -117,17 +122,17 @@ public abstract class Calendar implements Serializable, Cloneable {
         return 0;
     }
 
-    public abstract int getGreatestMinimum(int arg0);
+    public abstract int getGreatestMinimum(int field);
 
-    public abstract int getLeastMaximum(int arg0);
+    public abstract int getLeastMaximum(int field);
 
-    public abstract int getMaximum(int arg0);
+    public abstract int getMaximum(int field);
 
     public int getMinimalDaysInFirstWeek() {
         return 0;
     }
 
-    public abstract int getMinimum(int arg0);
+    public abstract int getMinimum(int field);
 
     public final Date getTime() {
         return null;
@@ -145,7 +150,7 @@ public abstract class Calendar implements Serializable, Cloneable {
         return 0;
     }
 
-    protected final int internalGet(int arg0) {
+    protected final int internalGet(int field) {
         return 0;
     }
 
@@ -153,33 +158,36 @@ public abstract class Calendar implements Serializable, Cloneable {
         return false;
     }
 
-    public final boolean isSet(int arg0) {
+    public final boolean isSet(int field) {
         return false;
     }
 
-    public abstract void roll(int arg0, boolean arg1);
+    public abstract void roll(int field, boolean up);
 
-    public void roll(int arg0, int arg1) {}
+    public void roll(int field, int amount) {}
 
-    public void set(int arg0, int arg1) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void set(int field, int value) {}
 
-    public final void set(int arg0, int arg1, int arg2) {}
+    public final void set(int year, int month, int date) {}
 
-    public final void set(int arg0, int arg1, int arg2, int arg3, int arg4) {}
+    public final void set(int year, int month, int date, int hour, int minute) {}
 
-    public final void set(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {}
+    public final void set(int year, int month, int date, int hour, int minute, int second) {}
 
-    public void setFirstDayOfWeek(int arg0) {}
+    public void setFirstDayOfWeek(int value) {}
 
-    public void setLenient(boolean arg0) {}
+    public void setLenient(boolean lenient) {}
 
-    public void setMinimalDaysInFirstWeek(int arg0) {}
+    public void setMinimalDaysInFirstWeek(int value) {}
 
-    public final void setTime(Date arg0) {}
+    public final void setTime(Date date) {}
 
-    public void setTimeInMillis(long arg0) {}
+    public void setTimeInMillis(long millis) {}
 
-    public void setTimeZone(TimeZone arg0) {}
+    public void setTimeZone(TimeZone value) {}
 
     public String toString() {
         return null;

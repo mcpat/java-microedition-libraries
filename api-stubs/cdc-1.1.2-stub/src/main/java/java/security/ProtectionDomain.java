@@ -1,8 +1,8 @@
 package java.security;
 
 public class ProtectionDomain {
-    public ProtectionDomain(CodeSource arg0, PermissionCollection arg1) {}
-    public ProtectionDomain(CodeSource arg0, PermissionCollection arg1, ClassLoader arg2, Principal[] arg3) {}
+    public ProtectionDomain(CodeSource codesource, PermissionCollection permissions) {}
+    public ProtectionDomain(CodeSource codesource, PermissionCollection permissions, ClassLoader classloader, Principal[] principals) {}
 
     public final ClassLoader getClassLoader() {
         return null;
@@ -20,7 +20,7 @@ public class ProtectionDomain {
         return null;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission permission) {
         return false;
     }
 

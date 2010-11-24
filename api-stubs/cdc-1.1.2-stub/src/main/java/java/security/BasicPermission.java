@@ -3,10 +3,19 @@ package java.security;
 import java.io.Serializable;
 
 public abstract class BasicPermission extends Permission implements Serializable {
-    public BasicPermission(String arg0) {}
-    public BasicPermission(String arg0, String arg1) {}
+	/**
+	 * @throws NullPointerException 
+	 * @throws IllegalArgumentException
+	 */
+    public BasicPermission(String name) {super(null);}
 
-    public boolean equals(Object arg0) {
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public BasicPermission(String name, String actions) {super(null);}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -18,7 +27,7 @@ public abstract class BasicPermission extends Permission implements Serializable
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

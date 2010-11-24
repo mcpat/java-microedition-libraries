@@ -1,7 +1,7 @@
 package java.security;
 
 public class PrivilegedActionException extends Exception {
-    public PrivilegedActionException(Exception arg0) {}
+    public PrivilegedActionException(Exception exception) {}
 
     public Throwable getCause() {
         return null;

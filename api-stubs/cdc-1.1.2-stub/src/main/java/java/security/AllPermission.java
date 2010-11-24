@@ -1,10 +1,10 @@
 package java.security;
 
 public final class AllPermission extends Permission {
-    public AllPermission() {}
-    public AllPermission(String arg0, String arg1) {}
+    public AllPermission() {super(null);}
+    public AllPermission(String name, String actions) {super(null);}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -16,7 +16,7 @@ public final class AllPermission extends Permission {
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

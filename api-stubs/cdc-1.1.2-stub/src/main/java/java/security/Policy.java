@@ -1,22 +1,28 @@
 package java.security;
 
 public abstract class Policy {
-    public static Policy getPolicy() {
+    /**
+     * @throws SecurityException
+     */
+	public static Policy getPolicy() {
         return null;
     }
 
-    public static void setPolicy(Policy arg0) {}
+	/**
+	 * @throws SecurityException
+	 */
+    public static void setPolicy(Policy policy) {}
 
 
     public Policy() {}
 
-    public abstract PermissionCollection getPermissions(CodeSource arg0);
+    public abstract PermissionCollection getPermissions(CodeSource codesource);
 
-    public PermissionCollection getPermissions(ProtectionDomain arg0) {
+    public PermissionCollection getPermissions(ProtectionDomain domain) {
         return null;
     }
 
-    public boolean implies(ProtectionDomain arg0, Permission arg1) {
+    public boolean implies(ProtectionDomain domain, Permission permission) {
         return false;
     }
 

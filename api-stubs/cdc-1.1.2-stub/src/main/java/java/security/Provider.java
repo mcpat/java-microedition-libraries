@@ -1,8 +1,18 @@
 package java.security;
 
-public abstract class Provider extends Properties {
-    protected Provider(String arg0, double arg1, String arg2) {}
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 
+public abstract class Provider extends Properties {
+    protected Provider(String name, double version, String info) {}
+
+    /**
+     * @throws SecurityException
+     */
     public void clear() {}
 
     public Set entrySet() {
@@ -25,15 +35,24 @@ public abstract class Provider extends Properties {
         return null;
     }
 
-    public void load(InputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void load(InputStream inStream) throws IOException {}
 
-    public Object put(Object arg0, Object arg1) {
+    /**
+     * @throws SecurityException
+     */
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    public void putAll(Map t) {}
 
-    public Object remove(Object arg0) {
+    /**
+     * @throws SecurityException
+     */
+    public Object remove(Object key) {
         return null;
     }
 

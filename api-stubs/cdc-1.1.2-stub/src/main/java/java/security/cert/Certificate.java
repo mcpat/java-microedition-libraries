@@ -1,12 +1,31 @@
 package java.security.cert;
 
-public abstract class Certificate implements Serializable {
-    protected Certificate(String arg0) {}
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.PublicKey;
+import java.security.SignatureException;
 
-    public boolean equals(Object arg0) {
+public abstract class Certificate implements Serializable {
+	public static class CertificateRep implements Serializable {
+	    protected CertificateRep(String type, byte[] data) {}
+
+	    protected Object readResolve() throws ObjectStreamException {
+	        return null;
+	    }
+
+	}
+    protected Certificate(String type) {}
+
+    public boolean equals(Object other) {
         return false;
     }
 
+    /**
+     * @throws CertificateEncodingException
+     */
     public abstract byte[] getEncoded() throws CertificateEncodingException;
 
     public abstract PublicKey getPublicKey();
@@ -21,10 +40,27 @@ public abstract class Certificate implements Serializable {
 
     public abstract String toString();
 
-    public abstract void verify(PublicKey arg0) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException;
+    /**
+     * @throws CertificateException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeyException
+     * @throws NoSuchProviderException
+     * @throws SignatureException
+     */
+    public abstract void verify(PublicKey key) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException;
 
-    public abstract void verify(PublicKey arg0, String arg1) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException;
+    /**
+     * @throws CertificateException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeyException
+     * @throws NoSuchProviderException
+     * @throws SignatureException
+     */
+    public abstract void verify(PublicKey key, String sigProvider) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException;
 
+    /**
+     * @throws ObjectStreamException
+     */
     protected Object writeReplace() throws ObjectStreamException {
         return null;
     }

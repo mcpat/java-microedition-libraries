@@ -1,7 +1,7 @@
 package java.security;
 
 public interface Principal {
-    boolean equals(Object arg0);
+    boolean equals(Object another);
 
     String getName();
 

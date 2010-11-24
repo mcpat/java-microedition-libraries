@@ -1,9 +1,13 @@
 package java.security;
 
+import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
 public class DigestOutputStream extends FilterOutputStream {
     protected MessageDigest digest;
 
-    public DigestOutputStream(OutputStream arg0, MessageDigest arg1) {}
+    public DigestOutputStream(OutputStream stream, MessageDigest digest) {super(null);}
 
     public MessageDigest getMessageDigest() {
         return null;
@@ -11,14 +15,20 @@ public class DigestOutputStream extends FilterOutputStream {
 
     public void on(boolean arg0) {}
 
-    public void setMessageDigest(MessageDigest arg0) {}
+    public void setMessageDigest(MessageDigest digest) {}
 
     public String toString() {
         return null;
     }
 
-    public void write(int arg0) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(int b) throws IOException {}
 
-    public void write(byte[] arg0, int arg1, int arg2) throws IOException {}
+    /**
+     * @throws IOException
+     */
+    public void write(byte[] b, int off, int len) throws IOException {}
 
 }

@@ -1,9 +1,13 @@
 package java.security;
 
-public class CodeSource implements Serializable {
-    public CodeSource(URL arg0, Certificate[] arg1) {}
+import java.io.Serializable;
+import java.net.URL;
+import java.security.cert.Certificate;
 
-    public boolean equals(Object arg0) {
+public class CodeSource implements Serializable {
+    public CodeSource(URL url, Certificate[] certs) {}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -19,7 +23,7 @@ public class CodeSource implements Serializable {
         return 0;
     }
 
-    public boolean implies(CodeSource arg0) {
+    public boolean implies(CodeSource codesource) {
         return false;
     }
 

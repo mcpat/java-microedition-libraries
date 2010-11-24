@@ -1,14 +1,26 @@
 package java.security;
 
 public class SecureClassLoader extends ClassLoader {
-    protected SecureClassLoader(ClassLoader arg0) {}
+	/**
+	 * @throws SecurityException
+	 */
+    protected SecureClassLoader(ClassLoader parent) {}
+
+    /**
+     * @throws SecurityException
+     */
     protected SecureClassLoader() {}
 
-    protected final Class defineClass(String arg0, byte[] arg1, int arg2, int arg3, CodeSource arg4) {
+    /**
+     * @throws ClassFormatError 
+     * @throws IndexOutOfBoundsException 
+     * @throws SecurityException
+     */
+    protected final Class defineClass(String name, byte[] b, int off, int len, CodeSource cs) {
         return null;
     }
 
-    protected PermissionCollection getPermissions(CodeSource arg0) {
+    protected PermissionCollection getPermissions(CodeSource codesource) {
         return null;
     }
 

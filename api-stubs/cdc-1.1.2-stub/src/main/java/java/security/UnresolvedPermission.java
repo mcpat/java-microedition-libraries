@@ -1,9 +1,12 @@
 package java.security;
 
-public final class UnresolvedPermission extends Permission implements Serializable {
-    public UnresolvedPermission(String arg0, String arg1, String arg2, Certificate[] arg3) {}
+import java.io.Serializable;
+import java.security.cert.Certificate;
 
-    public boolean equals(Object arg0) {
+public final class UnresolvedPermission extends Permission implements Serializable {
+    public UnresolvedPermission(String type, String name, String actions, Certificate[] certs) {super(null);}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -15,7 +18,7 @@ public final class UnresolvedPermission extends Permission implements Serializab
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

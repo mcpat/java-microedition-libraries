@@ -1,21 +1,30 @@
 package java.security;
 
 public final class AccessController {
-    public static void checkPermission(Permission arg0) throws AccessControlException {}
+    /**
+     * @throws AccessControlException
+     */
+    public static void checkPermission(Permission perm) throws AccessControlException {}
 
-    public static Object doPrivileged(PrivilegedAction arg0) {
+    public static Object doPrivileged(PrivilegedAction action) {
         return null;
     }
 
-    public static Object doPrivileged(PrivilegedAction arg0, AccessControlContext arg1) {
+    public static Object doPrivileged(PrivilegedAction action, AccessControlContext context) {
         return null;
     }
 
-    public static Object doPrivileged(PrivilegedExceptionAction arg0) throws PrivilegedActionException {
+    /**
+     * @throws PrivilegedActionException
+     */
+    public static Object doPrivileged(PrivilegedExceptionAction action) throws PrivilegedActionException {
         return null;
     }
 
-    public static Object doPrivileged(PrivilegedExceptionAction arg0, AccessControlContext arg1) throws PrivilegedActionException {
+    /**
+     * @throws PrivilegedActionException
+     */
+    public static Object doPrivileged(PrivilegedExceptionAction action, AccessControlContext context) throws PrivilegedActionException {
         return null;
     }
 

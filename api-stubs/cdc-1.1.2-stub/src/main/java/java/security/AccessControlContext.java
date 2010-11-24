@@ -1,15 +1,26 @@
 package java.security;
 
 public final class AccessControlContext {
-    public AccessControlContext(ProtectionDomain[] arg0) {}
-    public AccessControlContext(AccessControlContext arg0, DomainCombiner arg1) {}
+    public AccessControlContext(ProtectionDomain[] context) {}
+    /**
+     * @throws NullPointerException 
+     * @throws SecurityException
+     */
+    public AccessControlContext(AccessControlContext acc, DomainCombiner combiner) {}
 
-    public void checkPermission(Permission arg0) throws AccessControlException {}
+    /**
+     * @throws AccessControlException
+     * @throws NullPointerException
+     */
+    public void checkPermission(Permission perm) throws AccessControlException {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
+    /**
+     * @throws SecurityException
+     */
     public DomainCombiner getDomainCombiner() {
         return null;
     }

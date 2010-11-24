@@ -1,19 +1,28 @@
 package java.security;
 
+import java.util.Map;
+import java.util.Set;
+
 public final class Security {
-    public static int addProvider(Provider arg0) {
+	/**
+     * @throws SecurityException
+     */
+	public static int addProvider(Provider provider) {
         return 0;
     }
 
-    public static Set getAlgorithms(String arg0) {
+    public static Set getAlgorithms(String serviceName) {
         return null;
     }
 
-    public static String getProperty(String arg0) {
+    /**
+     * @throws SecurityException
+     */
+    public static String getProperty(String key) {
         return null;
     }
 
-    public static Provider getProvider(String arg0) {
+    public static Provider getProvider(String name) {
         return null;
     }
 
@@ -21,21 +30,36 @@ public final class Security {
         return null;
     }
 
-    public static Provider[] getProviders(String arg0) {
+    /**
+     * @throws InvalidParameterException
+     */
+    public static Provider[] getProviders(String filter) {
         return null;
     }
 
-    public static Provider[] getProviders(Map arg0) {
+    /**
+     * @throws InvalidParameterException
+     */
+    public static Provider[] getProviders(Map filter) {
         return null;
     }
 
-    public static int insertProviderAt(Provider arg0, int arg1) {
+    /**
+     * @throws SecurityException
+     */
+    public static int insertProviderAt(Provider provider, int position) {
         return 0;
     }
 
-    public static void removeProvider(String arg0) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void removeProvider(String name) {}
 
-    public static void setProperty(String arg0, String arg1) {}
+    /**
+     * @throws SecurityException
+     */
+    public static void setProperty(String key, String datum) {}
 
 
 }

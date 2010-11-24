@@ -1,25 +1,40 @@
 package java.security;
 
 public abstract class MessageDigest extends MessageDigestSpi {
-    public static MessageDigest getInstance(String arg0) throws NoSuchAlgorithmException {
+    /**
+     * @throws NoSuchAlgorithmException
+     */
+    public static MessageDigest getInstance(String algorithm) throws NoSuchAlgorithmException {
         return null;
     }
 
-    public static MessageDigest getInstance(String arg0, String arg1) throws NoSuchAlgorithmException, NoSuchProviderException {
+    /**
+     * @throws NoSuchAlgorithmException 
+     * @throws NoSuchProviderException 
+     * @throws IllegalArgumentException
+     */
+    public static MessageDigest getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         return null;
     }
 
-    public static MessageDigest getInstance(String arg0, Provider arg1) throws NoSuchAlgorithmException {
+    /**
+     * @throws NoSuchAlgorithmException
+     * @throws IllegalArgumentException
+     */
+    public static MessageDigest getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         return null;
     }
 
-    public static boolean isEqual(byte[] arg0, byte[] arg1) {
+    public static boolean isEqual(byte[] digesta, byte[] digestb) {
         return false;
     }
 
 
-    protected MessageDigest(String arg0) {}
+    protected MessageDigest(String algorithm) {}
 
+    /**
+     * @throws CloneNotSupportedException
+     */
     public Object clone() throws CloneNotSupportedException {
         return null;
     }
@@ -28,11 +43,14 @@ public abstract class MessageDigest extends MessageDigestSpi {
         return null;
     }
 
-    public int digest(byte[] arg0, int arg1, int arg2) throws DigestException {
+    /**
+     * @throws DigestException
+     */
+    public int digest(byte[] buf, int offset, int len) throws DigestException {
         return 0;
     }
 
-    public byte[] digest(byte[] arg0) {
+    public byte[] digest(byte[] input) {
         return null;
     }
 
@@ -54,10 +72,10 @@ public abstract class MessageDigest extends MessageDigestSpi {
         return null;
     }
 
-    public void update(byte arg0) {}
+    public void update(byte input) {}
 
-    public void update(byte[] arg0, int arg1, int arg2) {}
+    public void update(byte[] input, int offset, int len) {}
 
-    public void update(byte[] arg0) {}
+    public void update(byte[] input) {}
 
 }

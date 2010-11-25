@@ -1,25 +1,49 @@
 package java.text;
 
+import java.io.Serializable;
+import java.text.AttributedCharacterIterator.Attribute;
+
 public abstract class Format implements Serializable, Cloneable {
+	public static class Field extends Attribute {
+	    protected Field(String name) {super(null);}
+
+	}
     public Format() {}
 
     public Object clone() {
         return null;
     }
 
-    public final String format(Object arg0) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public final String format(Object obj) {
         return null;
     }
 
-    public abstract StringBuffer format(Object arg0, StringBuffer arg1, FieldPosition arg2);
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public abstract StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos);
 
-    public AttributedCharacterIterator formatToCharacterIterator(Object arg0) {
+    /**
+     * @throws NullPointerException 
+     * @thtows IllegalArgumentException
+     */
+    public AttributedCharacterIterator formatToCharacterIterator(Object obj) {
         return null;
     }
 
-    public abstract Object parseObject(String arg0, ParsePosition arg1);
+    /**
+     * @throws NullPointerException
+     */
+    public abstract Object parseObject(String source, ParsePosition pos);
 
-    public Object parseObject(String arg0) throws ParseException {
+    /**
+     * @throws ParseException
+     */
+    public Object parseObject(String source) throws ParseException {
         return null;
     }
 

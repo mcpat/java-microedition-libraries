@@ -1,31 +1,55 @@
 package java.text;
 
+import java.util.Currency;
+
 public class DecimalFormat extends NumberFormat {
     public DecimalFormat() {}
-    public DecimalFormat(String arg0) {}
-    public DecimalFormat(String arg0, DecimalFormatSymbols arg1) {}
+    
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException 
+     */
+    public DecimalFormat(String pattern) {}
 
-    public void applyLocalizedPattern(String arg0) {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException 
+     */
+    public DecimalFormat(String pattern, DecimalFormatSymbols symbols) {}
 
-    public void applyPattern(String arg0) {}
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException 
+     */
+    public void applyLocalizedPattern(String pattern) {}
+
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException 
+     */
+    public void applyPattern(String pattern) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public StringBuffer format(double arg0, StringBuffer arg1, FieldPosition arg2) {
+    public StringBuffer format(double number, StringBuffer result, FieldPosition fieldPosition) {
         return null;
     }
 
-    public StringBuffer format(long arg0, StringBuffer arg1, FieldPosition arg2) {
+    public StringBuffer format(long number, StringBuffer result, FieldPosition fieldPosition) {
         return null;
     }
 
-    public AttributedCharacterIterator formatToCharacterIterator(Object arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException 
+     */
+    public AttributedCharacterIterator formatToCharacterIterator(Object obj) {
         return null;
     }
 
@@ -69,35 +93,41 @@ public class DecimalFormat extends NumberFormat {
         return false;
     }
 
-    public Number parse(String arg0, ParsePosition arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public Number parse(String text, ParsePosition pos) {
         return null;
     }
 
-    public void setCurrency(Currency arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setCurrency(Currency currency) {}
 
-    public void setDecimalFormatSymbols(DecimalFormatSymbols arg0) {}
+    public void setDecimalFormatSymbols(DecimalFormatSymbols newSymbols) {}
 
-    public void setDecimalSeparatorAlwaysShown(boolean arg0) {}
+    public void setDecimalSeparatorAlwaysShown(boolean newValue) {}
 
-    public void setGroupingSize(int arg0) {}
+    public void setGroupingSize(int newValue) {}
 
-    public void setMaximumFractionDigits(int arg0) {}
+    public void setMaximumFractionDigits(int newValue) {}
 
-    public void setMaximumIntegerDigits(int arg0) {}
+    public void setMaximumIntegerDigits(int newValue) {}
 
-    public void setMinimumFractionDigits(int arg0) {}
+    public void setMinimumFractionDigits(int newValue) {}
 
-    public void setMinimumIntegerDigits(int arg0) {}
+    public void setMinimumIntegerDigits(int newValue) {}
 
-    public void setMultiplier(int arg0) {}
+    public void setMultiplier(int newValue) {}
 
-    public void setNegativePrefix(String arg0) {}
+    public void setNegativePrefix(String newValue) {}
 
-    public void setNegativeSuffix(String arg0) {}
+    public void setNegativeSuffix(String newValue) {}
 
-    public void setPositivePrefix(String arg0) {}
+    public void setPositivePrefix(String newValue) {}
 
-    public void setPositiveSuffix(String arg0) {}
+    public void setPositiveSuffix(String newValue) {}
 
     public String toLocalizedPattern() {
         return null;

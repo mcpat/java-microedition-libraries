@@ -1,28 +1,61 @@
 package java.text;
 
+import java.util.Date;
+import java.util.Locale;
+
 public class SimpleDateFormat extends DateFormat {
     public SimpleDateFormat() {}
-    public SimpleDateFormat(String arg0) {}
-    public SimpleDateFormat(String arg0, Locale arg1) {}
-    public SimpleDateFormat(String arg0, DateFormatSymbols arg1) {}
+    
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public SimpleDateFormat(String pattern) {}
 
-    public void applyLocalizedPattern(String arg0) {}
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public SimpleDateFormat(String pattern, Locale locale) {}
 
-    public void applyPattern(String arg0) {}
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public SimpleDateFormat(String pattern, DateFormatSymbols formatSymbols) {}
+
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public void applyLocalizedPattern(String pattern) {}
+
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public void applyPattern(String pattern) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public StringBuffer format(Date arg0, StringBuffer arg1, FieldPosition arg2) {
+    /**
+     * @throws NullPointerException
+     */
+    public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition pos) {
         return null;
     }
 
-    public AttributedCharacterIterator formatToCharacterIterator(Object arg0) {
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public AttributedCharacterIterator formatToCharacterIterator(Object obj) {
         return null;
     }
 
@@ -38,13 +71,19 @@ public class SimpleDateFormat extends DateFormat {
         return 0;
     }
 
-    public Date parse(String arg0, ParsePosition arg1) {
+    /**
+     * @throws NullPointerException 
+     */
+    public Date parse(String text, ParsePosition pos) {
         return null;
     }
 
-    public void set2DigitYearStart(Date arg0) {}
+    public void set2DigitYearStart(Date startDate) {}
 
-    public void setDateFormatSymbols(DateFormatSymbols arg0) {}
+    /**
+     * @throws NullPointerException 
+     */
+    public void setDateFormatSymbols(DateFormatSymbols newFormatSymbols) {}
 
     public String toLocalizedPattern() {
         return null;

@@ -1,7 +1,7 @@
 package java.text;
 
 public interface CharacterIterator extends Cloneable {
-    char DONE;
+    char DONE= 65535;
 
     Object clone();
 

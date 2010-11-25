@@ -1,9 +1,9 @@
 package java.text;
 
 public class ParsePosition {
-    public ParsePosition(int arg0) {}
+    public ParsePosition(int index) {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -19,9 +19,9 @@ public class ParsePosition {
         return 0;
     }
 
-    public void setErrorIndex(int arg0) {}
+    public void setErrorIndex(int ei) {}
 
-    public void setIndex(int arg0) {}
+    public void setIndex(int index) {}
 
     public String toString() {
         return null;

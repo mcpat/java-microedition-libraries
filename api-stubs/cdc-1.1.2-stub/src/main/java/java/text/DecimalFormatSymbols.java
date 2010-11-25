@@ -1,14 +1,22 @@
 package java.text;
 
+import java.io.Serializable;
+import java.util.Currency;
+import java.util.Locale;
+
 public final class DecimalFormatSymbols implements Cloneable, Serializable {
     public DecimalFormatSymbols() {}
-    public DecimalFormatSymbols(Locale arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public DecimalFormatSymbols(Locale locale) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -72,32 +80,35 @@ public final class DecimalFormatSymbols implements Cloneable, Serializable {
         return 0;
     }
 
-    public void setCurrency(Currency arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setCurrency(Currency currency) {}
 
-    public void setCurrencySymbol(String arg0) {}
+    public void setCurrencySymbol(String currency) {}
 
-    public void setDecimalSeparator(char arg0) {}
+    public void setDecimalSeparator(char decimalSeparator) {}
 
-    public void setDigit(char arg0) {}
+    public void setDigit(char digit) {}
 
-    public void setGroupingSeparator(char arg0) {}
+    public void setGroupingSeparator(char groupingSeparator) {}
 
-    public void setInfinity(String arg0) {}
+    public void setInfinity(String infinity) {}
 
-    public void setInternationalCurrencySymbol(String arg0) {}
+    public void setInternationalCurrencySymbol(String currencyCode) {}
 
-    public void setMinusSign(char arg0) {}
+    public void setMinusSign(char minusSign) {}
 
-    public void setMonetaryDecimalSeparator(char arg0) {}
+    public void setMonetaryDecimalSeparator(char sep) {}
 
-    public void setNaN(String arg0) {}
+    public void setNaN(String NaN) {}
 
-    public void setPatternSeparator(char arg0) {}
+    public void setPatternSeparator(char patternSeparator) {}
 
-    public void setPercent(char arg0) {}
+    public void setPercent(char percent) {}
 
-    public void setPerMill(char arg0) {}
+    public void setPerMill(char perMill) {}
 
-    public void setZeroDigit(char arg0) {}
+    public void setZeroDigit(char zeroDigit) {}
 
 }

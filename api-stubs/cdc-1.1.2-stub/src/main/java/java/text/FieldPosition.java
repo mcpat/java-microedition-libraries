@@ -1,11 +1,13 @@
 package java.text;
 
-public class FieldPosition {
-    public FieldPosition(int arg0) {}
-    public FieldPosition(Format$Field arg0) {}
-    public FieldPosition(Format$Field arg0, int arg1) {}
+import java.text.DateFormat.Field;
 
-    public boolean equals(Object arg0) {
+public class FieldPosition {
+    public FieldPosition(int field) {}
+    public FieldPosition(Field attribute) {}
+    public FieldPosition(Field attribute, int fieldID) {}
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -21,7 +23,7 @@ public class FieldPosition {
         return 0;
     }
 
-    public Format$Field getFieldAttribute() {
+    public Field getFieldAttribute() {
         return null;
     }
 
@@ -29,9 +31,9 @@ public class FieldPosition {
         return 0;
     }
 
-    public void setBeginIndex(int arg0) {}
+    public void setBeginIndex(int bi) {}
 
-    public void setEndIndex(int arg0) {}
+    public void setEndIndex(int ei) {}
 
     public String toString() {
         return null;

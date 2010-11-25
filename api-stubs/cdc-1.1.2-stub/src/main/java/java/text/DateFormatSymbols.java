@@ -1,14 +1,25 @@
 package java.text;
 
+import java.io.Serializable;
+import java.util.Locale;
+
 public class DateFormatSymbols implements Serializable, Cloneable {
+	
+	/**
+	 * @throws MissingResourceException
+	 */
     public DateFormatSymbols() {}
-    public DateFormatSymbols(Locale arg0) {}
+
+    /**
+     * @throws MissingResourceException
+     */
+    public DateFormatSymbols(Locale locale) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -48,20 +59,20 @@ public class DateFormatSymbols implements Serializable, Cloneable {
         return 0;
     }
 
-    public void setAmPmStrings(String[] arg0) {}
+    public void setAmPmStrings(String[] newAmpms) {}
 
-    public void setEras(String[] arg0) {}
+    public void setEras(String[] newEras) {}
 
-    public void setLocalPatternChars(String arg0) {}
+    public void setLocalPatternChars(String newLocalPatternChars) {}
 
-    public void setMonths(String[] arg0) {}
+    public void setMonths(String[] newMonths) {}
 
-    public void setShortMonths(String[] arg0) {}
+    public void setShortMonths(String[] newShortMonths) {}
 
-    public void setShortWeekdays(String[] arg0) {}
+    public void setShortWeekdays(String[] newShortWeekdays) {}
 
-    public void setWeekdays(String[] arg0) {}
+    public void setWeekdays(String[] newWeekdays) {}
 
-    public void setZoneStrings(String[][] arg0) {}
+    public void setZoneStrings(String[][] newZoneStrings) {}
 
 }

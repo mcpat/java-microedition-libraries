@@ -1,33 +1,72 @@
 package java.text;
 
+import java.io.InvalidObjectException;
+import java.util.Locale;
+
 public class MessageFormat extends Format {
+	public static class Field extends Format.Field {
+	    public final static Field ARGUMENT;
+
+	    static {
+	    	ARGUMENT= new Field(null);
+	    }
+	    
+	    protected Field(String name) {super(null);}
+
+	    protected Object readResolve() throws InvalidObjectException {
+	        return null;
+	    }
+
+	}
+    /**
+     * @throws IllegalArgumentException
+     */
     public static String format(String arg0, Object[] arg1) {
         return null;
     }
 
+    /**
+     * @throws IllegalArgumentException
+     */
+    public MessageFormat(String pattern) {}
 
-    public MessageFormat(String arg0) {}
-    public MessageFormat(String arg0, Locale arg1) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public MessageFormat(String pattern, Locale locale) {}
 
-    public void applyPattern(String arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void applyPattern(String pattern) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public final StringBuffer format(Object[] arg0, StringBuffer arg1, FieldPosition arg2) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public final StringBuffer format(Object[] arguments, StringBuffer result, FieldPosition pos) {
         return null;
     }
 
-    public final StringBuffer format(Object arg0, StringBuffer arg1, FieldPosition arg2) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public final StringBuffer format(Object arguments, StringBuffer result, FieldPosition pos) {
         return null;
     }
 
-    public AttributedCharacterIterator formatToCharacterIterator(Object arg0) {
+    /**
+     * @throws NullPointerException 
+     * @throws IllegalArgumentException
+     */
+    public AttributedCharacterIterator formatToCharacterIterator(Object arguments) {
         return null;
     }
 
@@ -47,27 +86,42 @@ public class MessageFormat extends Format {
         return 0;
     }
 
-    public Object[] parse(String arg0, ParsePosition arg1) {
+    public Object[] parse(String source, ParsePosition pos) {
         return null;
     }
 
-    public Object[] parse(String arg0) throws ParseException {
+    /**
+     * @throws ParseException
+     */
+    public Object[] parse(String source) throws ParseException {
         return null;
     }
 
-    public Object parseObject(String arg0, ParsePosition arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object parseObject(String source, ParsePosition pos) {
         return null;
     }
 
-    public void setFormat(int arg0, Format arg1) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void setFormat(int formatElementIndex, Format newFormat) {}
 
-    public void setFormatByArgumentIndex(int arg0, Format arg1) {}
+    public void setFormatByArgumentIndex(int argumentIndex, Format newFormat) {}
 
-    public void setFormats(Format[] arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setFormats(Format[] newFormats) {}
 
-    public void setFormatsByArgumentIndex(Format[] arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void setFormatsByArgumentIndex(Format[] newFormats) {}
 
-    public void setLocale(Locale arg0) {}
+    public void setLocale(Locale locale) {}
 
     public String toPattern() {
         return null;

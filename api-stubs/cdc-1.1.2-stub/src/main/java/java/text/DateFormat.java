@@ -1,29 +1,100 @@
 package java.text;
 
+import java.io.InvalidObjectException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+
 public abstract class DateFormat extends Format {
-    public final static int AM_PM_FIELD;
-    public final static int DATE_FIELD;
-    public final static int DAY_OF_WEEK_FIELD;
-    public final static int DAY_OF_WEEK_IN_MONTH_FIELD;
-    public final static int DAY_OF_YEAR_FIELD;
-    public final static int DEFAULT;
-    public final static int ERA_FIELD;
-    public final static int FULL;
-    public final static int HOUR0_FIELD;
-    public final static int HOUR1_FIELD;
-    public final static int HOUR_OF_DAY0_FIELD;
-    public final static int HOUR_OF_DAY1_FIELD;
-    public final static int LONG;
-    public final static int MEDIUM;
-    public final static int MILLISECOND_FIELD;
-    public final static int MINUTE_FIELD;
-    public final static int MONTH_FIELD;
-    public final static int SECOND_FIELD;
-    public final static int SHORT;
-    public final static int TIMEZONE_FIELD;
-    public final static int WEEK_OF_MONTH_FIELD;
-    public final static int WEEK_OF_YEAR_FIELD;
-    public final static int YEAR_FIELD;
+	public static class Field extends Format.Field {
+	    public final static Field AM_PM;
+	    public final static Field DAY_OF_MONTH;
+	    public final static Field DAY_OF_WEEK;
+	    public final static Field DAY_OF_WEEK_IN_MONTH;
+	    public final static Field DAY_OF_YEAR;
+	    public final static Field ERA;
+	    public final static Field HOUR0;
+	    public final static Field HOUR1;
+	    public final static Field HOUR_OF_DAY0;
+	    public final static Field HOUR_OF_DAY1;
+	    public final static Field MILLISECOND;
+	    public final static Field MINUTE;
+	    public final static Field MONTH;
+	    public final static Field SECOND;
+	    public final static Field TIME_ZONE;
+	    public final static Field WEEK_OF_MONTH;
+	    public final static Field WEEK_OF_YEAR;
+	    public final static Field YEAR;
+
+	    
+	    static {
+			AM_PM= new Field("", 0);
+			DAY_OF_MONTH= new Field("", 0); 
+			DAY_OF_WEEK= new Field("", 0); 
+			DAY_OF_WEEK_IN_MONTH= new Field("", 0); 
+			DAY_OF_YEAR= new Field("", 0); 
+			ERA= new Field("", 0); 
+			HOUR_OF_DAY0= new Field("", 0); 
+			HOUR_OF_DAY1= new Field("", 0); 
+			HOUR0= new Field("", 0); 
+			HOUR1= new Field("", 0); 
+			MILLISECOND= new Field("", 0); 
+			MINUTE= new Field("", 0); 
+			MONTH= new Field("", 0); 
+			SECOND= new Field("", 0); 
+			TIME_ZONE= new Field("", 0); 
+			WEEK_OF_MONTH= new Field("", 0); 
+			WEEK_OF_YEAR= new Field("", 0); 
+			YEAR= new Field("", 0); 
+		}
+	    
+	    /**
+	     * @throws IllegalArgumentException
+	     */
+	    public static Field ofCalendarField(int calendarField) {
+	        return null;
+	    }
+
+
+	    protected Field(String name, int calendarField) {super(null);}
+
+	    public int getCalendarField() {
+	        return 0;
+	    }
+
+	    /**
+	     * @throws InvalidObjectException
+	     */
+	    protected Object readResolve() throws InvalidObjectException {
+	        return null;
+	    }
+	}
+	
+	
+	public static final int AM_PM_FIELD= 14;
+	public static final int DATE_FIELD= 3;
+	public static final int DAY_OF_WEEK_FIELD= 9;
+	public static final int DAY_OF_WEEK_IN_MONTH_FIELD= 11;
+	public static final int DAY_OF_YEAR_FIELD= 10;
+	public static final int DEFAULT= 2;
+	public static final int ERA_FIELD= 0;
+	public static final int FULL= 0;
+	public static final int HOUR_OF_DAY0_FIELD= 5;
+	public static final int HOUR_OF_DAY1_FIELD= 4;
+	public static final int HOUR0_FIELD= 16;
+	public static final int HOUR1_FIELD= 15;
+	public static final int LONG= 1;
+	public static final int MEDIUM= 2;
+	public static final int MILLISECOND_FIELD= 8;
+	public static final int MINUTE_FIELD= 6;
+	public static final int MONTH_FIELD= 2;
+	public static final int SECOND_FIELD= 7;
+	public static final int SHORT= 3;
+	public static final int TIMEZONE_FIELD= 17;
+	public static final int WEEK_OF_MONTH_FIELD= 13;
+	public static final int WEEK_OF_YEAR_FIELD= 12;
+	public static final int YEAR_FIELD= 1;
 
     public static Locale[] getAvailableLocales() {
         return null;
@@ -33,11 +104,11 @@ public abstract class DateFormat extends Format {
         return null;
     }
 
-    public final static DateFormat getDateInstance(int arg0) {
+    public final static DateFormat getDateInstance(int style) {
         return null;
     }
 
-    public final static DateFormat getDateInstance(int arg0, Locale arg1) {
+    public final static DateFormat getDateInstance(int style, Locale aLocale) {
         return null;
     }
 
@@ -45,11 +116,11 @@ public abstract class DateFormat extends Format {
         return null;
     }
 
-    public final static DateFormat getDateTimeInstance(int arg0, int arg1) {
+    public final static DateFormat getDateTimeInstance(int dateStyle, int timeStyle) {
         return null;
     }
 
-    public final static DateFormat getDateTimeInstance(int arg0, int arg1, Locale arg2) {
+    public final static DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
         return null;
     }
 
@@ -61,11 +132,11 @@ public abstract class DateFormat extends Format {
         return null;
     }
 
-    public final static DateFormat getTimeInstance(int arg0) {
+    public final static DateFormat getTimeInstance(int style) {
         return null;
     }
 
-    public final static DateFormat getTimeInstance(int arg0, Locale arg1) {
+    public final static DateFormat getTimeInstance(int style, Locale aLocale) {
         return null;
     }
 
@@ -79,17 +150,17 @@ public abstract class DateFormat extends Format {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
-    public final StringBuffer format(Object arg0, StringBuffer arg1, FieldPosition arg2) {
+    public final StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition fieldPosition) {
         return null;
     }
 
-    public abstract StringBuffer format(Date arg0, StringBuffer arg1, FieldPosition arg2);
+    public abstract StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition);
 
-    public final String format(Date arg0) {
+    public final String format(Date date) {
         return null;
     }
 
@@ -113,22 +184,28 @@ public abstract class DateFormat extends Format {
         return false;
     }
 
-    public Date parse(String arg0) throws ParseException {
+    /**
+     * @throws ParseException
+     */
+    public Date parse(String source) throws ParseException {
         return null;
     }
 
-    public abstract Date parse(String arg0, ParsePosition arg1);
+    public abstract Date parse(String source, ParsePosition pos);
 
-    public Object parseObject(String arg0, ParsePosition arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object parseObject(String source, ParsePosition pos) {
         return null;
     }
 
-    public void setCalendar(Calendar arg0) {}
+    public void setCalendar(Calendar newCalendar) {}
 
-    public void setLenient(boolean arg0) {}
+    public void setLenient(boolean lenient) {}
 
-    public void setNumberFormat(NumberFormat arg0) {}
+    public void setNumberFormat(NumberFormat newNumberFormat) {}
 
-    public void setTimeZone(TimeZone arg0) {}
+    public void setTimeZone(TimeZone zone) {}
 
 }

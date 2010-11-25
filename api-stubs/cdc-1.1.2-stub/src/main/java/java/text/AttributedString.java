@@ -1,27 +1,54 @@
 package java.text;
 
+import java.text.AttributedCharacterIterator.Attribute;
+import java.util.Map;
+
 public class AttributedString {
-    public AttributedString(String arg0) {}
-    public AttributedString(String arg0, Map arg1) {}
-    public AttributedString(AttributedCharacterIterator arg0) {}
-    public AttributedString(AttributedCharacterIterator arg0, int arg1, int arg2) {}
-    public AttributedString(AttributedCharacterIterator arg0, int arg1, int arg2, AttributedCharacterIterator$Attribute[] arg3) {}
+    public AttributedString(String text) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public AttributedString(String text, Map attributes) {}
+    public AttributedString(AttributedCharacterIterator text) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public AttributedString(AttributedCharacterIterator text, int beginIndex, int endIndex) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public AttributedString(AttributedCharacterIterator text, int beginIndex, int endIndex, AttributedCharacterIterator.Attribute[] attributes) {}
 
-    public void addAttribute(AttributedCharacterIterator$Attribute arg0, Object arg1) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void addAttribute(Attribute attribute, Object value) {}
 
-    public void addAttribute(AttributedCharacterIterator$Attribute arg0, Object arg1, int arg2, int arg3) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void addAttribute(Attribute attribute, Object value, int beginIndex, int endIndex) {}
 
-    public void addAttributes(Map arg0, int arg1, int arg2) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void addAttributes(Map attributes, int beginIndex, int endIndex) {}
 
     public AttributedCharacterIterator getIterator() {
         return null;
     }
 
-    public AttributedCharacterIterator getIterator(AttributedCharacterIterator$Attribute[] arg0) {
+    public AttributedCharacterIterator getIterator(Attribute[] attributes) {
         return null;
     }
 
-    public AttributedCharacterIterator getIterator(AttributedCharacterIterator$Attribute[] arg0, int arg1, int arg2) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public AttributedCharacterIterator getIterator(Attribute[] attributes, int beginIndex, int endIndex) {
         return null;
     }
 

@@ -1,12 +1,26 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class HashSet extends AbstractSet implements Set, Cloneable, Serializable {
     public HashSet() {}
-    public HashSet(Collection arg0) {}
-    public HashSet(int arg0, float arg1) {}
-    public HashSet(int arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public HashSet(Collection c) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public HashSet(int initialCapacity, float loadFactor) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public HashSet(int initialCapacity) {}
 
-    public boolean add(Object arg0) {
+    public boolean add(Object o) {
         return false;
     }
 
@@ -16,7 +30,7 @@ public class HashSet extends AbstractSet implements Set, Cloneable, Serializable
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    public boolean contains(Object o) {
         return false;
     }
 
@@ -28,7 +42,7 @@ public class HashSet extends AbstractSet implements Set, Cloneable, Serializable
         return null;
     }
 
-    public boolean remove(Object arg0) {
+    public boolean remove(Object o) {
         return false;
     }
 

@@ -1,10 +1,12 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class Random implements Serializable {
     public Random() {}
-    public Random(long arg0) {}
+    public Random(long seed) {}
 
-    protected int next(int arg0) {
+    protected int next(int bits) {
         return 0;
     }
 
@@ -12,7 +14,7 @@ public class Random implements Serializable {
         return false;
     }
 
-    public void nextBytes(byte[] arg0) {}
+    public void nextBytes(byte[] bytes) {}
 
     public double nextDouble() {
         return 0;
@@ -30,7 +32,10 @@ public class Random implements Serializable {
         return 0;
     }
 
-    public int nextInt(int arg0) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public int nextInt(int n) {
         return 0;
     }
 
@@ -38,6 +43,6 @@ public class Random implements Serializable {
         return 0;
     }
 
-    public void setSeed(long arg0) {}
+    public void setSeed(long seed) {}
 
 }

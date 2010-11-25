@@ -1,10 +1,24 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class Hashtable extends Dictionary implements Map, Cloneable, Serializable {
-    public Hashtable(int arg0, float arg1) {}
-    public Hashtable(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public Hashtable(int initialCapacity, float loadFactor) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public Hashtable(int initialCapacity) {}
+    
     public Hashtable() {}
-    public Hashtable(Map arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public Hashtable(Map t) {}
 
     public void clear() {}
 
@@ -12,15 +26,24 @@ public class Hashtable extends Dictionary implements Map, Cloneable, Serializabl
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean contains(Object value) {
         return false;
     }
 
-    public boolean containsKey(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean containsValue(Object value) {
         return false;
     }
 
@@ -32,11 +55,14 @@ public class Hashtable extends Dictionary implements Map, Cloneable, Serializabl
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
-    public Object get(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object get(Object key) {
         return null;
     }
 
@@ -56,15 +82,24 @@ public class Hashtable extends Dictionary implements Map, Cloneable, Serializabl
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void putAll(Map t) {}
 
     protected void rehash() {}
 
-    public Object remove(Object arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public Object remove(Object key) {
         return null;
     }
 

@@ -20,25 +20,13 @@
 		<developerConnection>scm:git:git://github.com/mcpat/java-microedition-libraries.git</developerConnection>
 	</scm>
 	
-	<distributionManagement>
-		<repository>
-			<id>${release-repo-id}</id>
-			<name>${release-repo-id}</name>
-			<url>${release-repo-url}</url>
-		</repository>
-		<snapshotRepository>
-			<id>${snapshot-repo-id}</id>
-			<name>${snapshot-repo-id}</name>
-			<url>${snapshot-repo-url}</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.5</version>
 					<configuration>
 						<skip>true</skip>
 					</configuration>

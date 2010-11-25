@@ -5,15 +5,24 @@ public abstract class Dictionary {
 
     public abstract Enumeration elements();
 
-    public abstract Object get(Object arg0);
+    /**
+     * @throws NullPointerException
+     */
+    public abstract Object get(Object key);
 
     public abstract boolean isEmpty();
 
     public abstract Enumeration keys();
 
-    public abstract Object put(Object arg0, Object arg1);
+    /**
+     * @throws NullPointerException
+     */
+    public abstract Object put(Object key, Object value);
 
-    public abstract Object remove(Object arg0);
+    /**
+     * @throws NullPointerException
+     */
+    public abstract Object remove(Object key);
 
     public abstract int size();
 

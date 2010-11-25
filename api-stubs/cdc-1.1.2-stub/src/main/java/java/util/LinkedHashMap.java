@@ -1,23 +1,38 @@
 package java.util;
 
 public class LinkedHashMap extends HashMap {
-    public LinkedHashMap(int arg0, float arg1) {}
-    public LinkedHashMap(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public LinkedHashMap(int initialCapacity, float loadFactor) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public LinkedHashMap(int initialCapacity) {}
     public LinkedHashMap() {}
-    public LinkedHashMap(Map arg0) {}
-    public LinkedHashMap(int arg0, float arg1, boolean arg2) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public LinkedHashMap(Map m) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public LinkedHashMap(int initialCapacity, float loadFactor, boolean accessOrder) {}
 
     public void clear() {}
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
-    public Object get(Object arg0) {
+    public Object get(Object key) {
         return null;
     }
 
-    protected boolean removeEldestEntry(Map$Entry arg0) {
+    protected boolean removeEldestEntry(Entry eldest) {
         return false;
     }
 

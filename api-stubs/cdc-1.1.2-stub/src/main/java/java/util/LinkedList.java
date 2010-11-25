@@ -1,26 +1,42 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class LinkedList extends AbstractSequentialList implements List, Cloneable, Serializable {
     public LinkedList() {}
-    public LinkedList(Collection arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public LinkedList(Collection c) {}
 
-    public boolean add(Object arg0) {
+    public boolean add(Object o) {
         return false;
     }
 
-    public void add(int arg0, Object arg1) {}
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public void add(int index, Object element) {}
 
-    public boolean addAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean addAll(Collection c) {
         return false;
     }
 
-    public boolean addAll(int arg0, Collection arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     * @throws NullPointerException
+     */
+    public boolean addAll(int index, Collection c) {
         return false;
     }
 
-    public void addFirst(Object arg0) {}
+    public void addFirst(Object o) {}
 
-    public void addLast(Object arg0) {}
+    public void addLast(Object o) {}
 
     public void clear() {}
 
@@ -28,51 +44,72 @@ public class LinkedList extends AbstractSequentialList implements List, Cloneabl
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    public boolean contains(Object o) {
         return false;
     }
 
-    public Object get(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object get(int index) {
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object getFirst() {
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object getLast() {
         return null;
     }
 
-    public int indexOf(Object arg0) {
+    public int indexOf(Object o) {
         return 0;
     }
 
-    public int lastIndexOf(Object arg0) {
+    public int lastIndexOf(Object o) {
         return 0;
     }
 
-    public ListIterator listIterator(int arg0) {
+    public ListIterator listIterator(int index) {
         return null;
     }
 
-    public boolean remove(Object arg0) {
+    public boolean remove(Object o) {
         return false;
     }
 
-    public Object remove(int arg0) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object remove(int index) {
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object removeFirst() {
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object removeLast() {
         return null;
     }
 
-    public Object set(int arg0, Object arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public Object set(int index, Object element) {
         return null;
     }
 
@@ -84,7 +121,11 @@ public class LinkedList extends AbstractSequentialList implements List, Cloneabl
         return null;
     }
 
-    public Object[] toArray(Object[] arg0) {
+    /**
+     * @throws ArrayStoreException
+     * @throws NoSuchElementException
+     */
+    public Object[] toArray(Object[] a) {
         return null;
     }
 

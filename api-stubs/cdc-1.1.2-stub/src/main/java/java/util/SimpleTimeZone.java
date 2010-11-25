@@ -1,20 +1,32 @@
 package java.util;
 
 public class SimpleTimeZone extends TimeZone {
-    public final static int STANDARD_TIME;
-    public final static int UTC_TIME;
-    public final static int WALL_TIME;
+    public final static int STANDARD_TIME= 1;
+    public final static int UTC_TIME= 2;
+    public final static int WALL_TIME= 0;
 
-    public SimpleTimeZone(int arg0, String arg1) {}
-    public SimpleTimeZone(int arg0, String arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {}
-    public SimpleTimeZone(int arg0, String arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {}
-    public SimpleTimeZone(int arg0, String arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12) {}
+    public SimpleTimeZone(int rawOffset, String ID) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public SimpleTimeZone(int rawOffset, String ID, int startMonth, int startDay, int startDayOfWeek, int startTime, int endMonth, int endDay, int endDayOfWeek, int endTime) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public SimpleTimeZone(int rawOffset, String ID, int startMonth, int startDay, int startDayOfWeek, int startTime, int endMonth, int endDay, int endDayOfWeek, int endTime, int dstSavings) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public SimpleTimeZone(int rawOffset, String ID, int startMonth, int startDay, int startDayOfWeek, int startTime, int startTimeMode, int endMonth, int endDay, int endDayOfWeek, int endTime, int endTimeMode, int dstSavings) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -22,11 +34,14 @@ public class SimpleTimeZone extends TimeZone {
         return 0;
     }
 
-    public int getOffset(long arg0) {
+    public int getOffset(long date) {
         return 0;
     }
 
-    public int getOffset(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
         return 0;
     }
 
@@ -38,31 +53,49 @@ public class SimpleTimeZone extends TimeZone {
         return 0;
     }
 
-    public boolean hasSameRules(TimeZone arg0) {
+    public boolean hasSameRules(TimeZone other) {
         return false;
     }
 
-    public boolean inDaylightTime(Date arg0) {
+    public boolean inDaylightTime(Date date) {
         return false;
     }
 
-    public void setDSTSavings(int arg0) {}
+    public void setDSTSavings(int millisSavedDuringDST) {}
 
-    public void setEndRule(int arg0, int arg1, int arg2, int arg3) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setEndRule(int endMonth, int endDay, int endDayOfWeek, int endTime) {}
 
-    public void setEndRule(int arg0, int arg1, int arg2) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setEndRule(int endMonth, int endDay, int endTime) {}
 
-    public void setEndRule(int arg0, int arg1, int arg2, int arg3, boolean arg4) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setEndRule(int endMonth, int endDay, int endDayOfWeek, int endTime, boolean after) {}
 
-    public void setRawOffset(int arg0) {}
+    public void setRawOffset(int offsetMillis) {}
 
-    public void setStartRule(int arg0, int arg1, int arg2, int arg3) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setStartRule(int startMonth, int startDay, int startDayOfWeek, int startTime) {}
 
-    public void setStartRule(int arg0, int arg1, int arg2) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setStartRule(int startMonth, int startDay, int startTime) {}
 
-    public void setStartRule(int arg0, int arg1, int arg2, int arg3, boolean arg4) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public void setStartRule(int startMonth, int startDay, int startDayOfWeek, int startTime, boolean after) {}
 
-    public void setStartYear(int arg0) {}
+    public void setStartYear(int year) {}
 
     public String toString() {
         return null;

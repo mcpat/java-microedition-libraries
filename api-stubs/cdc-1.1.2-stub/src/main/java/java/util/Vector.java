@@ -1,5 +1,7 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class Vector extends AbstractList implements List, RandomAccess, Cloneable, Serializable {
     protected int capacityIncrement;
     protected int elementCount;

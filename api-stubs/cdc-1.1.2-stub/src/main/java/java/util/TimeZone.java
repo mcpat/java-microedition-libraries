@@ -1,10 +1,12 @@
 package java.util;
 
-public abstract class TimeZone implements Serializable, Cloneable {
-    public final static int LONG;
-    public final static int SHORT;
+import java.io.Serializable;
 
-    public static String[] getAvailableIDs(int arg0) {
+public abstract class TimeZone implements Serializable, Cloneable {
+    public final static int LONG= 1;
+    public final static int SHORT= 0;
+
+    public static String[] getAvailableIDs(int rawOffset) {
         return null;
     }
 
@@ -16,11 +18,11 @@ public abstract class TimeZone implements Serializable, Cloneable {
         return null;
     }
 
-    public static TimeZone getTimeZone(String arg0) {
+    public static TimeZone getTimeZone(String ID) {
         return null;
     }
 
-    public static void setDefault(TimeZone arg0) {}
+    public static void setDefault(TimeZone zone) {}
 
 
     public TimeZone() {}
@@ -33,15 +35,18 @@ public abstract class TimeZone implements Serializable, Cloneable {
         return null;
     }
 
-    public final String getDisplayName(Locale arg0) {
+    public final String getDisplayName(Locale locale) {
         return null;
     }
 
-    public final String getDisplayName(boolean arg0, int arg1) {
+    public final String getDisplayName(boolean daylight, int style) {
         return null;
     }
 
-    public String getDisplayName(boolean arg0, int arg1, Locale arg2) {
+    /**
+     * @throws IllegalArgumentException
+     */
+    public String getDisplayName(boolean daylight, int style, Locale locale) {
         return null;
     }
 
@@ -53,23 +58,23 @@ public abstract class TimeZone implements Serializable, Cloneable {
         return null;
     }
 
-    public abstract int getOffset(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
+    public abstract int getOffset(int era, int year, int month, int day, int dayOfWeek, int milliseconds);
 
-    public int getOffset(long arg0) {
+    public int getOffset(long date) {
         return 0;
     }
 
     public abstract int getRawOffset();
 
-    public boolean hasSameRules(TimeZone arg0) {
+    public boolean hasSameRules(TimeZone other) {
         return false;
     }
 
-    public abstract boolean inDaylightTime(Date arg0);
+    public abstract boolean inDaylightTime(Date date);
 
-    public void setID(String arg0) {}
+    public void setID(String ID) {}
 
-    public abstract void setRawOffset(int arg0);
+    public abstract void setRawOffset(int offsetMillis);
 
     public abstract boolean useDaylightTime();
 

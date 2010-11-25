@@ -1,10 +1,24 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class HashMap extends AbstractMap implements Map, Cloneable, Serializable {
-    public HashMap(int arg0, float arg1) {}
-    public HashMap(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public HashMap(int initialCapacity, float loadFactory) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public HashMap(int initialCapacity) {}
+    
     public HashMap() {}
-    public HashMap(Map arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public HashMap(Map m) {}
 
     public void clear() {}
 
@@ -12,11 +26,11 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
         return null;
     }
 
-    public boolean containsKey(Object arg0) {
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
@@ -24,7 +38,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
         return null;
     }
 
-    public Object get(Object arg0) {
+    public Object get(Object key) {
         return null;
     }
 
@@ -36,13 +50,13 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    public void putAll(Map m) {}
 
-    public Object remove(Object arg0) {
+    public Object remove(Object key) {
         return null;
     }
 

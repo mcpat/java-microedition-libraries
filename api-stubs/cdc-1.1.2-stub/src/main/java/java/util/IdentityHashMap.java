@@ -1,9 +1,19 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class IdentityHashMap extends AbstractMap implements Map, Serializable, Cloneable {
     public IdentityHashMap() {}
-    public IdentityHashMap(int arg0) {}
-    public IdentityHashMap(Map arg0) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public IdentityHashMap(int expectedMaxCapacity) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public IdentityHashMap(Map m) {}
 
     public void clear() {}
 
@@ -11,11 +21,11 @@ public class IdentityHashMap extends AbstractMap implements Map, Serializable, C
         return null;
     }
 
-    public boolean containsKey(Object arg0) {
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
@@ -23,11 +33,11 @@ public class IdentityHashMap extends AbstractMap implements Map, Serializable, C
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
-    public Object get(Object arg0) {
+    public Object get(Object key) {
         return null;
     }
 
@@ -43,13 +53,16 @@ public class IdentityHashMap extends AbstractMap implements Map, Serializable, C
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void putAll(Map t) {}
 
-    public Object remove(Object arg0) {
+    public Object remove(Object key) {
         return null;
     }
 

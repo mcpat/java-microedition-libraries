@@ -1,10 +1,21 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class TreeMap extends AbstractMap implements SortedMap, Cloneable, Serializable {
     public TreeMap() {}
-    public TreeMap(Comparator arg0) {}
-    public TreeMap(Map arg0) {}
-    public TreeMap(SortedMap arg0) {}
+    public TreeMap(Comparator c) {}
+    
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public TreeMap(Map m) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public TreeMap(SortedMap m) {}
 
     public void clear() {}
 
@@ -16,11 +27,15 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, Serial
         return null;
     }
 
-    public boolean containsKey(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
@@ -28,15 +43,27 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, Serial
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object firstKey() {
         return null;
     }
 
-    public Object get(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public Object get(Object key) {
         return null;
     }
 
-    public SortedMap headMap(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedMap headMap(Object toKey) {
         return null;
     }
 
@@ -44,17 +71,32 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, Serial
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object lastKey() {
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public void putAll(Map map) {}
 
-    public Object remove(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public Object remove(Object key) {
         return null;
     }
 
@@ -62,11 +104,21 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, Serial
         return 0;
     }
 
-    public SortedMap subMap(Object arg0, Object arg1) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedMap subMap(Object fromKey, Object toKey) {
         return null;
     }
 
-    public SortedMap tailMap(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedMap tailMap(Object fromKey) {
         return null;
     }
 

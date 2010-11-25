@@ -1,15 +1,27 @@
 package java.util;
 
 public abstract class ResourceBundle {
-    public final static ResourceBundle getBundle(String arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     */
+    public final static ResourceBundle getBundle(String baseName) {
         return null;
     }
 
-    public final static ResourceBundle getBundle(String arg0, Locale arg1) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     */
+    public final static ResourceBundle getBundle(String baseName, Locale locale) {
         return null;
     }
 
-    public static ResourceBundle getBundle(String arg0, Locale arg1, ClassLoader arg2) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     */
+    public static ResourceBundle getBundle(String baseName, Locale locale, ClassLoader loader) {
         return null;
     }
 
@@ -24,20 +36,37 @@ public abstract class ResourceBundle {
         return null;
     }
 
-    public final Object getObject(String arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     */
+    public final Object getObject(String key) {
         return null;
     }
 
-    public final String getString(String arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     * @throws ClassCastException
+     */
+    public final String getString(String key) {
         return null;
     }
 
-    public final String[] getStringArray(String arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws MissingResourceException
+     * @throws ClassCastException
+     */
+    public final String[] getStringArray(String key) {
         return null;
     }
 
-    protected abstract Object handleGetObject(String arg0);
+    /**
+     * @throws NullPointerException
+     */
+    protected abstract Object handleGetObject(String key);
 
-    protected void setParent(ResourceBundle arg0) {}
+    protected void setParent(ResourceBundle parent) {}
 
 }

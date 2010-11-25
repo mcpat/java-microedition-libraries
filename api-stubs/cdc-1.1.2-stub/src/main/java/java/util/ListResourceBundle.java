@@ -9,7 +9,7 @@ public abstract class ListResourceBundle extends ResourceBundle {
         return null;
     }
 
-    public final Object handleGetObject(String arg0) {
+    public final Object handleGetObject(String key) {
         return null;
     }
 

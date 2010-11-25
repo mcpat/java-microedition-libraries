@@ -1,5 +1,7 @@
 package java.util;
 
+import java.io.Serializable;
+
 public final class Locale implements Cloneable, Serializable {
     public final static Locale CANADA;
     public final static Locale CANADA_FRENCH;
@@ -22,6 +24,12 @@ public final class Locale implements Cloneable, Serializable {
     public final static Locale TRADITIONAL_CHINESE;
     public final static Locale UK;
     public final static Locale US;
+    
+    static {
+        CANADA= CANADA_FRENCH= CHINA= CHINESE= ENGLISH= FRANCE= FRENCH=
+        GERMAN= GERMANY= ITALIAN= ITALY= JAPAN= JAPANESE= KOREA= KOREAN=
+        PRC= SIMPLIFIED_CHINESE= TAIWAN= TRADITIONAL_CHINESE= UK= US= getDefault();
+    }
 
     public static Locale[] getAvailableLocales() {
         return null;
@@ -39,18 +47,33 @@ public final class Locale implements Cloneable, Serializable {
         return null;
     }
 
-    public static void setDefault(Locale arg0) {}
+    /**
+     * @throws SecurityException
+     * @throws NullPointerException
+     */
+    public static void setDefault(Locale newLocale) {}
 
-
-    public Locale(String arg0, String arg1, String arg2) {}
-    public Locale(String arg0, String arg1) {}
-    public Locale(String arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public Locale(String language, String country, String variant) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public Locale(String language, String country) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public Locale(String language) {}
 
     public Object clone() {
         return null;
     }
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -62,7 +85,7 @@ public final class Locale implements Cloneable, Serializable {
         return null;
     }
 
-    public String getDisplayCountry(Locale arg0) {
+    public String getDisplayCountry(Locale inLocale) {
         return null;
     }
 
@@ -70,7 +93,7 @@ public final class Locale implements Cloneable, Serializable {
         return null;
     }
 
-    public String getDisplayLanguage(Locale arg0) {
+    public String getDisplayLanguage(Locale inLocale) {
         return null;
     }
 
@@ -78,7 +101,7 @@ public final class Locale implements Cloneable, Serializable {
         return null;
     }
 
-    public String getDisplayName(Locale arg0) {
+    public String getDisplayName(Locale inLocale) {
         return null;
     }
 
@@ -86,14 +109,20 @@ public final class Locale implements Cloneable, Serializable {
         return null;
     }
 
-    public String getDisplayVariant(Locale arg0) {
+    public String getDisplayVariant(Locale inLocale) {
         return null;
     }
 
+    /**
+     * @throws MissingResourceException
+     */
     public String getISO3Country() throws MissingResourceException {
         return null;
     }
 
+    /**
+     * @throws MissingResourceException
+     */
     public String getISO3Language() throws MissingResourceException {
         return null;
     }

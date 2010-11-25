@@ -1,9 +1,15 @@
 package java.util;
 
-public final class PropertyPermission extends BasicPermission {
-    public PropertyPermission(String arg0, String arg1) {}
+import java.security.BasicPermission;
+import java.security.Permission;
+import java.security.PermissionCollection;
 
-    public boolean equals(Object arg0) {
+public final class PropertyPermission extends BasicPermission {
+    public PropertyPermission(String name, String actions) {
+        super(name, actions);
+    }
+
+    public boolean equals(Object obj) {
         return false;
     }
 
@@ -15,7 +21,7 @@ public final class PropertyPermission extends BasicPermission {
         return 0;
     }
 
-    public boolean implies(Permission arg0) {
+    public boolean implies(Permission p) {
         return false;
     }
 

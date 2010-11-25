@@ -1,9 +1,23 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class LinkedHashSet extends HashSet implements Set, Cloneable, Serializable {
-    public LinkedHashSet(int arg0, float arg1) {}
-    public LinkedHashSet(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public LinkedHashSet(int initialCapacity, float loadFactor) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public LinkedHashSet(int initialCapacity) {}
+    
     public LinkedHashSet() {}
-    public LinkedHashSet(Collection arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public LinkedHashSet(Collection c) {}
 
 }

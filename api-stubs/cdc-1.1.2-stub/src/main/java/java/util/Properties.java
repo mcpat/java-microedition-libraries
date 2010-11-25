@@ -1,35 +1,54 @@
 package java.util;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+
 public class Properties extends Hashtable {
     protected Properties defaults;
 
     public Properties() {}
-    public Properties(Properties arg0) {}
+    public Properties(Properties defaults) {}
 
-    public String getProperty(String arg0) {
+    public String getProperty(String key) {
         return null;
     }
 
-    public String getProperty(String arg0, String arg1) {
+    public String getProperty(String key, String defaultValue) {
         return null;
     }
 
-    public void list(PrintStream arg0) {}
+    public void list(PrintStream out) {}
 
-    public void list(PrintWriter arg0) {}
+    public void list(PrintWriter out) {}
 
-    public void load(InputStream arg0) throws IOException {}
+    /**
+     * @throws IOException
+     * @throws IllegalArgumentException
+     */
+    public void load(InputStream inStream) throws IOException {}
 
     public Enumeration propertyNames() {
         return null;
     }
 
-    public void save(OutputStream arg0, String arg1) {}
+    /**
+     * @deprecated {@link #store(OutputStream, String)}
+     * @throws ClassCastException
+     */
+    public void save(OutputStream out, String header) {}
 
-    public Object setProperty(String arg0, String arg1) {
+    public Object setProperty(String key, String value) {
         return null;
     }
 
-    public void store(OutputStream arg0, String arg1) throws IOException {}
+    /**
+     * @throws IOException
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public void store(OutputStream out, String header) throws IOException {}
 
 }

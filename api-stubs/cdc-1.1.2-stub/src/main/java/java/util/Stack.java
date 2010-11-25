@@ -7,19 +7,25 @@ public class Stack extends Vector {
         return false;
     }
 
+    /**
+     * @throws EmptyStackException
+     */
     public Object peek() {
         return null;
     }
 
+    /**
+     * @throws EmptyStackException
+     */
     public Object pop() {
         return null;
     }
 
-    public Object push(Object arg0) {
+    public Object push(Object item) {
         return null;
     }
 
-    public int search(Object arg0) {
+    public int search(Object o) {
         return 0;
     }
 

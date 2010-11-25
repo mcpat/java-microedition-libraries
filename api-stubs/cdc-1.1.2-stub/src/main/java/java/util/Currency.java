@@ -1,11 +1,21 @@
 package java.util;
 
+import java.io.Serializable;
+
 public final class Currency implements Serializable {
-    public static Currency getInstance(String arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    public static Currency getInstance(String currencyCode) {
         return null;
     }
 
-    public static Currency getInstance(Locale arg0) {
+    /**
+     * @throws NullPointerException
+     * @throws IllegalArgumentException
+     */
+    public static Currency getInstance(Locale locale) {
         return null;
     }
 
@@ -22,7 +32,10 @@ public final class Currency implements Serializable {
         return null;
     }
 
-    public String getSymbol(Locale arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public String getSymbol(Locale locale) {
         return null;
     }
 

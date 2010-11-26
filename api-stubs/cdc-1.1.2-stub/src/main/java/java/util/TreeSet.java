@@ -1,16 +1,34 @@
 package java.util;
 
+import java.io.Serializable;
+
 public class TreeSet extends AbstractSet implements SortedSet, Cloneable, Serializable {
     public TreeSet() {}
-    public TreeSet(Comparator arg0) {}
-    public TreeSet(Collection arg0) {}
-    public TreeSet(SortedSet arg0) {}
+    public TreeSet(Comparator c) {}
+    
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public TreeSet(Collection c) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public TreeSet(SortedSet s) {}
 
-    public boolean add(Object arg0) {
+    /**
+     * @throws ClassCastException
+     */
+    public boolean add(Object o) {
         return false;
     }
 
-    public boolean addAll(Collection arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws NullPointerException
+     */
+    public boolean addAll(Collection c) {
         return false;
     }
 
@@ -24,15 +42,26 @@ public class TreeSet extends AbstractSet implements SortedSet, Cloneable, Serial
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    /**
+     * @throws ClassCastException
+     */
+    public boolean contains(Object o) {
         return false;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object first() {
         return null;
     }
 
-    public SortedSet headSet(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedSet headSet(Object toElement) {
         return null;
     }
 
@@ -44,11 +73,17 @@ public class TreeSet extends AbstractSet implements SortedSet, Cloneable, Serial
         return null;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object last() {
         return null;
     }
 
-    public boolean remove(Object arg0) {
+    /**
+     * @throws ClassCastException
+     */
+    public boolean remove(Object o) {
         return false;
     }
 
@@ -56,11 +91,21 @@ public class TreeSet extends AbstractSet implements SortedSet, Cloneable, Serial
         return 0;
     }
 
-    public SortedSet subSet(Object arg0, Object arg1) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedSet subSet(Object fromElement, Object toElement) {
         return null;
     }
 
-    public SortedSet tailSet(Object arg0) {
+    /**
+     * @throws ClassCastException
+     * @throws IllegalArgumentException
+     * @throws NullPointerException
+     */
+    public SortedSet tailSet(Object fromElement) {
         return null;
     }
 

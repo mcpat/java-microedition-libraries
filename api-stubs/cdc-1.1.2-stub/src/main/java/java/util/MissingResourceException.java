@@ -1,7 +1,7 @@
 package java.util;
 
 public class MissingResourceException extends RuntimeException {
-    public MissingResourceException(String arg0, String arg1, String arg2) {}
+    public MissingResourceException(String s, String className, String key) {}
 
     public String getClassName() {
         return null;

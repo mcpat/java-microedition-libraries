@@ -1,18 +1,29 @@
 package java.util;
 
 public class WeakHashMap extends AbstractMap implements Map {
-    public WeakHashMap(int arg0, float arg1) {}
-    public WeakHashMap(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public WeakHashMap(int initialCapacity, float loadFactor) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public WeakHashMap(int initialCapacity) {}
     public WeakHashMap() {}
-    public WeakHashMap(Map arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public WeakHashMap(Map t) {}
 
     public void clear() {}
 
-    public boolean containsKey(Object arg0) {
+    public boolean containsKey(Object key) {
         return false;
     }
 
-    public boolean containsValue(Object arg0) {
+    public boolean containsValue(Object value) {
         return false;
     }
 
@@ -20,7 +31,7 @@ public class WeakHashMap extends AbstractMap implements Map {
         return null;
     }
 
-    public Object get(Object arg0) {
+    public Object get(Object key) {
         return null;
     }
 
@@ -32,13 +43,16 @@ public class WeakHashMap extends AbstractMap implements Map {
         return null;
     }
 
-    public Object put(Object arg0, Object arg1) {
+    public Object put(Object key, Object value) {
         return null;
     }
 
-    public void putAll(Map arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void putAll(Map m) {}
 
-    public Object remove(Object arg0) {
+    public Object remove(Object key) {
         return null;
     }
 

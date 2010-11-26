@@ -7,26 +7,48 @@ public class Vector extends AbstractList implements List, RandomAccess, Cloneabl
     protected int elementCount;
     protected Object[] elementData;
 
-    public Vector(int arg0, int arg1) {}
-    public Vector(int arg0) {}
+    /**
+     * @throws IllegalArgumentException
+     */
+    public Vector(int initialCapacity, int capacityIncrement) {}
+    
+    /**
+     * @throws IllegalArgumentException
+     */
+    public Vector(int initialCapacity) {}
+    
     public Vector() {}
-    public Vector(Collection arg0) {}
+    
+    /**
+     * @throws NullPointerException
+     */
+    public Vector(Collection c) {}
 
-    public boolean add(Object arg0) {
+    public boolean add(Object o) {
         return false;
     }
 
-    public void add(int arg0, Object arg1) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void add(int index, Object element) {}
 
-    public boolean addAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean addAll(Collection c) {
         return false;
     }
 
-    public boolean addAll(int arg0, Collection arg1) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     * @throws NullPointerException
+     */
+    public boolean addAll(int index, Collection c) {
         return false;
     }
 
-    public void addElement(Object arg0) {}
+    public void addElement(Object obj) {}
 
     public int capacity() {
         return 0;
@@ -38,17 +60,26 @@ public class Vector extends AbstractList implements List, RandomAccess, Cloneabl
         return null;
     }
 
-    public boolean contains(Object arg0) {
+    public boolean contains(Object elem) {
         return false;
     }
 
-    public boolean containsAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean containsAll(Collection c) {
         return false;
     }
 
-    public void copyInto(Object[] arg0) {}
+    /**
+     * @throws NullPointerException
+     */
+    public void copyInto(Object[] anArray) {}
 
-    public Object elementAt(int arg0) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public Object elementAt(int index) {
         return null;
     }
 
@@ -56,17 +87,23 @@ public class Vector extends AbstractList implements List, RandomAccess, Cloneabl
         return null;
     }
 
-    public void ensureCapacity(int arg0) {}
+    public void ensureCapacity(int minCapacity) {}
 
-    public boolean equals(Object arg0) {
+    public boolean equals(Object o) {
         return false;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object firstElement() {
         return null;
     }
 
-    public Object get(int arg0) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public Object get(int index) {
         return null;
     }
 
@@ -74,71 +111,108 @@ public class Vector extends AbstractList implements List, RandomAccess, Cloneabl
         return 0;
     }
 
-    public int indexOf(Object arg0) {
+    public int indexOf(Object elem) {
         return 0;
     }
 
-    public int indexOf(Object arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public int indexOf(Object elem, int index) {
         return 0;
     }
 
-    public void insertElementAt(Object arg0, int arg1) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void insertElementAt(Object obj, int index) {}
 
     public boolean isEmpty() {
         return false;
     }
 
+    /**
+     * @throws NoSuchElementException
+     */
     public Object lastElement() {
         return null;
     }
 
-    public int lastIndexOf(Object arg0) {
+    public int lastIndexOf(Object elem) {
         return 0;
     }
 
-    public int lastIndexOf(Object arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     */
+    public int lastIndexOf(Object elem, int index) {
         return 0;
     }
 
-    public boolean remove(Object arg0) {
+    public boolean remove(Object o) {
         return false;
     }
 
-    public Object remove(int arg0) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public Object remove(int index) {
         return null;
     }
 
-    public boolean removeAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean removeAll(Collection c) {
         return false;
     }
 
     public void removeAllElements() {}
 
-    public boolean removeElement(Object arg0) {
+    public boolean removeElement(Object obj) {
         return false;
     }
 
-    public void removeElementAt(int arg0) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void removeElementAt(int index) {}
 
-    protected void removeRange(int arg0, int arg1) {}
+    protected void removeRange(int fromIndex, int toIndex) {}
 
-    public boolean retainAll(Collection arg0) {
+    /**
+     * @throws NullPointerException
+     */
+    public boolean retainAll(Collection c) {
         return false;
     }
 
-    public Object set(int arg0, Object arg1) {
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public Object set(int index, Object element) {
         return null;
     }
 
-    public void setElementAt(Object arg0, int arg1) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void setElementAt(Object obj, int index) {}
 
-    public void setSize(int arg0) {}
+    /**
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public void setSize(int newSize) {}
 
     public int size() {
         return 0;
     }
 
-    public List subList(int arg0, int arg1) {
+    /**
+     * @throws IndexOutOfBoundsException
+     * @throws IllegalArgumentException
+     */
+    public List subList(int fromIndex, int toIndex) {
         return null;
     }
 
@@ -146,7 +220,11 @@ public class Vector extends AbstractList implements List, RandomAccess, Cloneabl
         return null;
     }
 
-    public Object[] toArray(Object[] arg0) {
+    /**
+     * @throws ArrayStoreException
+     * @throws NullPointerException
+     */
+    public Object[] toArray(Object[] a) {
         return null;
     }
 

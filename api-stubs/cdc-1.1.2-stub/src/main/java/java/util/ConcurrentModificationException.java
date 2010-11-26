@@ -2,6 +2,6 @@ package java.util;
 
 public class ConcurrentModificationException extends RuntimeException {
     public ConcurrentModificationException() {}
-    public ConcurrentModificationException(String arg0) {}
+    public ConcurrentModificationException(String message) {}
 
 }

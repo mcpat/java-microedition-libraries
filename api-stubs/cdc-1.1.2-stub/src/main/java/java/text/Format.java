@@ -29,7 +29,7 @@ public abstract class Format implements Serializable, Cloneable {
 
     /**
      * @throws NullPointerException 
-     * @thtows IllegalArgumentException
+     * @throws IllegalArgumentException
      */
     public AttributedCharacterIterator formatToCharacterIterator(Object obj) {
         return null;

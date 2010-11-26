@@ -12,6 +12,7 @@
 		<module>cldc-1.1-stub</module>
 		<module>imp-1.0-stub</module>
 		<module>midp-2.0-stub</module>
+		<module>cdc-1.1.2-stub</module>
 	</modules>
 
 	<scm>

@@ -4,7 +4,7 @@ public interface Controllable {
     
 	/**
 	 * @throws IllegalArgumentException
-	 * @throw IllegalStateException
+	 * @throws IllegalStateException
 	 */
 	Control getControl(String controlType);
 

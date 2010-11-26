@@ -15,17 +15,17 @@
 
 	<properties>
 		<libxjava-class-version>1.3</libxjava-class-version>
-<!--		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>-->
+		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>
 		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
 		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>
 		<libxjava-api-link>${clc-api-link}</libxjava-api-link>
 	</properties>
 
 	<dependencies>
-<!--		<dependency>-->
-<!--			<groupId>com.github.mcpat.apistubs</groupId>-->
-<!--			<artifactId>cdc-1.1.2-stub</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>com.github.mcpat.apistubs</groupId>
+			<artifactId>cdc-1.1.2-stub</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

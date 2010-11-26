@@ -5,11 +5,10 @@
 		<groupId>com.github.mcpat.apistubs</groupId>
 		<artifactId>stub-parent</artifactId>
 		<relativePath>../stub-parent/pom.xml</relativePath>
-		<version>0.1-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 
 	<artifactId>midp-2.0-stub</artifactId>
-	<version>0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>MIDP-2.0 Stub</name>

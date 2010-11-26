@@ -5,11 +5,10 @@
 		<groupId>com.github.mcpat.apistubs</groupId>
 		<artifactId>stub-parent</artifactId>
 		<relativePath>../stub-parent/pom.xml</relativePath>
-		<version>0.1-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 
 	<artifactId>cdc-1.1.2-stub</artifactId>
-	<version>0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>CDC-1.1.2 Stub</name>

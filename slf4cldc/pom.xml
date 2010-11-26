@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.github.mcpat.slf4j</groupId>
 	<artifactId>slf4cldc-parent</artifactId>
-	<version>1.6.0-SNAPSHOT</version>
+	<version>1.6.0</version>
 
 	<packaging>pom</packaging>
 	<name>SLF for CLDC</name>
@@ -41,7 +41,7 @@
 	</developers>
 
 	<properties>
-		<cldc-stub-version>0.1-SNAPSHOT</cldc-stub-version>
+		<cldc-stub-version>1.0</cldc-stub-version>
 		<cldc-stub-jar>${settings.localRepository}/com/github/mcpat/apistubs/cldc-1.1-stub/${cldc-stub-version}/cldc-1.1-stub-${cldc-stub-version}.jar</cldc-stub-jar>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -100,6 +100,29 @@
 						<link>http://download.oracle.com/javame/config/cldc/ref-impl/cldc1.1/jsr139</link>
 					</links>
 				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			
 			<plugin>

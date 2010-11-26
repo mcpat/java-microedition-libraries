@@ -44,6 +44,7 @@
 
 	<modules>
 		<module>slf4cldc-api</module>
+		<module>slf4cldc-nop</module>
 		<module>slf4cldc-simple</module>
 	</modules>
 
@@ -96,20 +97,22 @@
 			</plugins>
 		</pluginManagement>
 		
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-gpg-plugin</artifactId>
-			<version>1.1</version>
-			<executions>
-				<execution>
-					<id>sign-artifacts</id>
-					<phase>verify</phase>
-					<goals>
-						<goal>sign</goal>
-					</goals>
-				</execution>
-			</executions>
-		</plugin>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 
 	<scm>

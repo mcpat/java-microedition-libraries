@@ -10,6 +10,7 @@
 	<modules>
 		<module>api-stubs</module>
 		<module>libxjava</module>
+		<module>slf4cldc</module>
 	</modules>
 	
 	<scm>

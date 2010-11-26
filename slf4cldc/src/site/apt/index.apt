@@ -1,0 +1,13 @@
+ ------
+ Introduction
+ ------
+ Marcel Patzlaff
+ ------
+ 2010.11.26
+ ------
+
+
+SLF for CLDC
+
+  stands for Simple Logging Facade for the Connected Limited Device Configuration (1.1).
+  It is a downsized version of {{{http://www.slf4j.org}slf4j}} which runs on CLDC.

@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.mcpat.slf4j</groupId>
+		<artifactId>slf4cldc-parent</artifactId>
+		<version>1.6.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>slf4cldc-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>SLF for CLDC API Module</name>
+	<description>The SLF API for Connected Limited Device Configuration 1.1</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<tasks>
+						<echo>Removing slf4cldc-api's dummy StaticLoggerBinder</echo>
+						<delete dir="target/classes/org/slf4j/impl" />
+					</tasks>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,6 +1,6 @@
 package java.lang.reflect;
 
-public final class Method implements Member {
+public final class Method extends AccessibleObject implements Member {
     public boolean equals(Object obj) {
         return false;
     }

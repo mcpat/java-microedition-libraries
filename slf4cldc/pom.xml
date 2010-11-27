@@ -8,7 +8,6 @@
 	</parent>
 	<groupId>com.github.mcpat.slf4j</groupId>
 	<artifactId>slf4cldc-parent</artifactId>
-	<version>1.6.0</version>
 
 	<packaging>pom</packaging>
 	<name>SLF for CLDC</name>
@@ -37,6 +36,7 @@
 			<roles>
 				<role>Developer</role>
 			</roles>
+			<timezone>+1</timezone>
 		</developer>
 	</developers>
 

@@ -1,6 +1,6 @@
 package java.io;
 
-public class WriteAbortedException {
+public class WriteAbortedException extends ObjectStreamException {
     public Exception detail;
 
     public WriteAbortedException(String s, Exception ex) {}

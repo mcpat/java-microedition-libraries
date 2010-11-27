@@ -1,6 +1,7 @@
 package java.text;
 
-import java.text.DateFormat.Field;
+import java.text.Format.Field;
+
 
 public class FieldPosition {
     public FieldPosition(int field) {}

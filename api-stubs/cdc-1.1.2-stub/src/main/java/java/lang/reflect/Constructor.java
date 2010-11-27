@@ -1,6 +1,6 @@
 package java.lang.reflect;
 
-public final class Constructor implements Member {
+public final class Constructor extends AccessibleObject implements Member {
     public boolean equals(Object obj) {
         return false;
     }

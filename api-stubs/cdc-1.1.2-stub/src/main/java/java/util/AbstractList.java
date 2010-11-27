@@ -1,7 +1,7 @@
 package java.util;
 
 public abstract class AbstractList extends AbstractCollection implements List {
-    protected int modCount;
+    protected transient int modCount;
 
     protected AbstractList() {}
 

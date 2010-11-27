@@ -1,6 +1,6 @@
 package java.io;
 
-public class InvalidClassException {
+public class InvalidClassException extends ObjectStreamException {
     public String classname;
 
     public InvalidClassException(String reason) {}

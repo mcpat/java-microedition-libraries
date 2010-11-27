@@ -24,10 +24,10 @@
 
 	<build>
 		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>net.sf.jour</groupId>-->
-<!--				<artifactId>jour-maven-plugin</artifactId>-->
-<!--			</plugin>-->
+			<plugin>
+				<groupId>net.sf.jour</groupId>
+				<artifactId>jour-maven-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

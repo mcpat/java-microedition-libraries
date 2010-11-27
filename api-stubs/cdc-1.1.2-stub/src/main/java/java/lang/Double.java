@@ -2,6 +2,7 @@ package java.lang;
 
 public final class Double extends Number implements Comparable {
 	public static final double MAX_VALUE= 1.7976931348623157E308d;
+	public static final double MIN_VALUE= longBitsToDouble(0x1L);
 	public static final double NaN= 0d/0d;
 	public static final double NEGATIVE_INFINITY= -1d/0d;
 	public static final double POSITIVE_INFINITY= 1d/0d;

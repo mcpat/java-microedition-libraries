@@ -27,7 +27,7 @@
 	<developers>
 		<developer>
 			<id>schoener</id>
-			<name>Vladimir Sch&ouml;ner</name>
+			<name>Vladimir Sch&#x00F6;ner</name>
 			<email>schoener@wapl.de</email>
 			<timezone>+1</timezone>
 			<roles>

@@ -1,13 +1,11 @@
 package java.lang;
 
 public final class Byte extends Number implements Comparable {
-    public final static byte MAX_VALUE;
-    public final static byte MIN_VALUE;
+    public final static byte MAX_VALUE= 127;
+    public final static byte MIN_VALUE= -128;
     public final static Class TYPE;
     
 	static {
-		MAX_VALUE= 127;
-		MIN_VALUE= -128;
 		TYPE= Class.class;
 	}
 

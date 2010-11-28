@@ -63,9 +63,10 @@ public final class BinarySerialiserStream extends DataOutputStream implements IS
             return;
         } else {
             int type= BinarySerialiserConstants.getType(o.getClass().getName());
-            if(type < 0)
+            if(type < 0) {
                 throw new IOException("object of class + '" + o.getClass().getName() + "' cannot be serialised");
-                
+            }
+            
             writeByte(type);
             
             switch (type) {
@@ -120,8 +121,9 @@ public final class BinarySerialiserStream extends DataOutputStream implements IS
     }
 
     private void insertReference(Object obj) {
-        if(obj == null || _references.containsKey(obj))
+        if(obj == null || _references.containsKey(obj)) {
             return;
+        }
         
         Byte value= new Byte(_referenceCounter++);
         _references.put(obj, value);

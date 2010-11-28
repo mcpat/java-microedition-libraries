@@ -64,7 +64,8 @@ public class SerialisableVector/*[J5<E>J5]*/ extends Vector/*[J5<E>J5]*/ impleme
         int count= size();
         out.writeInt(count);
         
-        for(int i= 0; i < count; ++i)
+        for(int i= 0; i < count; ++i) {
             out.writeObject(/*[J5(E)J5]*/elementAt(i));
+        }
     }
 }

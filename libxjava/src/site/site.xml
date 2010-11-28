@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Lib-Cross-Java">
+	<poweredBy>
+		<logo name="Maven" href="http://maven.apache.org" img="http://maven.apache.org/images/logos/maven-feather.png"/>
+		<logo name="GitHub" href="https://github.com" img="https://github.com/images/modules/header/logov3.png"/>
+	</poweredBy>
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-default-skin</artifactId>
+		<version>1.0</version>
+	</skin>
+
+	<body>
+		<menu name="Lib-Cross-Java">
+<!--			<item name="Overview" href="index.html" />-->
+		</menu>
+		<menu ref="reports" inherit="bottom" />
+		<menu ref="modules" inherit="bottom" />
+		<menu ref="parent" inherit="bottom" />
+	</body>
+</project>

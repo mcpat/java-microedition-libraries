@@ -70,8 +70,6 @@ public class Base64 extends BaseX {
                 if(encLen > 0) {
                     continue;
                 }
-            } else {
-                
             }
             
             if(encOff > 0) {

@@ -109,8 +109,9 @@ public final class BinaryDeserialiserStream extends DataInputStream implements I
             }
         }
         
-        if(result == null)
+        if(result == null) {
             throw new IOException("unexpected type: '" + type + "'");
+        }
         
         insertReference(result);
         return result;

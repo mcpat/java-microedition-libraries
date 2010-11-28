@@ -71,12 +71,7 @@ public class BasicHashMap {
         }
 
         public Object nextElement() {
-            if (entry == null) {
-                while ((index-- > 0) && ((entry= table[index]) == null))
-                    ;
-            }
-
-            if (entry != null) {
+            if (hasMoreElements()) {
                 Entry e= entry;
                 entry= e.next;
                 lastAccessedElement= e;
@@ -103,7 +98,7 @@ public class BasicHashMap {
     private final static int DEFAULT_INITIAL_CAPACITY= 16;
     private final static int MAX_CAPACITY= 1 << 30;
 
-    private final static int hash(int h) {
+    private static int hash(int h) {
         h^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }

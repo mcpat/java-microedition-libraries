@@ -28,9 +28,9 @@ import java.util.Enumeration;
  */
 public interface BasicEnumeration/*[J5<E>J5]*/ extends Enumeration/*[J5<E>J5]*/ {
 
-	public boolean hasMoreElements();
+	boolean hasMoreElements();
 
-	public /*[J5E/*J5]*/Object/**/ nextElement();
+	/*[J5E/*J5]*/Object/**/ nextElement();
 
-	public void remove();
+	void remove();
 }

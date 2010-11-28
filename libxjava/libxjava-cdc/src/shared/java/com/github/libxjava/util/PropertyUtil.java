@@ -58,4 +58,6 @@ public final class PropertyUtil {
         temp.load(input);
         properties.putAll(temp);
     }
+    
+    private PropertyUtil() {}
 }

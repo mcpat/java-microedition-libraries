@@ -98,9 +98,12 @@ final class BinarySerialiserConstants {
      * @see IDeserialiser
      */
     public static boolean isSerialisationSupported(Object obj) {
-        if((obj == null ) || (obj instanceof ISerialisable))
+        if((obj == null ) || (obj instanceof ISerialisable)) {
             return true;
+        }
         
         return containsType(obj.getClass().getName());
     }
+    
+    private BinarySerialiserConstants() {}
 }

@@ -139,4 +139,6 @@ public final class PropertyUtil {
             properties.put(reader.lastKey, reader.lastValue);
         }
     }
+    
+    private PropertyUtil() {}
 }

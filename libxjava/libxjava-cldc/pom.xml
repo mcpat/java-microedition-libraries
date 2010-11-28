@@ -97,6 +97,22 @@
 		</plugins>
 	</build>
 	
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<bootclasspath>${libxjava-boot-classpath}</bootclasspath>
+					<detectJavaApiLink>false</detectJavaApiLink>
+					<links>
+						<link>http://download.oracle.com/javame/config/cldc/ref-impl/cldc1.1/jsr139</link>
+					</links>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	
 	<profiles>
 		<profile>
 			<!-- create metadata with 'mvn -Peclipse' -->

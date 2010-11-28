@@ -105,6 +105,22 @@
 		</plugins>
 	</build>
 	
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<bootclasspath>${libxjava-boot-classpath}</bootclasspath>
+					<detectJavaApiLink>false</detectJavaApiLink>
+					<links>
+						<link>http://download.oracle.com/javame/config/cdc/ref-impl/cdc1.1.2/jsr218</link>
+					</links>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	
 	<profiles>
 		<profile>
 			<!-- create metadata with 'mvn -Peclipse' -->

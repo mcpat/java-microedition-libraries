@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.github.mcpat.libxjava</groupId>
 		<artifactId>libxjava-parent</artifactId>
-		<relativePath>../libxjava-parent/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 		<version>0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>libxjava-jse5</artifactId>
@@ -14,6 +14,7 @@
 	<description>Lib-Cross-Java for the Java Standard Edition v5+</description>
 
 	<properties>
+		<libxjava-license-dir>${basedir}/..</libxjava-license-dir>
 		<libxjava-class-version>1.5</libxjava-class-version>
 		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
 		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>

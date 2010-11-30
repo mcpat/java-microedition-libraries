@@ -45,7 +45,7 @@ import org.slf4j.Logger;
  * @author Ceki G&uuml;lc&uuml;
  * @author Marcel Patzlaff
  */
-public class NOPLogger implements Logger {
+public final class NOPLogger implements Logger {
 
   /**
    * The unique instance of NOPLogger.

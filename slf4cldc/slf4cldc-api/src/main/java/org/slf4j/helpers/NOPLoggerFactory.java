@@ -45,7 +45,7 @@ import org.slf4j.helpers.NOPLogger;
  * 
  * @author Ceki G&uuml;lc&uuml;
  */
-public class NOPLoggerFactory implements ILoggerFactory {
+public final class NOPLoggerFactory implements ILoggerFactory {
   
   public NOPLoggerFactory() {
     // nothing to do

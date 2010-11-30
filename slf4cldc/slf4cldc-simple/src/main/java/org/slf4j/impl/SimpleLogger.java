@@ -64,16 +64,16 @@ import org.slf4j.Logger;
  * @author Ceki G&uuml;lc&uuml;
  * @author Marcel Patzlaff
  */
-public class SimpleLogger implements Logger {
+public final class SimpleLogger implements Logger {
     /**
      * Mark the time when this class gets loaded into memory.
      */
-    private static final long startTime= System.currentTimeMillis();
-    private static String TRACE_STR= "TRACE";
-    private static String DEBUG_STR= "DEBUG";
-    private static String INFO_STR= "INFO";
-    private static String WARN_STR= "WARN";
-    private static String ERROR_STR= "ERROR";
+    private static final long START_TIME= System.currentTimeMillis();
+    private static final String TRACE_STR= "TRACE";
+    private static final String DEBUG_STR= "DEBUG";
+    private static final String INFO_STR= "INFO";
+    private static final String WARN_STR= "WARN";
+    private static final String ERROR_STR= "ERROR";
 
     private final String name;
     private final int logLevel;
@@ -135,7 +135,7 @@ public class SimpleLogger implements Logger {
         StringBuffer buf= new StringBuffer();
 
         long millis= System.currentTimeMillis();
-        buf.append(millis - startTime);
+        buf.append(millis - START_TIME);
 
         buf.append(" [");
         buf.append(Thread.currentThread().getName());

@@ -58,7 +58,11 @@ public final class LoggerFactory {
     static final int NOP_FALLBACK_INITILIZATION= 4;
 
     static int INITIALIZATION_STATE= UNINITIALIZED;
-    static NOPLoggerFactory NOP_FALLBACK_FACTORY= new NOPLoggerFactory();
+    static final NOPLoggerFactory NOP_FALLBACK_FACTORY;
+    
+    static {
+        NOP_FALLBACK_FACTORY= new NOPLoggerFactory();
+    }
 
     // private constructor prevents instantiation
     private LoggerFactory() {

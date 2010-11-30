@@ -50,12 +50,12 @@ import org.slf4j.Logger;
  * @author Ceki G&uuml;lc&uuml;
  * @author Marcel Patzlaff
  */
-public class SimpleLoggerFactory implements ILoggerFactory {
+public final class SimpleLoggerFactory implements ILoggerFactory {
 
     final static SimpleLoggerFactory INSTANCE= new SimpleLoggerFactory();
 
-    Hashtable loggerMap;
-    int logLevel;
+    private Hashtable loggerMap;
+    private int logLevel;
 
     public SimpleLoggerFactory() {
         loggerMap= new Hashtable();

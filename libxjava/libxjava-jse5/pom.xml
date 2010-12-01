@@ -5,7 +5,7 @@
 		<groupId>com.github.mcpat.libxjava</groupId>
 		<artifactId>libxjava-parent</artifactId>
 		<relativePath>../pom.xml</relativePath>
-		<version>0.1-SNAPSHOT</version>
+		<version>0.1</version>
 	</parent>
 	<artifactId>libxjava-jse5</artifactId>
 

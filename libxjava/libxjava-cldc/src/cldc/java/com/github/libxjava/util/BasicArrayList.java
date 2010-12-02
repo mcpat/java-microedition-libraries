@@ -22,15 +22,67 @@ package com.github.libxjava.util;
 
 import java.util.NoSuchElementException;
 
-import com.github.libxjava.util.BasicEnumeration;
-
 /**
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
 public class BasicArrayList {
+    private final class Enumerator implements BasicEnumeration {
+        private int _index;
+        private int _lastReturned;
+        private int _expectedModCount;
+        
+        protected Enumerator(int modCount) {
+            _index= 0;
+            _lastReturned= -1;
+            _expectedModCount= modCount;
+        }
+        
+        public boolean hasMoreElements() {
+            return _index < size();
+        }
+
+        public Object nextElement() {
+            ensureUnmodified();
+            
+            try {
+                Object val= BasicArrayList.this.get(_index);
+                _lastReturned= _index++;
+                return val;
+            } catch (IndexOutOfBoundsException e) {
+                ensureUnmodified();
+                throw new NoSuchElementException("ArrayList Enumeration");
+            }
+        }
+
+        public void remove() {
+            if(_lastReturned < 0) {
+                throw new RuntimeException("illegal state");
+            }
+            
+            ensureUnmodified();
+            try {
+                BasicArrayList.this.remove(_lastReturned);
+                _index--;
+                _lastReturned= -1;
+                _expectedModCount= _modCount;
+            } catch (IndexOutOfBoundsException e) {
+                throw new RuntimeException("concurrent modification");
+            }
+        }
+        
+        private void ensureUnmodified() {
+            if(_modCount != _expectedModCount) {
+                throw new RuntimeException("concurrent modification");
+            }
+        }
+    }
+    
     private Object[] _data;
     private int _size;
+    
+    // has to be private here because otherwise it breaks the API
+    private int _modCount;
     
     public BasicArrayList() {
         this(10);
@@ -43,6 +95,7 @@ public class BasicArrayList {
         
         _data= new Object[initialCapacity];
         _size= 0;
+        _modCount= 0;
     }
     
     public boolean add(Object obj) {
@@ -52,9 +105,7 @@ public class BasicArrayList {
     }
     
     public void add(int index, Object obj) {
-        if (index > _size || index < 0) {
-            throw new IndexOutOfBoundsException("Index: "+index+", Size: "+_size);
-        }
+        checkIndex(index);
         ensureCapacity(_size + 1);
         System.arraycopy(_data, index, _data, index + 1, _size - index);
         _data[index]= obj;
@@ -62,6 +113,7 @@ public class BasicArrayList {
     }
     
     public void clear() {
+        _modCount++;
         for(int i= 0; i < _size; ++i) {
             _data[i]= null;
         }
@@ -73,9 +125,10 @@ public class BasicArrayList {
     }
     
     public void ensureCapacity(int minCapacity) {
+        _modCount++;
         int oldCapacity = _data.length;
         if (minCapacity > oldCapacity) {
-            int newCapacity = (oldCapacity * 3)/2 + 1;
+            int newCapacity= (oldCapacity * 3)/2 + 1;
             if (newCapacity < minCapacity) {
                 newCapacity = minCapacity;
             }
@@ -87,40 +140,11 @@ public class BasicArrayList {
     }
     
     public BasicEnumeration enumeration() {
-        return new BasicEnumeration() {
-            private int _index= 0;
-            private int _lastReturned= -1;
-
-            public boolean hasMoreElements() {
-                return _index < _size;
-            }
-
-            public Object nextElement() {
-                if(_index < _size) {
-                    Object result= _data[_index];
-                    _lastReturned= _index++;
-                    return result;
-                }
-                
-                throw new NoSuchElementException("ArrayList Enumeration");
-            }
-
-            public void remove() {
-                if(_lastReturned < 0) {
-                    throw new RuntimeException("illegal state");
-                }
-                
-                BasicArrayList.this.remove(_lastReturned);
-                _index--;
-                _lastReturned= -1;
-            }
-        };
+        return new Enumerator(_modCount);
     }
     
     public Object get(int index) {
-        if (index >= _size) {
-            throw new IndexOutOfBoundsException( "Index: "+index+", Size: "+_size);
-        }
+        checkIndex(index);
         return _data[index];
     }
     
@@ -167,6 +191,7 @@ public class BasicArrayList {
     }
     
     public void trimToSize() {
+        _modCount++;
         if(_size < _data.length) {
             Object[] newData= new Object[_size];
             System.arraycopy(_data, 0, newData, 0, _size);
@@ -186,9 +211,7 @@ public class BasicArrayList {
     }
     
     public Object remove(int index) {
-        if (index >= _size) {
-            throw new IndexOutOfBoundsException( "Index: "+index+", Size: "+_size);
-        }
+        checkIndex(index);
         
         Object old= _data[index];
         internalRemove(index);
@@ -196,10 +219,7 @@ public class BasicArrayList {
     }
     
     public Object set(int index, Object obj) {
-        if (index >= _size) {
-            throw new IndexOutOfBoundsException( "Index: "+index+", Size: "+_size);
-        }
-        
+        checkIndex(index);
         Object old= _data[index];
         _data[index]= obj;
         return old;
@@ -228,12 +248,21 @@ public class BasicArrayList {
         result.append(']');
         return result.toString();
     }
+    
+    private void checkIndex(int index) {
+        if (index >= _size) {
+            throw new IndexOutOfBoundsException("index " + index + ", size " + _size);
+        }
+    }
 
     private void internalRemove(int index) {
+        _modCount++;
         int toMove= _size - index - 1;
         
         if(toMove > 0) {
             System.arraycopy(_data, index + 1, _data, index, toMove);
         }
+        
+        _data[--_size]= null;
     }
 }

@@ -24,7 +24,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import com.github.libxjava.util.BasicHashMap;
+import /*[CDCjava.util.HashMap/*CDC]*/com.github.libxjava.util.BasicHashMap/**/;
 
 
 /**
@@ -32,7 +32,7 @@ import com.github.libxjava.util.BasicHashMap;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class BinarySerialiserStream extends DataOutputStream implements ISerialiser {
-    private BasicHashMap _references= new BasicHashMap();
+    private /*[CDCHashMap/*CDC]*/BasicHashMap/**/ _references= new /*[CDCHashMap/*CDC]*/BasicHashMap/**/();
     private byte _referenceCounter= 0;
     
     public BinarySerialiserStream(OutputStream out) {

@@ -70,6 +70,9 @@
 								<replaceregexp byline="true" flags="g" match="/\*\[J5(.+?)J5\]\*/" replace="\1">
 									<fileset dir="${libxjava-module-sources}"/>
 								</replaceregexp>
+								<replaceregexp byline="true" flags="g" match="/\*\[CDC(.+?)CDC\]\*/" replace="\1">
+									<fileset dir="${libxjava-module-sources}"/>
+								</replaceregexp>
 							</target>
 						</configuration>
 						<goals>

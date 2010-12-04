@@ -20,7 +20,7 @@
 
 package com.github.libxjava.io;
 
-import com.github.libxjava.util.BasicHashMap;
+import /*[CDCjava.util.HashMap/*CDC]*/com.github.libxjava.util.BasicHashMap/**/;
 
 /**
  * A utility class with constants for the serialisation.
@@ -47,7 +47,7 @@ final class BinarySerialiserConstants {
     public static final byte SHORT= BASE_TYPE_START + 7;
     public static final byte STRING= BASE_TYPE_START + 8;
     
-    private static final BasicHashMap ALLOWED= new BasicHashMap();
+    private static final /*[CDCHashMap/*CDC]*/BasicHashMap/**/ ALLOWED= new /*[CDCHashMap/*CDC]*/BasicHashMap/**/();
     
     static {
         ALLOWED.put("java.lang.Boolean", new Byte(BOOLEAN));

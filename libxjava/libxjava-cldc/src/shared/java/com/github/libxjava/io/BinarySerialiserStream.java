@@ -125,7 +125,7 @@ public final class BinarySerialiserStream extends DataOutputStream implements IS
             return;
         }
         
-        Byte value= new Byte(_referenceCounter++);
+        Byte value= /*[J5Byte.valueOf/*J5]*/new Byte/**/(_referenceCounter++);
         _references.put(obj, value);
     }
 }

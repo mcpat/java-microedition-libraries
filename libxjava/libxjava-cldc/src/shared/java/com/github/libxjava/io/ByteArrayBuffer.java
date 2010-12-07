@@ -197,13 +197,7 @@ public final class ByteArrayBuffer {
         return _writer;
     }
     
-    protected void internalWrite(byte[] b, int off, int len) throws IOException {
-//try {
-//    throw new RuntimeException("someone writes me " + toString());
-//} catch (Exception e) {
-//    e.printStackTrace();
-//}
-        
+    void internalWrite(byte[] b, int off, int len) throws IOException {
         if(_dropUntilFlush) {
             return;
         }
@@ -256,20 +250,15 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected void internalCloseWriter() {
+    void internalCloseWriter() {
         synchronized (_buffer) {
-//try {
-//    throw new RuntimeException("someone closed me " + toString());
-//} catch (Exception e) {
-//    e.printStackTrace();
-//}
             internalMarkComplete();
             _endOfStream= true;
             _buffer.notify();
         }
     }
     
-    protected void internalMarkComplete() {
+    void internalMarkComplete() {
         synchronized (_buffer) {
             if(_dropUntilFlush) {
                 _dropUntilFlush= false;
@@ -285,7 +274,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected void internalMarkIncomplete() {
+    void internalMarkIncomplete() {
         synchronized (_buffer) {
             if(_lastFrameEnd >= 0) {
                 // ignore it and just reset write pointer
@@ -299,7 +288,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected int internalRead(byte[] b, int off, int len) throws IOException {
+    int internalRead(byte[] b, int off, int len) throws IOException {
         synchronized (_buffer) {
             boolean canWait= true;
             
@@ -359,7 +348,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected int internalAvailable() {
+    int internalAvailable() {
         synchronized (_buffer) {
             if(_readPointer < _writePointer) {
                 return _writePointer - _readPointer;
@@ -373,7 +362,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected void internalMark(int readlimit) {
+    void internalMark(int readlimit) {
         synchronized (_buffer) {
             if(readlimit >= _buffer.length) {
                 throw new IllegalArgumentException("readlimit exceeds buffer size");
@@ -384,7 +373,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected void internalReset() throws IOException {
+    void internalReset() throws IOException {
         synchronized (_buffer) {
             if(_markPointer >= 0) {
                 if(_markPointer > _readPointer) {
@@ -400,7 +389,7 @@ public final class ByteArrayBuffer {
         }
     }
     
-    protected int internalSpace() {
+    int internalSpace() {
         synchronized (_buffer) {
             int consumedPointer= _markPointer >= 0 ? _markPointer : _readPointer;
             

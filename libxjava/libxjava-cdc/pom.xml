@@ -16,10 +16,9 @@
 	<properties>
 		<libxjava-license-dir>${basedir}/..</libxjava-license-dir>
 		<libxjava-class-version>1.3</libxjava-class-version>
-		<libxjava-boot-classpath>${cldc-jar}</libxjava-boot-classpath>
-		<libxjava-boot-classpath>${java.home}/lib/rt.jar</libxjava-boot-classpath>
+		<libxjava-boot-classpath>${cdc-jar}</libxjava-boot-classpath>
 		<libxjava-cldc-shared>${basedir}/../libxjava-cldc/src/shared/java</libxjava-cldc-shared>
-		<libxjava-api-link>${clc-api-link}</libxjava-api-link>
+		<libxjava-api-link>${cdc-api-link}</libxjava-api-link>
 	</properties>
 
 	<dependencies>

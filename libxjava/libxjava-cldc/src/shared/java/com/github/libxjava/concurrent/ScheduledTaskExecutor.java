@@ -51,7 +51,7 @@ public class ScheduledTaskExecutor {
         // do nothing
     }
     
-    protected TaskContext createTaskContext() {
+    protected TaskContext createTaskContext(Object task) {
         return new TaskContext();
     }
 }

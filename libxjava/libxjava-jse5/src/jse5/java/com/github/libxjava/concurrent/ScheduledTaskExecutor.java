@@ -73,19 +73,19 @@ public class ScheduledTaskExecutor extends ScheduledThreadPoolExecutor {
     
     @Override
     protected final <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> task) {
-        TaskContext<V> ctx= (TaskContext<V>) createTaskContext();
+        TaskContext<V> ctx= (TaskContext<V>) createTaskContext(callable);
         ctx.future= task;
         return ctx;
     }
 
     @Override
     protected final <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> task) {
-        TaskContext<V> ctx= (TaskContext<V>) createTaskContext();
+        TaskContext<V> ctx= (TaskContext<V>) createTaskContext(runnable);
         ctx.future= task;
         return ctx;
     }
 
-    protected TaskContext<?> createTaskContext() {
+    protected TaskContext<?> createTaskContext(Object task) {
         return new TaskContext();
     }
 }

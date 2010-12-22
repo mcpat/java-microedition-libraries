@@ -67,6 +67,8 @@
 		
 		<cdc-version>1.0</cdc-version>
 		<cdc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cdc-1.1.2-stub/${cdc-version}/cdc-1.1.2-stub-${cdc-version}.jar</cdc-jar>
+		
+		<sonar.phase>process-sources</sonar.phase>
 	</properties>
 	
 	<modules>
@@ -266,6 +268,9 @@
 						<goals>
 							<goal>sign</goal>
 						</goals>
+						<configuration>
+							<useAgent>true</useAgent>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

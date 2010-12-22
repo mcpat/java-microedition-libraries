@@ -44,12 +44,20 @@
 							<outputDirectory>${libxjava-module-sources}</outputDirectory>
 							<resources>
 								<resource>
+									<directory>${basedir}/src/jse5/java</directory>
+									<filtering>true</filtering>
+								</resource>
+								<resource>
 									<directory>${libxjava-cdc-shared}</directory>
 									<filtering>true</filtering>
 								</resource>
 								<resource>
 									<directory>${libxjava-cldc-shared}</directory>
 									<filtering>true</filtering>
+									<excludes>
+										<exclude>**/concurrent/ScheduledTaskExecutor*</exclude>
+										<exclude>**/concurrent/TaskContext*</exclude>
+									</excludes>
 								</resource>
 							</resources>
 						</configuration>

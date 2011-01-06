@@ -28,6 +28,73 @@ package com.github.libxjava.concurrent;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class ReentrantLock {
+    public final class Condition {
+        private final Object _conditionSync;
+        
+        protected Condition() {
+            _conditionSync= new Object();
+        }
+        
+        public void await() throws InterruptedException {
+            await(0L);
+        }
+        
+        public void await(long millis) throws InterruptedException {
+            int oldCount= 0;
+            try {
+                synchronized (_conditionSync) {
+                    oldCount= doReleaseFully();
+                    _conditionSync.wait(millis);
+                }
+            } finally {
+                doAcquire(oldCount);
+            }
+        }
+        
+        public void awaitUninterruptibly() {
+            final int oldCount;
+            boolean interrupted= false;
+            synchronized (_conditionSync) {
+                oldCount= doReleaseFully();
+                for(;;) {
+                    try {
+                        _conditionSync.wait();
+                        break;
+                    } catch (InterruptedException ie) {
+                        interrupted= true;
+                    }
+                }
+            }
+            if(doAcquire(oldCount)) {
+                interrupted= true;
+            }
+            
+            if(interrupted) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        
+        public void signal() {
+            if(!isOwner()) {
+                throw new IllegalMonitorStateException();
+            }
+            
+            synchronized (_conditionSync) {
+                _conditionSync.notify();
+            }
+        }
+        
+        public void signalAll() {
+            if(!isOwner()) {
+                throw new IllegalMonitorStateException();
+            }
+            
+            synchronized (_conditionSync) {
+                _conditionSync.notifyAll();
+            }
+        }
+    }
+    
     private Thread _owner;
     private int _counter;
     
@@ -46,16 +113,7 @@ public final class ReentrantLock {
      * @see #lockInterruptibly()
      */
     public void lock() {
-        boolean interrupted= false;
-        for(;;) {
-            try {
-                lockInterruptibly();
-                break;
-            } catch (InterruptedException ie) {
-                interrupted= true;
-            }
-        }
-        
+        final boolean interrupted= doAcquire(1);
         if(interrupted) {
             Thread.currentThread().interrupt();
         }
@@ -141,6 +199,44 @@ public final class ReentrantLock {
     public int getCount() {
         synchronized (_sync) {
             return _counter;
+        }
+    }
+    
+    public Condition newCondition() {
+        return new Condition();
+    }
+    
+    protected int doReleaseFully() {
+        synchronized (_sync) {
+            if(_owner != Thread.currentThread()) {
+                throw new IllegalMonitorStateException("the caller thread is not the owner of this lock");
+            }
+            
+            int c= _counter;
+            _counter= 0;
+            _sync.notify();
+            return c;
+        }
+    }
+    
+    protected boolean doAcquire(final int count) {
+        if(count <= 0) {
+            throw new IllegalArgumentException("count");
+        }
+        
+        synchronized (_sync) {
+            boolean interrupted= false;
+            while(_owner != null && _owner != Thread.currentThread()) {
+                try {
+                    _sync.wait();
+                } catch (InterruptedException ie) {
+                    interrupted= true;
+                }
+            }
+            
+            _owner= Thread.currentThread();
+            _counter+= count;
+            return interrupted;
         }
     }
 }

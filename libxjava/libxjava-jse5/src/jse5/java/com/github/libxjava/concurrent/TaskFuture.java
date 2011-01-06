@@ -20,21 +20,18 @@
 
 package com.github.libxjava.concurrent;
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.RunnableScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /**
  *
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
-public class TaskContext<V> implements RunnableScheduledFuture<V> {
-    /*package*/ RunnableScheduledFuture<V> future;
+public class TaskFuture {
+    /*package*/ RunnableScheduledFuture<?> future;
     
-    protected TaskContext() {}
+    protected TaskFuture() {}
     
     public final boolean isCancelled() {
         return future.isCancelled();
@@ -48,27 +45,11 @@ public class TaskContext<V> implements RunnableScheduledFuture<V> {
         return future.cancel(mayInterruptIfRunning);
     }
 
-    public final V get() throws InterruptedException, ExecutionException {
-        return future.get();
-    }
-
-    public final V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-        return future.get(timeout, unit);
-    }
-
     public final boolean isDone() {
         return future.isDone();
     }
 
-    public final int compareTo(Delayed o) {
-        return future.compareTo(o);
-    }
-
-    public final void run() {
-        future.run();
-    }
-
-    public final long getDelay(TimeUnit unit) {
-        return future.getDelay(unit);
+    public final long getDelayInMillis() {
+        return future.getDelay(TimeUnit.MILLISECONDS);
     }
 }

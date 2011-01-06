@@ -56,7 +56,7 @@
 									<filtering>true</filtering>
 									<excludes>
 										<exclude>**/concurrent/ScheduledTaskExecutor*</exclude>
-										<exclude>**/concurrent/TaskContext*</exclude>
+										<exclude>**/concurrent/TaskFuture*</exclude>
 									</excludes>
 								</resource>
 							</resources>

@@ -21,10 +21,14 @@
 package com.github.libxjava.concurrent;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.RunnableScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 
 /**
@@ -32,60 +36,120 @@ import java.util.concurrent.TimeUnit;
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
-public class ScheduledTaskExecutor extends ScheduledThreadPoolExecutor {
-    public ScheduledTaskExecutor(int initialPoolSize, int maxPoolSize, IThreadFactory threadFactory) {
-        super(initialPoolSize, (ThreadFactory) threadFactory);
-        setMaximumPoolSize(maxPoolSize);
+public class ScheduledTaskExecutor {
+    private static final class FutureWrapper<V> implements RunnableScheduledFuture<V> {
+        protected final TaskFuture tf;
+        protected final RunnableScheduledFuture<V> of;
+        
+        protected FutureWrapper(TaskFuture tf, RunnableScheduledFuture<V> of) {
+            this.tf= tf;
+            this.of= of;
+            tf.future= of;
+        }
+
+        public boolean cancel(boolean mayInterruptIfRunning) {
+            return of.cancel(mayInterruptIfRunning);
+        }
+
+        public boolean isCancelled() {
+            return of.isCancelled();
+        }
+
+        public boolean isDone() {
+            return of.isDone();
+        }
+
+        public V get() throws InterruptedException, ExecutionException {
+            return of.get();
+        }
+
+        public V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+            return of.get(timeout, unit);
+        }
+
+        public long getDelay(TimeUnit unit) {
+            return of.getDelay(unit);
+        }
+
+        public int compareTo(Delayed o) {
+            return of.compareTo(o);
+        }
+
+        public void run() {
+            of.run();
+        }
+
+        public boolean isPeriodic() {
+            return of.isPeriodic();
+        }
     }
     
-    @Override
-    public TaskContext<?> submit(Runnable task) {
-        return (TaskContext<?>) super.submit(task);
-    }
-
-    public TaskContext<?> schedule(Runnable r, long delayInMillis) {
-        return (TaskContext<?>) super.schedule(r, delayInMillis, TimeUnit.MILLISECONDS);
+    private static final TaskFuture unwrapTaskFuture(Future<?> future) {
+        FutureWrapper<?> wrapper= (FutureWrapper<?>) future;
+        return wrapper.tf;
     }
     
-    public TaskContext<?> scheduleAtFixedRate(Runnable r, long delayInMillis, long periodInMillis) {
-        return (TaskContext<?>) super.scheduleAtFixedRate(r, delayInMillis, periodInMillis, TimeUnit.MILLISECONDS);
+    private final class ScheduledThreadPoolExecutorExtender extends ScheduledThreadPoolExecutor {
+        protected ScheduledThreadPoolExecutorExtender(int corePoolSize, IThreadFactory threadFactory) {
+            super(corePoolSize, (ThreadFactory) threadFactory);
+        }
+        
+        @Override
+        protected final void afterExecute(Runnable r, Throwable t) {
+            ScheduledTaskExecutor.this.afterExecute(((FutureWrapper<?>) r).tf, t);
+            super.afterExecute(r, t);
+        }
+
+        @Override
+        protected final void beforeExecute(Thread t, Runnable r) {
+            ScheduledTaskExecutor.this.beforeExecute(t, ((FutureWrapper<?>) r).tf);
+            super.beforeExecute(t, r);
+        }
+        
+        @Override
+        protected final <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> task) {
+            return new FutureWrapper<V>(createTaskFuture(callable), task);
+        }
+        
+        @Override
+        protected final <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> task) {
+            return new FutureWrapper<V>(createTaskFuture(runnable), task);
+        }
     }
     
-    @Override
-    protected final void afterExecute(Runnable r, Throwable t) {
-        afterExecute((TaskContext) r, t);
-        super.afterExecute(r, t);
+    private final ScheduledThreadPoolExecutor _executorImpl;
+    
+    public ScheduledTaskExecutor(int initialPoolSize, int maxPoolSize, long keepAliveTimeInMillis, IThreadFactory threadFactory) {
+        _executorImpl= new ScheduledThreadPoolExecutorExtender(maxPoolSize, threadFactory);
+        _executorImpl.setKeepAliveTime(keepAliveTimeInMillis, TimeUnit.MILLISECONDS);
+        _executorImpl.allowCoreThreadTimeOut(true);
+        
+        for(int i= 0; i < initialPoolSize; i++) {
+            _executorImpl.prestartCoreThread();
+        }
+    }
+    
+    public TaskFuture submit(Runnable task) {
+        return unwrapTaskFuture(_executorImpl.submit(task));
+    }
+    
+    public TaskFuture schedule(Runnable r, long delayInMillis) {
+        return unwrapTaskFuture(_executorImpl.schedule(r, delayInMillis, TimeUnit.MILLISECONDS));
+    }
+    
+    public TaskFuture scheduleAtFixedRate(Runnable r, long delayInMillis, long periodInMillis) {
+        return unwrapTaskFuture(_executorImpl.scheduleAtFixedRate(r, delayInMillis, periodInMillis, TimeUnit.MILLISECONDS));
     }
 
-    @Override
-    protected final void beforeExecute(Thread t, Runnable r) {
-        beforeExecute(t, (TaskContext) r);
-        super.beforeExecute(t, r);
-    }
-
-    protected void beforeExecute(Thread workThread, TaskContext task) {
+    protected void beforeExecute(Thread workThread, TaskFuture task) {
         // do nothing
     }
     
-    protected void afterExecute(TaskContext task, Throwable t) {
+    protected void afterExecute(TaskFuture task, Throwable t) {
         task.future= null;
     }
-    
-    @Override
-    protected final <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> task) {
-        TaskContext<V> ctx= (TaskContext<V>) createTaskContext(callable);
-        ctx.future= task;
-        return ctx;
-    }
 
-    @Override
-    protected final <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> task) {
-        TaskContext<V> ctx= (TaskContext<V>) createTaskContext(runnable);
-        ctx.future= task;
-        return ctx;
-    }
-
-    protected TaskContext<?> createTaskContext(Object task) {
-        return new TaskContext();
+    protected TaskFuture createTaskFuture(Object task) {
+        return new TaskFuture();
     }
 }

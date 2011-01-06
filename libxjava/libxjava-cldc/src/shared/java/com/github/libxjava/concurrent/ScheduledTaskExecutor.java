@@ -167,20 +167,20 @@ public class ScheduledTaskExecutor {
         }
     }
     
-    public TaskFuture submit(Runnable task) {
-        return scheduleAtFixedRate(task, 0L, 0L);
+    public TaskFuture submit(Runnable target) {
+        return scheduleAtFixedRate(target, 0L, 0L);
     }
     
-    public TaskFuture schedule(Runnable r, long delayInMillis) {
-        return scheduleAtFixedRate(r, delayInMillis, 0L);
+    public TaskFuture schedule(Runnable target, long delayInMillis) {
+        return scheduleAtFixedRate(target, delayInMillis, 0L);
     }
     
-    public TaskFuture scheduleAtFixedRate(Runnable r, long delayInMillis, long periodInMillis) {
+    public TaskFuture scheduleAtFixedRate(Runnable target, long delayInMillis, long periodInMillis) {
         if(delayInMillis < 0 || periodInMillis < 0) {
             throw new IllegalArgumentException("delay or period");
         }
         
-        TaskFuture task= createAndInitialiseTaskFuture(r, delayInMillis, periodInMillis);
+        TaskFuture task= createAndInitialiseTaskFuture(target, delayInMillis, periodInMillis);
         addTaskForExecution(task);
         return task;
     }
@@ -193,7 +193,7 @@ public class ScheduledTaskExecutor {
         // do nothing
     }
     
-    protected TaskFuture createTaskFuture(Object task) {
+    protected TaskFuture createTaskFuture(Object target) {
         return new TaskFuture();
     }
     
@@ -210,6 +210,10 @@ public class ScheduledTaskExecutor {
         } finally {
             ensureEnoughThreadsStarted();
         }
+    }
+    
+    /*package*/ void addTask(TaskFuture task) {
+        _taskQueue.addTask(task);
     }
     
     /*package*/ void removeTask(TaskFuture task) {

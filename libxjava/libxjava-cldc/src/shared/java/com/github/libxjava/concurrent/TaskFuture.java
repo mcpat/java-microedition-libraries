@@ -99,13 +99,17 @@ public class TaskFuture {
                 _workThread= Thread.currentThread();
             }
             target.run();
-            
-            // TODO: what with periodic execution???
         } finally {
             synchronized (_mutex) {
                 _workThread= null;
                 if(_state == STATE_RUNNING) {
-                    _state= STATE_RAN;
+                    if(isPeriodic()) {
+                        _state= 0;
+                        start+= period;
+                        executor.addTask(this);
+                    } else {
+                        _state= STATE_RAN;
+                    }
                 }
             }
         }

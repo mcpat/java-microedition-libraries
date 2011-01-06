@@ -129,16 +129,16 @@ public class ScheduledTaskExecutor {
         }
     }
     
-    public TaskFuture submit(Runnable task) {
-        return unwrapTaskFuture(_executorImpl.submit(task));
+    public TaskFuture submit(Runnable target) {
+        return unwrapTaskFuture(_executorImpl.submit(target));
     }
     
-    public TaskFuture schedule(Runnable r, long delayInMillis) {
-        return unwrapTaskFuture(_executorImpl.schedule(r, delayInMillis, TimeUnit.MILLISECONDS));
+    public TaskFuture schedule(Runnable target, long delayInMillis) {
+        return unwrapTaskFuture(_executorImpl.schedule(target, delayInMillis, TimeUnit.MILLISECONDS));
     }
     
-    public TaskFuture scheduleAtFixedRate(Runnable r, long delayInMillis, long periodInMillis) {
-        return unwrapTaskFuture(_executorImpl.scheduleAtFixedRate(r, delayInMillis, periodInMillis, TimeUnit.MILLISECONDS));
+    public TaskFuture scheduleAtFixedRate(Runnable target, long delayInMillis, long periodInMillis) {
+        return unwrapTaskFuture(_executorImpl.scheduleAtFixedRate(target, delayInMillis, periodInMillis, TimeUnit.MILLISECONDS));
     }
 
     protected void beforeExecute(Thread workThread, TaskFuture task) {
@@ -149,7 +149,7 @@ public class ScheduledTaskExecutor {
         task.future= null;
     }
 
-    protected TaskFuture createTaskFuture(Object task) {
+    protected TaskFuture createTaskFuture(Object target) {
         return new TaskFuture();
     }
 }

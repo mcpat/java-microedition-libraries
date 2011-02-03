@@ -61,7 +61,7 @@ public class BinaryDeserialiserStream extends DataInputStream implements IDeseri
             }
 
             case BinarySerialiserConstants.SERIALISABLE:
-                return readSerialisable(readUTF());
+                return readSerialisable((String)readObject());
             
             case BinarySerialiserConstants.STRING: {
                 result= readUTF();

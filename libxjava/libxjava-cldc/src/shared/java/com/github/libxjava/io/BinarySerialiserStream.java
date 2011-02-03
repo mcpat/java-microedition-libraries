@@ -57,7 +57,7 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
         } else if(o instanceof ISerialisable) {
             writeByte(BinarySerialiserConstants.SERIALISABLE);
             insertReference(o);
-            writeUTF(o.getClass().getName());
+            writeObject(o.getClass().getName());
             ((ISerialisable) o).serialise(this);
             return;
         } else {

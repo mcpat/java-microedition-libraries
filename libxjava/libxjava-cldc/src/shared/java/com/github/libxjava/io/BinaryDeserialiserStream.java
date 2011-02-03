@@ -31,9 +31,9 @@ import com.github.libxjava.util.IntHashMap;
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
-public final class BinaryDeserialiserStream extends DataInputStream implements IDeserialiser {
+public class BinaryDeserialiserStream extends DataInputStream implements IDeserialiser {
     private IntHashMap _references= new IntHashMap();
-    private int _referenceCounter= 0;
+    protected int referenceCounter= 0;
     
     private IClassLoader _classLoader;
     
@@ -44,7 +44,7 @@ public final class BinaryDeserialiserStream extends DataInputStream implements I
     
     public void flush() {
         _references.clear();
-        _referenceCounter= 0;
+        referenceCounter= 0;
     }
 
     public Object readObject() throws ClassNotFoundException, IOException {
@@ -57,7 +57,7 @@ public final class BinaryDeserialiserStream extends DataInputStream implements I
             }
             
             case BinarySerialiserConstants.REFERENCE: {
-                return _references.get(readByte());
+                return getReference(readByte());
             }
 
             case BinarySerialiserConstants.SERIALISABLE:
@@ -117,8 +117,12 @@ public final class BinaryDeserialiserStream extends DataInputStream implements I
         return result;
     }
     
+    protected Object getReference(byte num) {
+        return _references.get(num);
+    }
+    
     private void insertReference(Object obj) {
-        _references.put(_referenceCounter++, obj);
+        _references.put(referenceCounter++, obj);
     }
     
     private ISerialisable readSerialisable(String className) throws ClassNotFoundException, IOException {

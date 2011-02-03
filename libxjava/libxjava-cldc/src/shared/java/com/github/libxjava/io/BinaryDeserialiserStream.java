@@ -47,7 +47,7 @@ public class BinaryDeserialiserStream extends DataInputStream implements IDeseri
         referenceCounter= 0;
     }
 
-    public Object readObject() throws ClassNotFoundException, IOException {
+    public final Object readObject() throws ClassNotFoundException, IOException {
         // get the type of the object
         Object result= null;
         int type= readUnsignedByte();

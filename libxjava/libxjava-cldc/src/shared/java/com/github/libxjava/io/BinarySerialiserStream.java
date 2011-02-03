@@ -45,7 +45,7 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
         super.flush();
     }
 
-    public void writeObject(Object o) throws IOException {
+    public final void writeObject(Object o) throws IOException {
         int refNum= -1;
         if(o == null) {
             writeByte(BinarySerialiserConstants.NULL);

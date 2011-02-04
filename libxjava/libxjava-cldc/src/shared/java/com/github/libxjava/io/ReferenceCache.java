@@ -94,7 +94,7 @@ public class ReferenceCache {
     public final void cacheReference(Object obj) {
         int refNum= getReferenceCount();
         _numToReference.put(refNum, obj);
-        _referenceToNum.put(new Byte((byte) refNum), obj);
+        _referenceToNum.put(obj, /*[J5Byte.valueOf/*J5]*/new Byte/**/((byte) refNum));
     }
     
     public final int getReferenceCount() {

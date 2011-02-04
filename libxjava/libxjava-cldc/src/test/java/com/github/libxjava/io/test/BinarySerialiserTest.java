@@ -21,14 +21,14 @@
 package com.github.libxjava.io.test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 
 import junit.framework.TestCase;
 
 import com.github.libxjava.io.BinaryDeserialiserStream;
 import com.github.libxjava.io.BinarySerialiserStream;
 import com.github.libxjava.io.ByteArrayInputBuffer;
-import com.github.libxjava.lang.IClassLoader;
+import com.github.libxjava.io.ReferenceCache;
+import com.github.libxjava.lang.SimpleClassLoader;
 import com.github.libxjava.util.SerialisableHashMap;
 
 /**
@@ -48,17 +48,28 @@ public class BinarySerialiserTest extends TestCase {
         System.out.println(new String(output.toByteArray()));
         
         ByteArrayInputBuffer input= new ByteArrayInputBuffer(output.toByteArray());
-        BinaryDeserialiserStream bds= new BinaryDeserialiserStream(
-            new IClassLoader() {
-                public InputStream getResourceAsStream(String name) {
-                    return null;
-                }
-
-                public Class loadClass(String name) throws ClassNotFoundException {
-                    return Class.forName(name);
-                }
-            }, 
-        input);
+        BinaryDeserialiserStream bds= new BinaryDeserialiserStream(new SimpleClassLoader(),input);
+        
+        System.out.println(bds.readObject());
+    }
+    
+    public void testCachedSerialiser() throws Exception {
+        ReferenceCache rc= new ReferenceCache();
+        rc.cacheReference(SerialisableHashMap.class.getName());
+        
+        SerialisableHashMap map= new SerialisableHashMap();
+        map.put("one", new Integer(1));
+        map.put(map, null);
+        
+        ByteArrayOutputStream output= new ByteArrayOutputStream();
+        BinarySerialiserStream bss= rc.createSerialiser(output);
+        bss.writeObject(map);
+        bss.flush();
+        
+        System.out.println(new String(output.toByteArray()));
+        
+        ByteArrayInputBuffer input= new ByteArrayInputBuffer(output.toByteArray());
+        BinaryDeserialiserStream bds= rc.createDeserialiser(new SimpleClassLoader(), input);
         
         System.out.println(bds.readObject());
     }

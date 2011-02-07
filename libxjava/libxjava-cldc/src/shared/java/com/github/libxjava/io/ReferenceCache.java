@@ -36,32 +36,29 @@ public class ReferenceCache {
     private final class CachedReferenceBinarySerialiserStream extends BinarySerialiserStream {
         protected CachedReferenceBinarySerialiserStream(OutputStream out) {
             super(out);
+            referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
         public void flush() throws IOException {
             super.flush();
-            referenceCounter= (byte) getReferenceCount();
+            referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
-        protected int getReferenceNumber(Object obj) {
-            int refNum= ReferenceCache.this.getReferenceNumber(obj);
-            
-            if(refNum >= 0) {
-                return refNum;
-            }
-            
-            return super.getReferenceNumber(obj);
+        protected Byte getReferenceNumber(Object obj) {
+            Byte refNum= ReferenceCache.this.getReferenceNumber(obj);
+            return refNum != null ? refNum : super.getReferenceNumber(obj);
         }
     }
     
     private final class CachedReferenceBinaryDeserialiserStream extends BinaryDeserialiserStream {
         public CachedReferenceBinaryDeserialiserStream(IClassLoader classLoader, InputStream in) {
             super(classLoader, in);
+            referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
         public void flush() {
             super.flush();
-            referenceCounter= getReferenceCount();
+            referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
         protected Object getReference(byte num) {
@@ -101,14 +98,8 @@ public class ReferenceCache {
         return _numToReference.size();
     }
     
-    protected final int getReferenceNumber(Object obj) {
-        Byte ref= (Byte) _referenceToNum.get(obj);
-        
-        if(ref != null) {
-            return ref.byteValue() & 0xFF;
-        }
-        
-        return -1;
+    protected final Byte getReferenceNumber(Object obj) {
+        return (Byte) _referenceToNum.get(obj);
     }
     
     protected final Object getReference(byte refNum) {

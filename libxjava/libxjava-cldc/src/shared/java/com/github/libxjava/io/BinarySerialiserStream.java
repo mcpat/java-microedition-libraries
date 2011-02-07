@@ -33,7 +33,7 @@ import /*[CDCjava.util.HashMap/*CDC]*/com.github.libxjava.util.BasicHashMap/**/;
  */
 public class BinarySerialiserStream extends DataOutputStream implements ISerialiser {
     private /*[CDCHashMap/*CDC]*/BasicHashMap/**/ _references= new /*[CDCHashMap/*CDC]*/BasicHashMap/**/();
-    protected byte referenceCounter= 0;
+    protected int referenceCounter= 0;
     
     public BinarySerialiserStream(OutputStream out) {
         super(out);
@@ -46,18 +46,18 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
     }
 
     public final void writeObject(Object o) throws IOException {
-        int refNum= -1;
+        Byte refNum= null;
         if(o == null) {
             writeByte(BinarySerialiserConstants.NULL);
             return;
-        } else if((refNum= getReferenceNumber(o)) >= 0) {
+        } else if((refNum= getReferenceNumber(o)) != null) {
             writeByte(BinarySerialiserConstants.REFERENCE);
-            writeByte(refNum);
+            writeByte(refNum.byteValue() & 0xFF);
             return;
         } else if(o instanceof ISerialisable) {
             writeByte(BinarySerialiserConstants.SERIALISABLE);
-            insertReference(o);
             writeObject(o.getClass().getName());
+            insertReference(o);
             ((ISerialisable) o).serialise(this);
             return;
         } else {
@@ -119,22 +119,16 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
         insertReference(o);
     }
     
-    protected int getReferenceNumber(Object obj) {
-        Byte ref= (Byte) _references.get(obj);
-        
-        if(ref != null) {
-            return ref.byteValue() & 0xFF;
-        }
-        
-        return -1;
+    protected Byte getReferenceNumber(Object obj) {
+        return (Byte) _references.get(obj);
     }
-
+    
     private void insertReference(Object obj) {
-        if(obj == null || _references.containsKey(obj)) {
+        if(_references.containsKey(obj)) {
             return;
         }
         
-        Byte value= /*[J5Byte.valueOf/*J5]*/new Byte/**/(referenceCounter++);
+        Byte value= /*[J5Byte.valueOf/*J5]*/new Byte/**/((byte)(referenceCounter++));
         _references.put(obj, value);
     }
 }

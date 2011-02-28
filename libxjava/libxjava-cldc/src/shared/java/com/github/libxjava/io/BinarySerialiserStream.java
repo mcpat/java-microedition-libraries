@@ -52,7 +52,7 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
             return;
         } else if((refNum= getReferenceNumber(o)) != null) {
             writeByte(BinarySerialiserConstants.REFERENCE);
-            writeShort(refNum.shortValue() & 0xFF);
+            writeShort(refNum.shortValue() & 0xFFFF);
             return;
         } else if(o instanceof ISerialisable) {
             writeByte(BinarySerialiserConstants.SERIALISABLE);

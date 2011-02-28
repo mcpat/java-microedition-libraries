@@ -46,13 +46,13 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
     }
 
     public final void writeObject(Object o) throws IOException {
-        Byte refNum= null;
+        Short refNum= null;
         if(o == null) {
             writeByte(BinarySerialiserConstants.NULL);
             return;
         } else if((refNum= getReferenceNumber(o)) != null) {
             writeByte(BinarySerialiserConstants.REFERENCE);
-            writeByte(refNum.byteValue() & 0xFF);
+            writeShort(refNum.shortValue() & 0xFF);
             return;
         } else if(o instanceof ISerialisable) {
             writeByte(BinarySerialiserConstants.SERIALISABLE);
@@ -119,8 +119,8 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
         insertReference(o);
     }
     
-    protected Byte getReferenceNumber(Object obj) {
-        return (Byte) _references.get(obj);
+    protected Short getReferenceNumber(Object obj) {
+        return (Short) _references.get(obj);
     }
     
     private void insertReference(Object obj) {
@@ -128,7 +128,7 @@ public class BinarySerialiserStream extends DataOutputStream implements ISeriali
             return;
         }
         
-        Byte value= /*[J5Byte.valueOf/*J5]*/new Byte/**/((byte)(referenceCounter++));
+        Short value= /*[J5Short.valueOf/*J5]*/new Short/**/((short)(referenceCounter++));
         _references.put(obj, value);
     }
 }

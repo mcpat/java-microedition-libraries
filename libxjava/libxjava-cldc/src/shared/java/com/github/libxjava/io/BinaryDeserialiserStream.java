@@ -57,7 +57,7 @@ public class BinaryDeserialiserStream extends DataInputStream implements IDeseri
             }
             
             case BinarySerialiserConstants.REFERENCE: {
-                return getReference(readByte());
+                return getReference(readShort());
             }
 
             case BinarySerialiserConstants.SERIALISABLE:
@@ -117,7 +117,7 @@ public class BinaryDeserialiserStream extends DataInputStream implements IDeseri
         return result;
     }
     
-    protected Object getReference(byte num) {
+    protected Object getReference(short num) {
         return _references.get(num);
     }
     

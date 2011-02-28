@@ -44,8 +44,8 @@ public class ReferenceCache {
             referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
-        protected Byte getReferenceNumber(Object obj) {
-            Byte refNum= ReferenceCache.this.getReferenceNumber(obj);
+        protected Short getReferenceNumber(Object obj) {
+            Short refNum= ReferenceCache.this.getReferenceNumber(obj);
             return refNum != null ? refNum : super.getReferenceNumber(obj);
         }
     }
@@ -61,7 +61,7 @@ public class ReferenceCache {
             referenceCounter= ReferenceCache.this.getReferenceCount();
         }
 
-        protected Object getReference(byte num) {
+        protected Object getReference(short num) {
             Object ref= ReferenceCache.this.getReference(num);
             
             if(ref != null) {
@@ -91,18 +91,18 @@ public class ReferenceCache {
     public final void cacheReference(Object obj) {
         int refNum= getReferenceCount();
         _numToReference.put(refNum, obj);
-        _referenceToNum.put(obj, /*[J5Byte.valueOf/*J5]*/new Byte/**/((byte) refNum));
+        _referenceToNum.put(obj, /*[J5Short.valueOf/*J5]*/new Short/**/((short) refNum));
     }
     
     public final int getReferenceCount() {
         return _numToReference.size();
     }
     
-    protected final Byte getReferenceNumber(Object obj) {
-        return (Byte) _referenceToNum.get(obj);
+    protected final Short getReferenceNumber(Object obj) {
+        return (Short) _referenceToNum.get(obj);
     }
     
-    protected final Object getReference(byte refNum) {
+    protected final Object getReference(short refNum) {
         return _numToReference.get(refNum);
     }
 }

@@ -1,5 +1,5 @@
-libxjava -- utility library for cross-Java-platform development
-            ${project.name}
+libxjava - utility library for cross-Java-platform development
+           ${project.name}
 
 Copyright (c) 2010-2011 Marcel Patzlaff (marcel.patzlaff@gmail.com) 
 

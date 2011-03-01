@@ -1,8 +1,8 @@
 /*
- * libxjava -- utility library for cross-Java-platform development
- *             ${project.name}
+ * libxjava - utility library for cross-Java-platform development
+ *            ${project.name}
  *
- * Copyright (c) 2010 Marcel Patzlaff (marcel.patzlaff@gmail.com)
+ * Copyright (c) 2010-2011 Marcel Patzlaff (marcel.patzlaff@gmail.com)
  *
  * This library is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published

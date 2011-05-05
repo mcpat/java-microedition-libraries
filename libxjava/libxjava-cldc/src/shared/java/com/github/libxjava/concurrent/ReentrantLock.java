@@ -47,7 +47,9 @@ public final class ReentrantLock {
                     _conditionSync.wait(millis);
                 }
             } finally {
-                doAcquire(oldCount);
+                if(doAcquire(oldCount)) {
+                    throw new InterruptedException();
+                }
             }
         }
         

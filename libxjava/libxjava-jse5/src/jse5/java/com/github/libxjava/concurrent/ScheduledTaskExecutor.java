@@ -140,6 +140,10 @@ public class ScheduledTaskExecutor {
     public TaskFuture scheduleAtFixedRate(Runnable target, long delayInMillis, long periodInMillis) {
         return unwrapTaskFuture(_executorImpl.scheduleAtFixedRate(target, delayInMillis, periodInMillis, TimeUnit.MILLISECONDS));
     }
+    
+    public void shutdown() {
+        _executorImpl.shutdownNow();
+    }
 
     protected void beforeExecute(Thread workThread, TaskFuture task) {
         // do nothing

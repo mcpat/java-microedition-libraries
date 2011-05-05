@@ -20,6 +20,8 @@
 
 package com.github.libxjava.concurrent;
 
+import com.github.libxjava.util.BasicArrayList;
+
 
 /**
  *
@@ -109,16 +111,25 @@ public class ScheduledTaskExecutor {
             }
         }
         
+        synchronized void clear() {
+            TaskFuture previous= _head;
+            while(previous != null) {
+                TaskFuture next= previous.next;
+                previous.next= null;
+                previous= next;
+                _count--;
+            }
+        }
+        
         synchronized boolean hasUnassignedTasks() {
             return _waitingThreads <= 0 && _count > 0;
         }
     }
     
     private final class Worker implements Runnable {
-        protected Thread thread;
+        /*package*/ Thread thread;
         
-        protected Worker() {
-        }
+        protected Worker() {}
         
         public void run() {
             try {
@@ -128,7 +139,7 @@ public class ScheduledTaskExecutor {
                     task= null;
                 }
             } finally {
-                totalThreads.updateAndGet(-1);
+                workerDone(this);
             }
         }
         
@@ -144,26 +155,32 @@ public class ScheduledTaskExecutor {
         }
     }
     
-    /*package*/ final AtomicNumber totalThreads;
-    
     private final IThreadFactory _threadFactory;
     private final TaskQueue _taskQueue;
     private final int _maxPoolSize;
     private final long _keepAliveTimeInMillis;
+    private final BasicArrayList _workers;
+    
+    private boolean _shutdown;
+    
+    private final Object _mainMutex= new Object();
     
     public ScheduledTaskExecutor(int initialPoolSize, int maxPoolSize, long keepAliveTimeInMillis, IThreadFactory threadFactory) {
         if(initialPoolSize < 0 || maxPoolSize < 0 || initialPoolSize > maxPoolSize) {
             throw new IllegalArgumentException("pool sizes");
         }
         
+        _shutdown= false;
         _maxPoolSize= maxPoolSize;
         _threadFactory= threadFactory;
         _taskQueue= new TaskQueue();
         _keepAliveTimeInMillis= keepAliveTimeInMillis;
-        this.totalThreads= new AtomicNumber(initialPoolSize);
+        _workers= new BasicArrayList();
         
-        for(int i= 0; i < initialPoolSize; i++) {
-            createAndStartThread();
+        synchronized (_mainMutex) {
+            for(int i= 0; i < initialPoolSize; i++) {
+                createAndStartThread();
+            }
         }
     }
     
@@ -179,10 +196,21 @@ public class ScheduledTaskExecutor {
         if(delayInMillis < 0 || periodInMillis < 0) {
             throw new IllegalArgumentException("delay or period");
         }
-        
         TaskFuture task= createAndInitialiseTaskFuture(target, delayInMillis, periodInMillis);
         addTaskForExecution(task);
         return task;
+    }
+    
+    public void shutdown() {
+        _shutdown= true;
+        
+        synchronized (_mainMutex) {
+            for(int i= _workers.size() - 1; i >= 0; i--) {
+                ((Worker) _workers.get(i)).thread.interrupt();
+            }
+        }
+        
+        _taskQueue.clear();
     }
     
     protected void beforeExecute(Thread workThread, TaskFuture task) {
@@ -200,16 +228,18 @@ public class ScheduledTaskExecutor {
     /*package*/ TaskFuture getTask() {
         long deadline= _keepAliveTimeInMillis + System.currentTimeMillis();
         try {
-            for(;;) {
+            while(!_shutdown) {
                 try {
                     return _taskQueue.waitForTask(deadline);
                 } catch (InterruptedException e) {
-                    // TODO: check for shutdown etc
+                    // just reenter the loop
                 }
             }
         } finally {
             ensureEnoughThreadsStarted();
         }
+        
+        return null;
     }
     
     /*package*/ void addTask(TaskFuture task) {
@@ -218,6 +248,12 @@ public class ScheduledTaskExecutor {
     
     /*package*/ void removeTask(TaskFuture task) {
         _taskQueue.removeTask(task);
+    }
+    
+    /*package*/ void workerDone(Worker worker) {
+        synchronized (_mainMutex) {
+            _workers.remove(worker);
+        }
     }
     
     private TaskFuture createAndInitialiseTaskFuture(Runnable target, long delay, long period) {
@@ -229,29 +265,41 @@ public class ScheduledTaskExecutor {
         return task;
     }
     
+    /*
+     *  all callers hold _mainMutex
+     */
     private void createAndStartThread() {
         Worker worker= new Worker();
         Thread thr= _threadFactory.newThread(worker);
         worker.thread= thr;
+        _workers.add(worker);
         thr.start();
     }
     
     private void addTaskForExecution(TaskFuture task) {
-        _taskQueue.addTask(task);
-        ensureEnoughThreadsStarted();
+        synchronized (_mainMutex) {
+            if(_shutdown) {
+                return;
+            }
+            
+            _taskQueue.addTask(task);
+            ensureEnoughThreadsStarted();
+        }
     }
     
     private void ensureEnoughThreadsStarted() {
-        while(_taskQueue.hasUnassignedTasks()) {
-            int threadCount= totalThreads.get();
-            if(threadCount < _maxPoolSize) {
-                if(totalThreads.compareAndSet(threadCount, threadCount + 1)) {
+        synchronized (_mainMutex) {
+            if(_shutdown) {
+                return;
+            }
+            
+            if(_taskQueue.hasUnassignedTasks()) {
+                if(_workers.size() < _maxPoolSize) {
                     createAndStartThread();
-                    break;
+                } else {
+                    // FIXME: what should we do here?
+                    System.err.println("WARNING: not enough worker threads");
                 }
-            } else {
-                // FIXME: what should we do here?
-                System.err.println("WARNING: not enough worker threads");
             }
         }
     }

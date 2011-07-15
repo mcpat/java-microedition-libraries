@@ -1,5 +1,6 @@
 package java.lang;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Properties;
@@ -10,9 +11,9 @@ public final class System {
     public final static PrintStream out;
 
     static {
-    	err= null;
-    	in= null;
-    	out= null;
+    	err= new PrintStream(null);
+    	in= new ByteArrayInputStream(null);
+    	out= new PrintStream(null);
     }
     
     /**

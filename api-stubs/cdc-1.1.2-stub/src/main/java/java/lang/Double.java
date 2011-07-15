@@ -6,8 +6,12 @@ public final class Double extends Number implements Comparable {
 	public static final double NaN= 0d/0d;
 	public static final double NEGATIVE_INFINITY= -1d/0d;
 	public static final double POSITIVE_INFINITY= 1d/0d;
-    public final static Class TYPE= null;
+    public final static Class TYPE;
 
+    static {
+        TYPE= new Object().getClass();
+    }
+    
     public static int compare(double d1, double d2) {
         return 0;
     }

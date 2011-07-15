@@ -15,6 +15,8 @@ public final class Class {
 		return null;
 	}
 	
+	private Class() {}
+	
 	public String getName() {
 		return null;
 		

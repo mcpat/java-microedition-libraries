@@ -10,7 +10,7 @@ public final class Boolean implements Serializable {
 	static {
 		FALSE= new Boolean(false);
 		TRUE= new Boolean(true);
-		TYPE = Class.class;
+		TYPE= new Object().getClass();
 	}
 	
     public static boolean getBoolean(String name) {

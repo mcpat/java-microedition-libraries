@@ -27,6 +27,7 @@ public final class Class implements Serializable {
         return null;
     }
 
+    private Class() {}
 
     public boolean desiredAssertionStatus() {
         return false;

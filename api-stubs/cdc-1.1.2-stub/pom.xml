@@ -9,6 +9,7 @@
 	</parent>
 
 	<artifactId>cdc-1.1.2-stub</artifactId>
+	<version>1.0.1</version>
 
 	<packaging>jar</packaging>
 	<name>CDC-1.1.2 Stub</name>

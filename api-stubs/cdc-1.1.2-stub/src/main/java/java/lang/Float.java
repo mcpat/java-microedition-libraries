@@ -9,7 +9,7 @@ public final class Float extends Number implements Comparable {
 	public final static Class TYPE;
 
 	static {
-		TYPE= null;
+		TYPE= new Object().getClass();
 	}
     public static int compare(float f1, float f2) {
         return 0;

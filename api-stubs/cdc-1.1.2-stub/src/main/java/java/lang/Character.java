@@ -265,7 +265,7 @@ public final class Character implements Serializable, Comparable {
 	public static final byte UPPERCASE_LETTER= 1;
 
 	static {
-	    TYPE= Class.class;
+	    TYPE= new Object().getClass();
 	}
 
     public static int digit(char ch, int radix) {

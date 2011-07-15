@@ -6,7 +6,7 @@ public final class Short extends Number implements Comparable {
     public final static Class TYPE;
     
     static {
-    	TYPE= null;
+    	TYPE= new Object().getClass();
     }
 
     /**

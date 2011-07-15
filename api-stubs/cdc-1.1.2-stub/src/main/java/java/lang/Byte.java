@@ -6,7 +6,7 @@ public final class Byte extends Number implements Comparable {
     public final static Class TYPE;
     
 	static {
-		TYPE= Class.class;
+		TYPE= new Object().getClass();
 	}
 
     /**

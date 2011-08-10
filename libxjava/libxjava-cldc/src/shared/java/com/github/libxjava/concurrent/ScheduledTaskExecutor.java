@@ -184,6 +184,10 @@ public class ScheduledTaskExecutor {
         }
     }
     
+    public int getMaximumPoolSize() {
+        return _maxPoolSize;
+    }
+    
     public TaskFuture submit(Runnable target) {
         return scheduleAtFixedRate(target, 0L, 0L);
     }

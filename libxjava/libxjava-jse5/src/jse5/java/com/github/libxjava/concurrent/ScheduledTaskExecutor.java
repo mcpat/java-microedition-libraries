@@ -129,6 +129,10 @@ public class ScheduledTaskExecutor {
         }
     }
     
+    public int getMaximumPoolSize() {
+        return _executorImpl.getMaximumPoolSize();
+    }
+    
     public TaskFuture submit(Runnable target) {
         return unwrapTaskFuture(_executorImpl.submit(target));
     }

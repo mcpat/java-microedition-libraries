@@ -28,8 +28,9 @@ package com.github.libxjava.concurrent;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class Semaphore {
+    /*[J5private final java.util.concurrent.Semaphore _impl;/*J5]*/
     private int _permits;
-    private final Object _sync;
+    private final Object _sync;/**/
     
     /**
      * Constructor for a Semaphore.
@@ -37,8 +38,9 @@ public final class Semaphore {
      * @param permits       the initial amount of permits
      */
     public Semaphore(int permits) {
+        /*[J5_impl= new java.util.concurrent.Semaphore(permits);/*J5]*/
         _permits= permits;
-        _sync= new Object();
+        _sync= new Object();/**/
     }
     
     /**
@@ -50,7 +52,8 @@ public final class Semaphore {
      * @see #acquireInterruptibly()
      */
     public void acquire() {
-        acquire(1);
+        /*[J5_impl.acquireUninterruptibly();/*J5]*/
+        acquire(1);/**/
     }
     
     /**
@@ -60,6 +63,7 @@ public final class Semaphore {
      * @see #acquireInterruptibly()
      */
     public void acquire(int permits) {
+        /*[J5_impl.acquireUninterruptibly(permits);/*J5]*/
         if(permits <= 0) {
             throw new IllegalArgumentException("permits must be a positive value");
         }
@@ -76,7 +80,7 @@ public final class Semaphore {
         
         if(interrupted) {
             Thread.currentThread().interrupt();
-        }
+        }/**/
     }
     
     /**
@@ -92,7 +96,8 @@ public final class Semaphore {
      * @see #acquire()
      */
     public void acquireInterruptibly() throws InterruptedException {
-        acquireInterruptibly(1);
+        /*[J5_impl.acquire();/*J5]*/
+        acquireInterruptibly(1);/**/
     }
     
     /**
@@ -105,6 +110,7 @@ public final class Semaphore {
      * @see #acquire()
      */
     public void acquireInterruptibly(int permits) throws InterruptedException, IllegalArgumentException {
+        /*[J5_impl.acquire(permits);/*J5]*/
         if(permits <= 0) {
             throw new IllegalArgumentException("permits must be a positive value");
         }
@@ -115,7 +121,7 @@ public final class Semaphore {
             }
             
             _permits-= permits;
-        }
+        }/**/
     }
     
     /**
@@ -126,7 +132,8 @@ public final class Semaphore {
      * </p>
      */
     public void release() {
-        release(1);
+        /*[J5_impl.release();/*J5]*/
+        release(1);/**/
     }
     
     /**
@@ -134,6 +141,7 @@ public final class Semaphore {
      * notified.
      */
     public void release(int permits) {
+        /*[J5_impl.release(permits);/*J5]*/
         if(permits <= 0) {
             throw new IllegalArgumentException("permits must be a positive value");
         }
@@ -141,7 +149,7 @@ public final class Semaphore {
         synchronized (_sync) {
             _permits+= permits;
             _sync.notify();
-        }
+        }/**/
     }
     
     /**
@@ -153,7 +161,8 @@ public final class Semaphore {
      * @return      {@code true} if acquisition was successful and {@code false} otherwise.
      */
     public boolean tryAcquire() {
-        return tryAcquire(1);
+        /*[J5return _impl.tryAcquire();/*J5]*/
+        return tryAcquire(1);/**/
     }
     
     /**
@@ -162,6 +171,7 @@ public final class Semaphore {
      * @return      {@code true} if acquisition was successful and {@code false} otherwise.
      */
     public boolean tryAcquire(int permits) {
+        /*[J5return _impl.tryAcquire(permits);/*J5]*/
         if(permits <= 0) {
             throw new IllegalArgumentException("permits must be a positive value");
         }
@@ -173,12 +183,13 @@ public final class Semaphore {
             }
             
             return false;
-        }
+        }/**/
     }
     
     public int getPermits() {
+        /*[J5return _impl.availablePermits();/*J5]*/
         synchronized (_sync) {
             return _permits;
-        }
+        }/**/
     }
 }

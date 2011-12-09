@@ -26,26 +26,29 @@ package com.github.libxjava.concurrent;
  * @version ${project.artifactId} - ${project.version}
  */
 public final class AtomicNumber {
+    /*[J5private final java.util.concurrent.atomic.AtomicInteger _impl;/*J5]*/
     private final Object _mutex;
-    
-    private int _value;
+    private int _value;/**/
     
     public AtomicNumber() {
         this(0);
     }
     
     public AtomicNumber(int initialValue) {
+        /*[J5_impl= new java.util.concurrent.atomic.AtomicInteger(initialValue);/*J5]*/
         _mutex= new Object();
-        _value= initialValue;
+        _value= initialValue;/**/
     }
     
     public int get() {
+        /*[J5return _impl.get();/*J5]*/
         synchronized (_mutex) {
             return _value;
-        }
+        }/**/
     }
     
     public boolean compareAndSet(int expected, int newValue) {
+        /*[J5return _impl.compareAndSet(expected, newValue);/*J5]*/
         synchronized (_mutex) {
             if(_value != expected) {
                 return false;
@@ -53,35 +56,39 @@ public final class AtomicNumber {
             
             _value= newValue;
             return true;
-        }
+        }/**/
     }
     
     public int updateAndGet(int diff) {
+        /*[J5return _impl.addAndGet(diff);/*J5]*/
         synchronized (_mutex) {
             _value+= diff;
             return _value;
-        }
+        }/**/
     }
     
     public int getAndUpdate(int diff) {
+        /*[J5return _impl.getAndAdd(diff);/*J5]*/
         synchronized (_mutex) {
             int result= _value;
             _value+= diff;
             return result;
-        }
+        }/**/
     }
     
     public int getAndSet(int newValue) {
+        /*[J5return _impl.getAndSet(newValue);/*J5]*/
         synchronized (_mutex) {
             int result= _value;
             _value= newValue;
             return result;
-        }
+        }/**/
     }
     
     public void set(int newValue) {
+        /*[J5_impl.set(newValue);/*J5]*/
         synchronized (_mutex) {
             _value= newValue;
-        }
+        }/**/
     }
 }

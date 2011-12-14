@@ -62,10 +62,10 @@
 		<libxjava-module-sources>${project.build.directory}/generated-sources</libxjava-module-sources>
 		
 		<junit-version>3.8.1</junit-version>
-		<cldc-version>1.0</cldc-version>
+		<cldc-version>1.0.1</cldc-version>
 		<cldc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cldc-1.1-stub/${cldc-version}/cldc-1.1-stub-${cldc-version}.jar</cldc-jar>
 		
-		<cdc-version>1.0</cdc-version>
+		<cdc-version>1.0.1</cdc-version>
 		<cdc-jar>${settings.localRepository}/com/github/mcpat/apistubs/cdc-1.1.2-stub/${cdc-version}/cdc-1.1.2-stub-${cdc-version}.jar</cdc-jar>
 		
 		<sonar.phase>process-sources</sonar.phase>

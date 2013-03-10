@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
+ * This class is not thread-safe!
+ * 
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
@@ -32,8 +34,6 @@ public abstract class BufferedOutputStream extends OutputStream {
     private byte[] _buffer;
     private int _position;
 
-    protected final Object worklock= new Object();
-    
     protected BufferedOutputStream(int bufsize) {
         this.bufsize = bufsize;
     }
@@ -43,18 +43,14 @@ public abstract class BufferedOutputStream extends OutputStream {
     }
     
     public final void clear() {
-        synchronized (worklock) {
-            _buffer= null;
-            _position = 0;
-        }
+        _buffer= null;
+        _position = 0;
     }
 
     public final void flush() throws IOException {
-        synchronized(worklock) {
-            if (_buffer != null && _position > 0) {
-                internalWrite(_buffer, _position, true);
-                clear();
-            }
+        if (_buffer != null && _position > 0) {
+            internalWrite(_buffer, _position, true);
+            clear();
         }
     }
 
@@ -67,32 +63,28 @@ public abstract class BufferedOutputStream extends OutputStream {
             return;
         }
         
-        synchronized(worklock) {
-            ensureBufferNotNull();
+        ensureBufferNotNull();
+        
+        int canWrite;
+        int toWrite;
+        int offset= off;
+        int length= len;
+        while(length > 0) {
+            checkBuffer(); // check whether the buffer should be flushed
+            canWrite= getPayloadEnd() - _position;
+            toWrite= length > canWrite ? canWrite : length;
             
-            int canWrite;
-            int toWrite;
-            int offset= off;
-            int length= len;
-            while(length > 0) {
-                checkBuffer(); // check whether the buffer should be flushed
-                canWrite= getPayloadEnd() - _position;
-                toWrite= length > canWrite ? canWrite : length;
-                
-                System.arraycopy(b, offset, _buffer, _position, toWrite);
-                offset+= toWrite;
-                length-= toWrite;
-                _position+= toWrite;
-            }
+            System.arraycopy(b, offset, _buffer, _position, toWrite);
+            offset+= toWrite;
+            length-= toWrite;
+            _position+= toWrite;
         }
     }
 
     public final void write(int b) throws IOException {
-        synchronized(worklock) {
-            ensureBufferNotNull();
-            checkBuffer(); // check whether the buffer should be flushed
-            _buffer[_position++]= (byte)b;
-        }
+        ensureBufferNotNull();
+        checkBuffer(); // check whether the buffer should be flushed
+        _buffer[_position++]= (byte)b;
     }
     
     protected int getPayloadStart() {

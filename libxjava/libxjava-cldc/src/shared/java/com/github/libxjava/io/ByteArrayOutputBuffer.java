@@ -25,7 +25,7 @@ import java.io.OutputStream;
 
 /**
  * This implementation is like the {@link ByteArrayOutputStream}
- * but not synchronised and it lets the user optimise byte array allocation.
+ * but not thread-safe and it lets the user optimise byte array allocation.
  * 
  * Furthermore this type of {@link OutputStream} is not closable, so
  * it can be reused.

@@ -25,11 +25,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
+ * This class is not thread-safe!
+ * 
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
 public abstract class BaseX {
-    private final Object _workLock= new Object();
     private final ByteArrayOutputBuffer _workOutput= new ByteArrayOutputBuffer();
     private final ByteArrayInputBuffer _workInput= new ByteArrayInputBuffer();
     
@@ -47,25 +48,21 @@ public abstract class BaseX {
      * Encodes the specified block of bytes and assumes that it holds all bytes to encode.
      */
     public final byte[] encode(byte[] b, int off, int len) {
-        synchronized (_workLock) {
-            _workOutput.reset();
-            _workInput.setInput(b, off, len);
-            try {
-                internalEncode(_workInput, _workOutput);
-            } catch (IOException e) {
-                // should never happen
-                throw new Error(e.getMessage());
-            }
-            
-            return _workOutput.toByteArray();
+        _workOutput.reset();
+        _workInput.setInput(b, off, len);
+        try {
+            internalEncode(_workInput, _workOutput);
+        } catch (IOException e) {
+            // should never happen
+            throw new Error(e.getMessage());
         }
+        
+        return _workOutput.toByteArray();
     }
     
     public final void encode(byte[] b, int off, int len, OutputStream out) throws IOException {
-        synchronized (_workLock) {
-            _workInput.setInput(b, off, len);
-            internalDecode(_workInput, out);
-        }
+        _workInput.setInput(b, off, len);
+        internalDecode(_workInput, out);
     }
     
     /**
@@ -73,9 +70,7 @@ public abstract class BaseX {
      * until it reads an {code end-of-file} from {@code in}.
      */
     public final void encode(InputStream in, OutputStream out) throws IOException {
-        synchronized (_workLock) {
-            internalEncode(in, out);
-        }
+        internalEncode(in, out);
     }
     
     /**
@@ -87,31 +82,43 @@ public abstract class BaseX {
     }
     
     /**
-     * Decodes the specified block of bytes and assumes that it holds all bytes to decode.
+     * Decodes the specified block of bytes under the following assumptions:
+     * <ol>
+     * <li>{@code b} contains only bytes that are recognised by the decoder
+     * implementation. White spaces etc. have to be removed before calling
+     * this method!</li>
+     *  <li>{@code b} contains <strong>all</strong> bytes to decode</li>
+     * 
+     * @see details of the specific encoding!
      */
     public final byte[] decode(byte[] b, int off, int len) {
-        synchronized (_workLock) {
-            _workOutput.reset();
-            _workInput.setInput(b, off, len);
-            try {
-                internalDecode(_workInput, _workOutput);
-            } catch (IOException e) {
-                // should never happen
-                throw new Error(e.getMessage());
-            }
-            
-            return _workOutput.toByteArray();
+        _workOutput.reset();
+        _workInput.setInput(b, off, len);
+        try {
+            internalDecode(_workInput, _workOutput);
+        } catch (IOException e) {
+            // should never happen
+            throw new Error(e.getMessage());
         }
+        
+        return _workOutput.toByteArray();
     }
     
     /**
-     * Decodes the data from {@code in} and writes it to {@code out}. It does so
-     * until it reads an {code end-of-file} from {@code in}.
+     * Decodes the data from {@code in} and writes it to {@code out} under the
+     * following assumptions:
+     * <ol>
+     * <li>{@code in} only delivers bytes that are recognised by the decoder
+     * implementation. White spaces etc. must not be returned when the decoder
+     * calls one of the read methods of {@code in}</li>
+     * </ol>
+     * It does so until it either reads an {code end-of-file} or encoding specific
+     * finalisation bytes from {@code in}.
+     * 
+     * @see details of the specific encoding!
      */
     public final void decode(InputStream in, OutputStream out) throws IOException {
-        synchronized (_workLock) {
-            internalDecode(in, out);
-        }
+        internalDecode(in, out);
     }
     
     protected abstract void internalDecode(InputStream in, OutputStream out) throws IOException;

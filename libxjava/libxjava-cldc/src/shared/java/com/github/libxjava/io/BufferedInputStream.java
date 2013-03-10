@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * This class is not thread-safe!
+ * 
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
@@ -33,30 +35,22 @@ public abstract class BufferedInputStream extends InputStream {
     private int _position = 0;
     private int _count = 0;
 
-    protected final Object worklock= new Object();
-    
     protected BufferedInputStream(int bufsize) {
         this.bufsize= bufsize;
     }
 
     public final int available() { 
-        synchronized (worklock) {
-            return _count - _position;
-        }
+        return _count - _position;
     }
     
     public final void clear() {
-        synchronized (worklock) {
-            _buffer= null;
-            _count= _position= 0;
-        }
+        _buffer= null;
+        _count= _position= 0;
     }
 
     public final int read() throws IOException {
-        synchronized(worklock) {
-            boolean eof= checkBuffer();
-            return eof ? -1 : (_buffer[_position++] & 0xFF);
-        }
+        boolean eof= checkBuffer();
+        return eof ? -1 : (_buffer[_position++] & 0xFF);
     }
 
     public final int read(byte[] b, int off, int len) throws IOException {
@@ -66,21 +60,19 @@ public abstract class BufferedInputStream extends InputStream {
             throw new IndexOutOfBoundsException("offset and/or length are out of the buffers bounds");
         }
 
-        synchronized(worklock) {
-            if(checkBuffer()) {
-                return -1;
-            }
-            
-            int numBytes= 0;
-            final int canRead= _count - _position;
-            if (canRead > 0 && len > 0) {
-                numBytes= len > canRead ? canRead : len;
-                System.arraycopy(_buffer, _position, b, off, numBytes);
-                _position+= numBytes;
-            }
-            
-            return numBytes;
+        if(checkBuffer()) {
+            return -1;
         }
+        
+        int numBytes= 0;
+        final int canRead= _count - _position;
+        if (canRead > 0 && len > 0) {
+            numBytes= len > canRead ? canRead : len;
+            System.arraycopy(_buffer, _position, b, off, numBytes);
+            _position+= numBytes;
+        }
+        
+        return numBytes;
     }
 
     protected int getPayloadStart() {

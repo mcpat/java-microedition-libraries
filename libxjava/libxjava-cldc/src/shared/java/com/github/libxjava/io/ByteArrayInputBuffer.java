@@ -20,9 +20,17 @@
 
 package com.github.libxjava.io;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
+ * This implementation is like the {@link ByteArrayInputStream}
+ * but not thread-safe.
+ * 
+ * Furthermore this type of {@link OutputStream} is not closable, so
+ * it can be reused.
+ * 
  * @author Marcel Patzlaff
  * @version ${project.artifactId} - ${project.version}
  */
